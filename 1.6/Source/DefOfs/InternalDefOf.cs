@@ -14,6 +14,9 @@ namespace VanillaRanchingExpanded
 		{
 			DefOfHelper.EnsureInitializedInCtor(typeof(InternalDefOf));
 		}
-		
-	}
+
+		public static StatDef VRE_HealthFromGenesScale;
+       
+
+    }
 }

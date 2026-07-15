@@ -7,7 +7,8 @@
 		<race>Cow</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Cow</iconPath>
 		<animalGenes>
-			<li>VRE_Derp</li>
+			<li>VRE_HorribleVitality</li>
+			<li>VRE_VeryFast</li>
 		
 		</animalGenes>
 	</VanillaRanchingExpanded.FeratypeDef>

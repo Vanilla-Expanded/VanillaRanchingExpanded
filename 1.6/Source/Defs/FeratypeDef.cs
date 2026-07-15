@@ -16,7 +16,7 @@ namespace VanillaRanchingExpanded
 
         public PawnKindDef race;
 
-        public List<AnimalGeneDef> animalGenes;
+        public List<AnimalGeneDef> animalGenes = new List<AnimalGeneDef>();
 
         public static readonly Color IconColor = new Color(0.75f, 0.75f, 0.75f);
 
@@ -48,6 +48,38 @@ namespace VanillaRanchingExpanded
             {
                 yield return "iconPath is empty.";
             }
+           
+        }
+
+        public override void ResolveReferences()
+        {
+            base.ResolveReferences();
+            if (animalGenes.NullOrEmpty())
+            {
+                return;
+            }
+            if (descriptionHyperlinks == null)
+            {
+                descriptionHyperlinks = new List<DefHyperlink>();
+            }
+            foreach (AnimalGeneDef gene in animalGenes)
+            {
+                descriptionHyperlinks.Add(new DefHyperlink(gene));
+            }
+        }
+
+        public static string FeratypeDescWithExtra(FeratypeDef feratype)
+        {
+            return feratype.description + "\n\n" + "VRE_MoreInfoInInfoScreen".Translate().Colorize(ColoredText.SubtleGrayColor);
+        }
+
+        public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
+        {
+            foreach (StatDrawEntry item in base.SpecialDisplayStats(req))
+            {
+                yield return item;
+            }
+            yield return new StatDrawEntry(StatCategoryDefOf.Basics, "VRE_AnimalGenes".Translate(), animalGenes.Select((AnimalGeneDef x) => x.label).ToCommaList().CapitalizeFirst(), "VRE_AnimalGenesFeratypeDesc".Translate() + "\n\n" + animalGenes.Select((AnimalGeneDef x) => x.label).ToLineList("  - ", capitalizeItems: true), 1000);
            
         }
     }

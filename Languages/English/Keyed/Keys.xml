@@ -2,5 +2,9 @@
 <LanguageData>
 	<VRE_TabAnimalGenes>Genes</VRE_TabAnimalGenes>
 	<VRE_AnimalGenes>Animal genes</VRE_AnimalGenes>
+	<VRE_AnimalGenesFeratypeDesc>The genes associated with this feratype.</VRE_AnimalGenesFeratypeDesc>
+	<VRE_Feratype>Feratype</VRE_Feratype>
 	<VRE_AnimalGenesDesc>Genes present in this animal</VRE_AnimalGenesDesc>
+	<VRE_StatsReport_Genes>Relevant animal genes</VRE_StatsReport_Genes>
+	<VRE_MoreInfoInInfoScreen>More information is available on this feratype's information screen.</VRE_MoreInfoInInfoScreen>
 </LanguageData>

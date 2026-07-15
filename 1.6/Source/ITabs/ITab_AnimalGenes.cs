@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System;
+using System.Drawing.Drawing2D;
 using UnityEngine;
 using VEF.Buildings;
 using Verse;
@@ -69,7 +70,7 @@ namespace VanillaRanchingExpanded
 
             Pawn pawn = PawnForGenes(Find.Selector.SingleSelectedThing);
 
-            if (pawn != null && StaticCollections.ranchingAnimals.Contains(pawn.kindDef))
+            if (pawn != null && WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn))
             {
                 return true;
             }
@@ -123,7 +124,7 @@ namespace VanillaRanchingExpanded
 
             Rect rect = new Rect(x, y, 140f, Text.LineHeight);
             Text.Anchor = TextAnchor.UpperCenter;
-            Widgets.Label(rect, comp.feratype.label);
+            Widgets.Label(rect, comp.feratype.label.CapitalizeFirst());
             Text.Anchor = TextAnchor.UpperLeft;
             Rect position = new Rect(rect.center.x - 17f, rect.yMax + 4f, 34f, 34f);
             GUI.color = XenotypeDef.IconColor;
@@ -133,7 +134,7 @@ namespace VanillaRanchingExpanded
             if (Mouse.IsOver(rect))
             {
                 Widgets.DrawHighlight(rect);
-                TooltipHandler.TipRegion(rect, () => ("Xenotype".Translate() + ": " + comp.feratype.label).Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + comp.feratype.description, 883938493);
+                TooltipHandler.TipRegion(rect, () => ("VRE_Feratype".Translate() + ": " + comp.feratype.label).Colorize(ColoredText.TipSectionTitleColor).CapitalizeFirst() + "\n\n" + FeratypeDef.FeratypeDescWithExtra(comp.feratype), 883938493);
             }
             if (Widgets.ButtonInvisible(rect))
             {
@@ -142,6 +143,7 @@ namespace VanillaRanchingExpanded
             }
 
         }
+
 
         private static void DrawAnimalGeneSections(Rect rect, Thing target, CompAnimalGenes comp, ref Vector2 scrollPosition)
         {
@@ -208,7 +210,7 @@ namespace VanillaRanchingExpanded
             DrawGeneBasics(gene, geneRect, doBackground, clickable);
             if (Mouse.IsOver(geneRect))
             {
-                string text = gene.LabelCap.Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + gene.description;
+                string text = gene.LabelCap.Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + gene.DescriptionFull;
 
                 if (clickable)
                 {
@@ -237,16 +239,16 @@ namespace VanillaRanchingExpanded
 
             switch (gene.stability)
             {
-                case AnimalGeneStability.Awful:
+                case 2:
                     cachedTexture = GeneBackground_Awful;
                     break;
-                case AnimalGeneStability.Poor:
+                case 1:
                     cachedTexture = GeneBackground_Poor;
                     break;
-                case AnimalGeneStability.Good:
+                case -1:
                     cachedTexture = GeneBackground_Good;
                     break;
-                case AnimalGeneStability.Excellent:
+                case -2:
                     cachedTexture = GeneBackground_Excellent;
                     break;
             }

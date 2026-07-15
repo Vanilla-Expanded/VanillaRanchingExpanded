@@ -1,11 +1,98 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<VanillaRanchingExpanded.AnimalGeneDef>
-		<defName>VRE_Derp</defName>
-		<description>Derpityderp.</description>
-		<label>derp</label>
-		<stability>Poor</stability>
+		<defName>VRE_PerfectVitality</defName>
+		<description>Carrier of this gene gains unparalleled physical resilience, allowing for rapid recovery from wounds and infections. They possess a robust constitution that renders them impervious to environmental hazards and toxins, while significantly bolstering their overall durability.</description>
+		<label>perfect vitality</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Vitality</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>
+		<statFactors>
+			<InjuryHealingFactor>4</InjuryHealingFactor>
+			<ImmunityGainSpeed>2</ImmunityGainSpeed>
+			<VRE_HealthFromGenesScale>1.5</VRE_HealthFromGenesScale>
+			<MarketValue>1.2</MarketValue>
+		</statFactors>
+		<statOffsets>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		</statOffsets>
+		<familyTag>VRE_Vitality</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_GoodVitality</defName>
+		<description>Carrier of this gene gains physical resilience, which accelerates wound recovery and immunity gain speed, while also improving the animal's overall durability.</description>
+		<label>good vitality</label>
+		<stability>-1</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Vitality</iconPath>
 		
+		<statFactors>
+			<InjuryHealingFactor>2</InjuryHealingFactor>
+			<ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+			<VRE_HealthFromGenesScale>1.25</VRE_HealthFromGenesScale>
+			
+		</statFactors>
+		
+		<familyTag>VRE_Vitality</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageVitality</defName>
+		<description>Carrier of this gene represents a baseline state of vitality and provides no bonuses or penalties.</description>
+		<label>average vitality</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Vitality</iconPath>
+		
+		
+		
+		<familyTag>VRE_Vitality</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_PoorVitality</defName>
+		<description>Carrier of this gene exhibits reduced physical constitution, resulting in slower wound recovery and a weakened immune system.</description>
+		<label>poor vitality</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Vitality</iconPath>
+		
+		<statFactors>
+			<InjuryHealingFactor>0.75</InjuryHealingFactor>
+			<ImmunityGainSpeed>0.75</ImmunityGainSpeed>
+			<VRE_HealthFromGenesScale>0.9</VRE_HealthFromGenesScale>
+			
+		</statFactors>
+		
+		<familyTag>VRE_Vitality</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_HorribleVitality</defName>
+		<description>Carrier of this gene possesses a fragile constitution, making them highly susceptible to injury and infection, with significantly diminished physical resilience.</description>
+		<label>horrible vitality</label>
+		<stability>2</stability>
+		<marketValueFactor>0.9</marketValueFactor>
+		<iconPath>UI/AnimalGenes/AnimalGene_Vitality</iconPath>
+		
+		<statFactors>
+			<InjuryHealingFactor>0.5</InjuryHealingFactor>
+			<ImmunityGainSpeed>0.5</ImmunityGainSpeed>
+			<VRE_HealthFromGenesScale>0.5</VRE_HealthFromGenesScale>
+			<MarketValue>0.9</MarketValue>
+		</statFactors>
+		
+		<familyTag>VRE_Vitality</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_VeryFast</defName>
+		<description>Carrier of this gene moves with incredible speed, allowing them to traverse local area rapidly and keep fast pace with caravans.</description>
+		<label>very fast</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Speed</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>
+		<statFactors>
+			<MoveSpeed>1.75</MoveSpeed>			
+			<CaravanRidingSpeedFactor>1.25</CaravanRidingSpeedFactor>			
+			<MarketValue>1.2</MarketValue>
+		</statFactors>		
+		<familyTag>VRE_AnimalSpeed</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
 </Defs>
