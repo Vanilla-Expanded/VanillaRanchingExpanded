@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<VanillaRanchingExpanded.FeratypeDef>
-		<defName>VRE_Muffalo</defName>
-		<race>Muffalo</race>
-		<iconPath>UI/FeratypeIcons/Feratype_Muffalo</iconPath>
+		<defName>VRE_Cow</defName>
+		<description>The baseliner cow is a large domesticated ungulate that has been selectively bred over millennia to serve as a versatile source of milk, meat, and leather.</description>
+		<label>cow</label>
+		<race>Cow</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Cow</iconPath>
+		<animalGenes>
+			<li>VRE_Derp</li>
+		
+		</animalGenes>
 	</VanillaRanchingExpanded.FeratypeDef>
 </Defs>

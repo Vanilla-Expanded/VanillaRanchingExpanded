@@ -1,7 +1,9 @@
-﻿
-using RimWorld;
+﻿using RimWorld;
+using System;
 using UnityEngine;
+using VEF.Buildings;
 using Verse;
+
 
 namespace VanillaRanchingExpanded
 {
@@ -21,10 +23,17 @@ namespace VanillaRanchingExpanded
 
         protected const float InitialHeight = 550f;
 
-       
+        private static float scrollHeight;
+        private static float genesHeight;
+
         public override bool IsVisible => CanShowGenesTab();
 
-       
+        private static readonly CachedTexture GeneBackground_Awful = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Awful");
+        private static readonly CachedTexture GeneBackground_Poor = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Poor");
+        private static readonly CachedTexture GeneBackground_Baseline = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Average");
+        private static readonly CachedTexture GeneBackground_Good = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Good");
+        private static readonly CachedTexture GeneBackground_Excellent = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Perfect");
+
         protected Pawn SelPawnForGenes => PawnForGenes(SelThing);
 
         public ITab_AnimalGenes()
@@ -33,14 +42,12 @@ namespace VanillaRanchingExpanded
             labelKey = "VRE_TabAnimalGenes";
         }
 
-      
-
         protected override void FillTab()
         {
-            GeneUIUtility.DrawGenesInfo(new Rect(0f, 20f, size.x, size.y - 20f), Find.Selector.SingleSelectedThing, 550f, ref size, ref scrollPosition);
+            DrawGenesInfo(new Rect(0f, 20f, size.x, size.y - 20f), Find.Selector.SingleSelectedThing, 550f, ref size, ref scrollPosition);
         }
 
-       
+
 
         private static Pawn PawnForGenes(Thing thing)
         {
@@ -59,15 +66,223 @@ namespace VanillaRanchingExpanded
 
         public static bool CanShowGenesTab()
         {
-           
+
             Pawn pawn = PawnForGenes(Find.Selector.SingleSelectedThing);
-          
+
             if (pawn != null && StaticCollections.ranchingAnimals.Contains(pawn.kindDef))
             {
                 return true;
             }
-           
+
             return false;
         }
+
+        public static void DrawGenesInfo(Rect rect, Thing target, float initialHeight, ref Vector2 size, ref Vector2 scrollPosition, GeneSet pregnancyGenes = null)
+        {
+            Pawn sourcePawn = target as Pawn;
+            if (sourcePawn == null || !WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(sourcePawn))
+            {
+                return;
+            }
+            CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[sourcePawn];
+            if (comp is null)
+            {
+                return;
+            }
+
+            Rect rect2 = rect;
+            Rect position = rect2.ContractedBy(10f);
+
+            GUI.BeginGroup(position);
+            float num = Text.LineHeight * 3f;
+            Rect rect3 = new Rect(0f, 0f, position.width, position.height - num - 12f);
+            DrawAnimalGeneSections(rect3, target, comp, ref scrollPosition);
+            Rect rect4 = new Rect(0f, rect3.yMax + 6f, position.width - 140f - 4f, num);
+            rect4.yMax = rect3.yMax + num + 6f;
+
+            //BiostatsTable.Draw(rect4, gcx, met, arc, drawMax: false, ignoreLimits: false);
+            TryDrawFeratype(target, rect4.xMax + 4f, rect4.y + Text.LineHeight / 2f, comp);
+            /*if (Event.current.type == EventType.Layout)
+            {
+                float num2 = endogenesHeight + xenogenesHeight + num + 12f + 70f;
+                if (num2 > initialHeight)
+                {
+                    size.y = Mathf.Min(num2, (float)(UI.screenHeight - 35) - 165f - 30f);
+                }
+                else
+                {
+                    size.y = initialHeight;
+                }
+                xenogenesHeight = 0f;
+                endogenesHeight = 0f;
+            }*/
+            GUI.EndGroup();
+        }
+        private static void TryDrawFeratype(Thing target, float x, float y, CompAnimalGenes comp)
+        {
+
+            Rect rect = new Rect(x, y, 140f, Text.LineHeight);
+            Text.Anchor = TextAnchor.UpperCenter;
+            Widgets.Label(rect, comp.feratype.label);
+            Text.Anchor = TextAnchor.UpperLeft;
+            Rect position = new Rect(rect.center.x - 17f, rect.yMax + 4f, 34f, 34f);
+            GUI.color = XenotypeDef.IconColor;
+            GUI.DrawTexture(position, comp.feratype.Icon);
+            GUI.color = Color.white;
+            rect.yMax = position.yMax;
+            if (Mouse.IsOver(rect))
+            {
+                Widgets.DrawHighlight(rect);
+                TooltipHandler.TipRegion(rect, () => ("Xenotype".Translate() + ": " + comp.feratype.label).Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + comp.feratype.description, 883938493);
+            }
+            if (Widgets.ButtonInvisible(rect))
+            {
+                Find.WindowStack.Add(new Dialog_InfoCard(comp.feratype));
+
+            }
+
+        }
+
+        private static void DrawAnimalGeneSections(Rect rect, Thing target, CompAnimalGenes comp, ref Vector2 scrollPosition)
+        {
+
+            GUI.BeginGroup(rect);
+            Rect rect2 = new Rect(0f, 0f, rect.width - 16f, scrollHeight);
+            float curY = 0f;
+            Widgets.BeginScrollView(rect.AtZero(), ref scrollPosition, rect2);
+            Rect containingRect = rect2;
+            containingRect.y = scrollPosition.y;
+            containingRect.height = rect.height;
+
+            DrawSection(rect, comp.genes.Count, ref curY, ref genesHeight, delegate (int i, Rect r)
+            {
+                DrawGene(comp.genes[i], r);
+            }, containingRect);
+            curY += 12f;
+
+            if (Event.current.type == EventType.Layout)
+            {
+                scrollHeight = curY;
+            }
+            Widgets.EndScrollView();
+            GUI.EndGroup();
+        }
+
+        private static void DrawSection(Rect rect, int count, ref float curY, ref float sectionHeight, Action<int, Rect> drawer, Rect containingRect)
+        {
+            Widgets.Label(10f, ref curY, rect.width, "VRE_AnimalGenes".Translate(), "VRE_AnimalGenesDesc".Translate());
+            float num = curY;
+            Rect rect2 = new Rect(rect.x, curY, rect.width, sectionHeight);
+
+            Widgets.DrawMenuSection(rect2);
+            float num2 = (rect.width - 12f - 630f - 36f) / 2f;
+            curY += num2;
+            int num3 = 0;
+            int num4 = 0;
+            for (int i = 0; i < count; i++)
+            {
+                if (num4 >= 6)
+                {
+                    num4 = 0;
+                    num3++;
+                }
+                else if (i > 0)
+                {
+                    num4++;
+                }
+                Rect rect3 = new Rect(num2 + (float)num4 * 90f + (float)num4 * 6f, curY + (float)num3 * 90f + (float)num3 * 6f, 90f, 90f);
+                if (containingRect.Overlaps(rect3))
+                {
+                    drawer(i, rect3);
+                }
+            }
+            curY += (float)(num3 + 1) * 90f + (float)num3 * 6f + num2;
+
+            if (Event.current.type == EventType.Layout)
+            {
+                sectionHeight = curY - num;
+            }
+        }
+        public static void DrawGene(AnimalGeneDef gene, Rect geneRect, bool doBackground = true, bool clickable = true)
+        {
+            DrawGeneBasics(gene, geneRect, doBackground, clickable);
+            if (Mouse.IsOver(geneRect))
+            {
+                string text = gene.LabelCap.Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + gene.description;
+
+                if (clickable)
+                {
+                    text = text + "\n\n" + "ClickForMoreInfo".Translate().ToString().Colorize(ColoredText.SubtleGrayColor);
+                }
+                TooltipHandler.TipRegion(geneRect, text);
+            }
+        }
+
+        private static void DrawGeneBasics(AnimalGeneDef gene, Rect geneRect, bool doBackground, bool clickable)
+        {
+            GUI.BeginGroup(geneRect);
+            Rect rect = geneRect.AtZero();
+            if (doBackground)
+            {
+                Widgets.DrawHighlight(rect);
+                GUI.color = new Color(1f, 1f, 1f, 0.05f);
+                Widgets.DrawBox(rect);
+                GUI.color = Color.white;
+            }
+            float num = rect.width - Text.LineHeight;
+            Rect rect2 = new Rect(geneRect.width / 2f - num / 2f, 0f, num, num);
+            Color iconColor = gene.IconColor;
+
+            CachedTexture cachedTexture = GeneBackground_Baseline;
+
+            switch (gene.stability)
+            {
+                case AnimalGeneStability.Awful:
+                    cachedTexture = GeneBackground_Awful;
+                    break;
+                case AnimalGeneStability.Poor:
+                    cachedTexture = GeneBackground_Poor;
+                    break;
+                case AnimalGeneStability.Good:
+                    cachedTexture = GeneBackground_Good;
+                    break;
+                case AnimalGeneStability.Excellent:
+                    cachedTexture = GeneBackground_Excellent;
+                    break;
+            }
+
+            GUI.DrawTexture(rect2, cachedTexture.Texture);
+            GUI.color = gene.IconColor;
+            Widgets.DrawTextureFitted(rect2, gene.Icon, 0.9f);
+            GUI.color = Color.white;
+           
+            Text.Font = GameFont.Tiny;
+            float num2 = Text.CalcHeight(gene.LabelCap, rect.width);
+            Rect rect3 = new Rect(0f, rect.yMax - num2, rect.width, num2);
+            GUI.DrawTexture(new Rect(rect3.x, rect3.yMax - num2, rect3.width, num2), TexUI.GrayTextBG);
+            Text.Anchor = TextAnchor.LowerCenter;
+           
+            if (doBackground && num2 < (Text.LineHeight - 2f) * 2f)
+            {
+                rect3.y -= 3f;
+            }
+            Widgets.Label(rect3, gene.LabelCap);
+            GUI.color = Color.white;
+            Text.Anchor = TextAnchor.UpperLeft;
+            Text.Font = GameFont.Small;
+            if (clickable)
+            {
+                if (Widgets.ButtonInvisible(rect))
+                {
+                    Find.WindowStack.Add(new Dialog_InfoCard(gene));
+                }
+                if (Mouse.IsOver(rect))
+                {
+                    Widgets.DrawHighlight(rect);
+                }
+            }
+            GUI.EndGroup();
+        }
+
     }
 }

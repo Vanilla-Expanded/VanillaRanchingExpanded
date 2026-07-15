@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 	<VRE_TabAnimalGenes>Genes</VRE_TabAnimalGenes>
+	<VRE_AnimalGenes>Animal genes</VRE_AnimalGenes>
+	<VRE_AnimalGenesDesc>Genes present in this animal</VRE_AnimalGenesDesc>
 </LanguageData>

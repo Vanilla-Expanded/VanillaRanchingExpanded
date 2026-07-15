@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Derp</defName>
+		<description>Derpityderp.</description>
+		<label>derp</label>
+		<stability>Poor</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Vitality</iconPath>
+		
+	</VanillaRanchingExpanded.AnimalGeneDef>
+</Defs>

@@ -6,19 +6,26 @@ using Verse;
 
 namespace VanillaRanchingExpanded
 {
-    public class FeratypeDef: Def
+    public enum AnimalGeneStability
     {
+        Awful,
+        Poor,
+        Baseline,
+        Good,
+        Excellent
+    }
 
+    public class AnimalGeneDef: Def
+    {
         [NoTranslate]
         public string iconPath;
+
+        private Color? iconColor;
+
         [Unsaved(false)]
         private Texture2D cachedIcon;
 
-        public PawnKindDef race;
-
-        public List<AnimalGeneDef> animalGenes;
-
-        public static readonly Color IconColor = new Color(0.75f, 0.75f, 0.75f);
+        public AnimalGeneStability stability;
 
         public Texture2D Icon
         {
@@ -32,23 +39,25 @@ namespace VanillaRanchingExpanded
                     }
                     else
                     {
-                        cachedIcon = ContentFinder<Texture2D>.Get(iconPath);
+                        cachedIcon = ContentFinder<Texture2D>.Get(iconPath) ?? BaseContent.BadTex;
                     }
                 }
                 return cachedIcon;
             }
         }
-        public override IEnumerable<string> ConfigErrors()
+
+        public Color IconColor
         {
-            foreach (string item in base.ConfigErrors())
+            get
             {
-                yield return item;
+                if (iconColor.HasValue)
+                {
+                    return iconColor.Value;
+                }
+                
+                return Color.white;
             }
-            if (iconPath.NullOrEmpty())
-            {
-                yield return "iconPath is empty.";
-            }
-           
         }
+
     }
 }
