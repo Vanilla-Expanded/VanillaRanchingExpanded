@@ -24,9 +24,9 @@ namespace VanillaRanchingExpanded
 
         public int stability;
 
-        public List<StatModifier> statOffsets;
+        public List<StatModifier> statOffsets = new List<StatModifier>();
 
-        public List<StatModifier> statFactors;
+        public List<StatModifier> statFactors = new List<StatModifier>();
 
         public float marketValueFactor = 1f;
 

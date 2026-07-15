@@ -61,13 +61,14 @@ namespace VanillaRanchingExpanded
                     foreach(AnimalGeneDef gene in feratype.animalGenes)
                     {
                         genes.Add(gene);
+                       
                         foreach (StatModifier statModifier in gene.statFactors)
                         {
                             statModifier.stat.Worker.ClearCacheForThing(pawn);
                         }
-                        foreach (StatModifier statModifier in gene.statOffsets)
+                        foreach (StatModifier statModifier2 in gene.statOffsets)
                         {
-                            statModifier.stat.Worker.ClearCacheForThing(pawn);
+                            statModifier2.stat.Worker.ClearCacheForThing(pawn);
                         }
                     }
                     
