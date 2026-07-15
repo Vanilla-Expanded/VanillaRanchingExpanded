@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_Muffalo</defName>
+		<race>Muffalo</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Muffalo</iconPath>
+	</VanillaRanchingExpanded.FeratypeDef>
+</Defs>
