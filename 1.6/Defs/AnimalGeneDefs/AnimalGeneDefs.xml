@@ -145,8 +145,66 @@
 		<iconPath>UI/AnimalGenes/AnimalGene_Size</iconPath>
 		<marketValueFactor>1.2</marketValueFactor>
 		<statFactors>
-			<VEF_BodySize_Multiplier>1.3</VEF_BodySize_Multiplier>
-			
+			<VEF_BodySize_Multiplier>1.3</VEF_BodySize_Multiplier>			
+			<MarketValue>1.2</MarketValue>
+		</statFactors>
+		<familyTag>VRE_AnimalSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Large</defName>
+		<description>Carrier of this gene possesses an above-average frame, increasing their physical stature and presence.</description>
+		<label>large</label>
+		<stability>-1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Size</iconPath>	
+		<statFactors>
+			<VEF_BodySize_Multiplier>1.15</VEF_BodySize_Multiplier>			
+		</statFactors>
+		<familyTag>VRE_AnimalSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageSize</defName>
+		<description>Carrier of this gene represents a baseline physical size and provides no bonuses or penalties.</description>
+		<label>average size</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Size</iconPath>		
+		<familyTag>VRE_AnimalSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Small</defName>
+		<description>Carrier of this gene is noticeably smaller than average, resulting in a reduced physical stature.</description>
+		<label>small</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Size</iconPath>		
+		<statFactors>
+			<VEF_BodySize_Multiplier>0.8</VEF_BodySize_Multiplier>		
+		</statFactors>
+		<familyTag>VRE_AnimalSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Tiny</defName>
+		<description>Carrier of this gene possesses a diminutive frame, significantly decreasing their physical size and presence.</description>
+		<label>tiny</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Size</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>
+		<statFactors>
+			<VEF_BodySize_Multiplier>0.65</VEF_BodySize_Multiplier>			
+			<MarketValue>0.9</MarketValue>
+		</statFactors>
+		<familyTag>VRE_AnimalSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Filth genes -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Clean</defName>
+		<description>Carrier of this gene is exceptionally hygienic, generating almost no filth and exhibiting a high resistance to common animal illnesses.</description>
+		<label>clean</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>
+		<statFactors>
+			<FilthRate>0</FilthRate>			
 			<MarketValue>1.2</MarketValue>
 		</statFactors>
 		<familyTag>VRE_AnimalSize</familyTag>
