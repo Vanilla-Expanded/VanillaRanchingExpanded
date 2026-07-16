@@ -34,6 +34,10 @@ namespace VanillaRanchingExpanded
 
         public float animalTantrumMTB = 0;
 
+        public HediffDef hediffToAdd = null;
+
+        public TrainabilityDef trainabilityDef = null;
+
         public string familyTag;
 
         public string DescriptionFull => cachedDescription ?? (cachedDescription = GetDescriptionFull());

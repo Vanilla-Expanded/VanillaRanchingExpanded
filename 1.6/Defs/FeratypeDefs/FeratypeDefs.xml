@@ -7,11 +7,34 @@
 		<race>Cow</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Cow</iconPath>
 		<animalGenes>
-			<li>VRE_HorribleVitality</li>
-			<li>VRE_VeryFast</li>
-			<li>VRE_Huge</li>
-		<li>VRE_Clean</li>
-		<li>VRE_Wild</li>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageMilk</li>
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_Muffalo</defName>
+		<description>A large herding herbivore descended from buffalo and adapted for both cold and warm environments. While enraged muffalo are deadly, tamed muffalo are quite docile and can be used as pack animals. Nobody is quite sure why they're blue - it might even be some early genetic modification test that just never got changed.</description>
+		<label>muffalo</label>
+		<race>Muffalo</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Muffalo</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_Large</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_ObliviousIntelligence</li>
+			<li>VRE_ThickWool</li>
+			<li>VRE_MeagerMilk</li>
 		</animalGenes>
 	</VanillaRanchingExpanded.FeratypeDef>
 </Defs>

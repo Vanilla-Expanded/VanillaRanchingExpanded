@@ -11,7 +11,6 @@
 		<toStringStyle>PercentZero</toStringStyle>
 		<displayPriorityInCategory>2202</displayPriorityInCategory>
 	</StatDef>
-	
 	<StatDef>
 		<defName>VRE_ManhunterOnDamageFactor</defName>
 		<label>manhunter on damage factor</label>
@@ -22,7 +21,6 @@
 		<toStringStyle>PercentZero</toStringStyle>
 		<displayPriorityInCategory>515</displayPriorityInCategory>
 	</StatDef>
-	
 	<StatDef>
 		<defName>VRE_ManhunterOnTameFailFactor</defName>
 		<label>manhunter on tame fail factor</label>
@@ -33,7 +31,6 @@
 		<toStringStyle>PercentZero</toStringStyle>
 		<displayPriorityInCategory>516</displayPriorityInCategory>
 	</StatDef>
-	
 	<StatDef>
 		<defName>VRE_ManhunterOnDamageOffset</defName>
 		<label>manhunter on damage offset</label>
@@ -44,7 +41,6 @@
 		<toStringStyle>PercentZero</toStringStyle>
 		<displayPriorityInCategory>517</displayPriorityInCategory>
 	</StatDef>
-	
 	<StatDef>
 		<defName>VRE_ManhunterOnTameFailOffset</defName>
 		<label>manhunter on tame fail offset</label>
@@ -55,7 +51,6 @@
 		<toStringStyle>PercentZero</toStringStyle>
 		<displayPriorityInCategory>518</displayPriorityInCategory>
 	</StatDef>
-	
 	<StatDef>
 		<defName>VRE_ManhunterOnRopingChance</defName>
 		<label>manhunter on roping chance</label>
@@ -66,5 +61,64 @@
 		<toStringStyle>PercentZero</toStringStyle>
 		<displayPriorityInCategory>519</displayPriorityInCategory>
 	</StatDef>
-	
+	<StatDef>
+		<defName>VRE_HungerRateFactor</defName>
+		<label>hunger rate factor</label>
+		<description>A multiplier on the hunger rate of this animal.</description>
+		<category>Animals</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<displayPriorityInCategory>520</displayPriorityInCategory>
+	</StatDef>
+	<StatDef>
+		<defName>VRE_RoamMTBFactor</defName>
+		<label>roam interval factor</label>
+		<description>A multiplier on the roam interval of this animal.</description>
+		<category>Animals</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<displayPriorityInCategory>521</displayPriorityInCategory>
+	</StatDef>
+	<StatDef>
+		<defName>VRE_MilkYieldFactor</defName>
+		<label>milk yield factor</label>
+		<description>A multiplier on the amount of milk produced by this animal.</description>
+		<category>Animals</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<displayPriorityInCategory>9829</displayPriorityInCategory>
+	</StatDef>
+	<StatDef>
+		<defName>VRE_MilkIntervalFactor</defName>
+		<label>milk interval factor</label>
+		<description>A multiplier on the interval of time needed for this animal to produce milk.</description>
+		<category>Animals</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<toStringStyle>PercentZero</toStringStyle>	
+		<displayPriorityInCategory>9828</displayPriorityInCategory>
+	</StatDef>
+	<StatDef>
+		<defName>VRE_WoolYieldFactor</defName>
+		<label>wool yield factor</label>
+		<description>A multiplier on the amount of wool produced by this animal.</description>
+		<category>Animals</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<displayPriorityInCategory>9827</displayPriorityInCategory>
+	</StatDef>
+	<StatDef>
+		<defName>VRE_WoolIntervalFactor</defName>
+		<label>wool interval factor</label>
+		<description>A multiplier on the interval of time needed for this animal to produce wool.</description>
+		<category>Animals</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<toStringStyle>PercentZero</toStringStyle>	
+		<displayPriorityInCategory>9826</displayPriorityInCategory>
+	</StatDef>
 </Defs>

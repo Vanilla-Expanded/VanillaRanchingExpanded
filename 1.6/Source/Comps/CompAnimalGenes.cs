@@ -72,6 +72,11 @@ namespace VanillaRanchingExpanded
                         {
                             statModifier2.stat.Worker.ClearCacheForThing(pawn);
                         }
+
+                        if (gene.hediffToAdd != null)
+                        {
+                            pawn.health.AddHediff(gene.hediffToAdd);
+                        }
                     }
                     
                 }

@@ -332,4 +332,316 @@
 		</statOffsets>
 		<familyTag>VRE_AnimalWildness</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Hunger genes -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_VerySlowMetabolism</defName>
+		<description>Carrier of this gene has a highly efficient metabolism, drastically reducing the frequency of hunger while optimizing nutrient intake.</description>
+		<label>very slow metabolism</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_HungerRate</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<statFactors>
+			<VRE_HungerRateFactor>0.5</VRE_HungerRateFactor>		
+			<EatingSpeed>1.15</EatingSpeed>		
+			<MaxNutrition>2</MaxNutrition>			
+			<MarketValue>1.2</MarketValue>
+		</statFactors>
+		<hediffToAdd>VRE_VerySlowMetabolism</hediffToAdd>
+		<familyTag>VRE_AnimalHungerRate</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_SlowMetabolism</defName>
+		<description>Carrier of this gene has an efficient metabolism, reducing the amount of food required and allowing for slower, more deliberate eating.</description>
+		<label>slow metabolism</label>
+		<stability>-1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_HungerRate</iconPath>		
+		<statFactors>
+			<VRE_HungerRateFactor>0.8</VRE_HungerRateFactor>		
+			<EatingSpeed>1.05</EatingSpeed>					
+		</statFactors>
+		<hediffToAdd>VRE_SlowMetabolism</hediffToAdd>
+		<familyTag>VRE_AnimalHungerRate</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageMetabolism</defName>
+		<description>Carrier of this gene has a standard metabolic rate, providing no bonuses or penalties.</description>
+		<label>average metabolism</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_HungerRate</iconPath>	
+		<familyTag>VRE_AnimalHungerRate</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_FastMetabolism</defName>
+		<description>Carrier of this gene has an accelerated metabolism, requiring more frequent feeding to maintain energy levels.</description>
+		<label>fast metabolism</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_HungerRate</iconPath>		
+		<statFactors>
+			<VRE_HungerRateFactor>1.25</VRE_HungerRateFactor>		
+			<EatingSpeed>0.9</EatingSpeed>				
+		</statFactors>
+		<hediffToAdd>VRE_FastMetabolism</hediffToAdd>
+		<familyTag>VRE_AnimalHungerRate</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_VeryFastMetabolism</defName>
+		<description>Carrier of this gene has a ravenous metabolism, needing near-constant food intake to survive, though they process nutrition less efficiently.</description>
+		<label>very fast metabolism</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_HungerRate</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<statFactors>
+			<VRE_HungerRateFactor>1.5</VRE_HungerRateFactor>		
+			<EatingSpeed>0.8</EatingSpeed>		
+			<MaxNutrition>0.8</MaxNutrition>			
+			<MarketValue>0.9</MarketValue>
+		</statFactors>
+		<hediffToAdd>VRE_VeryFastMetabolism</hediffToAdd>
+		<familyTag>VRE_AnimalHungerRate</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Meat yield genes -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Hulking</defName>
+		<description>Carrier of this gene possesses a massive amount of muscle mass, significantly increasing the total meat yield upon butchering.</description>
+		<label>hulking</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MeatYield</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<statFactors>
+			<MeatAmount>1.4</MeatAmount>		
+			<MarketValue>1.2</MarketValue>
+		</statFactors>	
+		<familyTag>VRE_AnimalMeatYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Bulky</defName>
+		<description>Carrier of this gene has increased muscle density, resulting in a higher meat yield.</description>
+		<label>bulky</label>
+		<stability>-1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MeatYield</iconPath>		
+		<statFactors>
+			<MeatAmount>1.15</MeatAmount>					
+		</statFactors>	
+		<familyTag>VRE_AnimalMeatYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageBuild</defName>
+		<description>Carrier of this gene represents a standard build, providing no bonuses or penalties to meat yield.</description>
+		<label>average build</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MeatYield</iconPath>		
+		<familyTag>VRE_AnimalMeatYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Lean</defName>
+		<description>Carrier of this gene has a slender build, resulting in a reduced meat yield.</description>
+		<label>lean</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MeatYield</iconPath>		
+		<statFactors>
+			<MeatAmount>0.7</MeatAmount>					
+		</statFactors>	
+		<familyTag>VRE_AnimalMeatYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Skeletal</defName>
+		<description>Carrier of this gene has minimal muscle and body mass, resulting in very low meat yields upon butchering.</description>
+		<label>skeletal</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MeatYield</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<statFactors>
+			<MeatAmount>0.45</MeatAmount>		
+			<MarketValue>0.9</MarketValue>
+		</statFactors>	
+		<familyTag>VRE_AnimalMeatYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Intelligence genes -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_IntermediateIntelligence</defName>
+		<description>Carrier of this gene possesses an advanced intellect, enabling the learning of complex tasks and intermediate trainability.</description>
+		<label>intermediate intelligence</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Intelligence</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<statFactors>		
+			<MarketValue>1.2</MarketValue>
+		</statFactors>	
+		<trainabilityDef>Intermediate</trainabilityDef>
+		<familyTag>VRE_AnimalIntelligence</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_SimpleIntelligence</defName>
+		<description>Carrier of this gene possesses a basic level of intellect, allowing for simple training and basic command recognition.</description>
+		<label>simple intelligence</label>
+		<stability>-1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Intelligence</iconPath>	
+		<trainabilityDef>Simple</trainabilityDef>
+		<familyTag>VRE_AnimalIntelligence</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageIntelligence</defName>
+		<description>Carrier of this gene exhibits standard animal intelligence, offering no special trainability.</description>
+		<label>average intelligence</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Intelligence</iconPath>		
+		<trainabilityDef>None</trainabilityDef>
+		<familyTag>VRE_AnimalIntelligence</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_ObliviousIntelligence</defName>
+		<description>Carrier of this gene is somewhat slower to process their surroundings, resulting in increased idle wandering.</description>
+		<label>oblivious intelligence</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Intelligence</iconPath>
+		<statFactors>
+			<VRE_RoamMTBFactor>0.7</VRE_RoamMTBFactor>
+		</statFactors>
+		<trainabilityDef>None</trainabilityDef>
+		<familyTag>VRE_AnimalIntelligence</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_MindlessIntelligence</defName>
+		<description>Carrier of this gene is almost entirely driven by instinct, showing little awareness of their environment and frequently wandering aimlessly.</description>
+		<label>mindless intelligence</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Intelligence</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<statFactors>		
+			<MarketValue>0.9</MarketValue>
+			<VRE_RoamMTBFactor>0.5</VRE_RoamMTBFactor>
+		</statFactors>	
+		<trainabilityDef>None</trainabilityDef>
+		<familyTag>VRE_AnimalIntelligence</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Milk yield genes -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_BountifulMilk</defName>
+		<description>Carrier of this gene produces vast quantities of milk, significantly increasing the resource yield per milking session while optimizing production intervals.</description>
+		<label>bountiful milk</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<statFactors>		
+			<MarketValue>1.2</MarketValue>
+			<VRE_MilkYieldFactor>1.4</VRE_MilkYieldFactor>
+			<VRE_MilkIntervalFactor>0.8</VRE_MilkIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalMilkYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AbundantMilk</defName>
+		<description>Carrier of this gene produces a high amount of milk, improving the yield per milking session.</description>
+		<label>abundant milk</label>
+		<stability>-1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>		
+		<statFactors>				
+			<VRE_MilkYieldFactor>1.15</VRE_MilkYieldFactor>
+			<VRE_MilkIntervalFactor>0.9</VRE_MilkIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalMilkYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageMilk</defName>
+		<description>Carrier of this gene produces a standard amount of milk, providing no bonuses or penalties.</description>
+		<label>average milk yield</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>				
+		<familyTag>VRE_AnimalMilkYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_MeagerMilk</defName>
+		<description>Carrier of this gene produces a reduced amount of milk per milking session.</description>
+		<label>meager milk</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>		
+		<statFactors>				
+			<VRE_MilkYieldFactor>0.7</VRE_MilkYieldFactor>		
+		</statFactors>		
+		<familyTag>VRE_AnimalMilkYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_DryMilk</defName>
+		<description>Carrier of this gene produces very little milk, with significantly diminished yields per milking session.</description>
+		<label>dry milk</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<statFactors>		
+			<MarketValue>0.3</MarketValue>
+			<VRE_MilkYieldFactor>1.4</VRE_MilkYieldFactor>			
+		</statFactors>		
+		<familyTag>VRE_AnimalMilkYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Wool yield genes -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_LuxuriantWool</defName>
+		<description>Carrier of this gene grows an incredibly thick and dense coat, dramatically increasing wool yield while allowing for more frequent shearing sessions.</description>
+		<label>luxuriant wool</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<statFactors>		
+			<MarketValue>1.2</MarketValue>
+			<VRE_WoolYieldFactor>1.5</VRE_WoolYieldFactor>
+			<VRE_WoolIntervalFactor>0.8</VRE_WoolIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalWoolYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_ThickWool</defName>
+		<description>Carrier of this gene grows a dense coat, improving the total wool yield per shearing session.</description>
+		<label>thick wool</label>
+		<stability>-1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>
+		<statFactors>		
+			<VRE_WoolYieldFactor>1.15</VRE_WoolYieldFactor>
+			<VRE_WoolIntervalFactor>0.9</VRE_WoolIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalWoolYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageWool</defName>
+		<description>Carrier of this gene produces a standard amount of wool, providing no bonuses or penalties.</description>
+		<label>average wool yield</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>		
+		<familyTag>VRE_AnimalWoolYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_SparseWool</defName>
+		<description>Carrier of this gene produces a reduced amount of wool per shearing session.</description>
+		<label>sparse wool</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>
+		<statFactors>		
+			<VRE_WoolYieldFactor>0.8</VRE_WoolYieldFactor>
+			<VRE_WoolIntervalFactor>1.25</VRE_WoolIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalWoolYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_BareWool</defName>
+		<description>Carrier of this gene produces very little wool, with significantly diminished yields per shearing session.</description>
+		<label>bare wool</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<statFactors>		
+			<MarketValue>0.9</MarketValue>
+			<VRE_WoolYieldFactor>0.5</VRE_WoolYieldFactor>
+			<VRE_WoolIntervalFactor>1.5</VRE_WoolIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalWoolYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
 </Defs>

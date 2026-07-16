@@ -60,8 +60,9 @@ namespace VanillaRanchingExpanded
                                 }
                             }
                         }
-                        return text.TrimEndNewlines();
+                        
                     }
+                    return text?.TrimEndNewlines();
                 }
             }
             return text;
