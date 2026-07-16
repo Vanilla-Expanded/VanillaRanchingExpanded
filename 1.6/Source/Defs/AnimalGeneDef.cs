@@ -30,6 +30,10 @@ namespace VanillaRanchingExpanded
 
         public float marketValueFactor = 1f;
 
+        public float animalIllnessMTB = 45;
+
+        public float animalTantrumMTB = 0;
+
         public string familyTag;
 
         public string DescriptionFull => cachedDescription ?? (cachedDescription = GetDescriptionFull());
@@ -87,6 +91,9 @@ namespace VanillaRanchingExpanded
                 sb.Append(description).AppendLine().AppendLine();
             }
 
+            sb.AppendLineTagged("VRE_Stability".Translate().Colorize(ColoredText.TipSectionTitleColor) + ": " + stability.ToStringWithSign());
+            sb.AppendLine();
+
             /*bool flag2 = false;
             if (biostatCpx != 0)
             {
@@ -122,7 +129,17 @@ namespace VanillaRanchingExpanded
                     }
                 }
             }
-           
+
+            if (animalIllnessMTB != 45)
+            {
+                sb.AppendLine();
+                sb.AppendLineTagged("VRE_AnimalIllness".Translate() + ": " + animalIllnessMTB + " " + "VRE_Days".Translate());
+            }         
+            if (animalTantrumMTB != 0)
+            {
+                sb.AppendLine();
+                sb.AppendLineTagged("VRE_AnimalTantrum".Translate() + ": " + animalTantrumMTB + " " + "VRE_Days".Translate());
+            }
             return sb.ToString().TrimEndNewlines();
             void AppendEffectLine(string text)
             {

@@ -203,10 +203,133 @@
 		<stability>-2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>
 		<marketValueFactor>1.2</marketValueFactor>
+		<animalIllnessMTB>120</animalIllnessMTB>
 		<statFactors>
 			<FilthRate>0</FilthRate>			
 			<MarketValue>1.2</MarketValue>
 		</statFactors>
-		<familyTag>VRE_AnimalSize</familyTag>
+		<familyTag>VRE_AnimalFilth</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Tidy</defName>
+		<description>Carrier of this gene is well-groomed and clean, resulting in reduced filth generation and improved resistance to illness.</description>
+		<label>tidy</label>
+		<stability>-1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>		
+		<animalIllnessMTB>60</animalIllnessMTB>
+		<statFactors>
+			<FilthRate>0.5</FilthRate>					
+		</statFactors>
+		<familyTag>VRE_AnimalFilth</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageCleanliness</defName>
+		<description>Carrier of this gene maintains a baseline level of hygiene, providing no bonuses or penalties.</description>
+		<label>average cleanliness</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>		
+		
+		<familyTag>VRE_AnimalFilth</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Filthy</defName>
+		<description>Carrier of this gene is prone to creating messes, increasing the rate of filth generation and slightly increasing susceptibility to disease.</description>
+		<label>filthy</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>		
+		<animalIllnessMTB>30</animalIllnessMTB>
+		<statFactors>
+			<FilthRate>1.5</FilthRate>					
+		</statFactors>
+		<familyTag>VRE_AnimalFilth</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_VeryFilthy</defName>
+		<description>Carrier of this gene produces excessive amounts of filth, significantly increasing the mess in their environment and making them highly prone to illness.</description>
+		<label>very filthy</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>
+		<animalIllnessMTB>18</animalIllnessMTB>
+		<statFactors>
+			<FilthRate>2</FilthRate>			
+			<MarketValue>0.9</MarketValue>
+		</statFactors>
+		<familyTag>VRE_AnimalFilth</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Wildness genes -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Docile</defName>
+		<description>Carrier of this gene is remarkably calm and obedient, reducing wildness significantly and virtually eliminating the chance of manhunting behavior.</description>
+		<label>docile</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Wildness</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<statFactors>
+			<VRE_ManhunterOnDamageFactor>0</VRE_ManhunterOnDamageFactor>		
+			<VRE_ManhunterOnTameFailFactor>0</VRE_ManhunterOnTameFailFactor>			
+			<MarketValue>1.2</MarketValue>
+		</statFactors>
+		<statOffsets>
+			<Wildness>-0.8</Wildness>
+		</statOffsets>
+		<familyTag>VRE_AnimalWildness</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Compliant</defName>
+		<description>Carrier of this gene is easy to manage, lowering wildness levels and significantly reducing the likelihood of aggressive outbursts.</description>
+		<label>compliant</label>
+		<stability>-1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Wildness</iconPath>		
+		<statFactors>
+			<VRE_ManhunterOnDamageFactor>0.5</VRE_ManhunterOnDamageFactor>		
+			<VRE_ManhunterOnTameFailFactor>0.5</VRE_ManhunterOnTameFailFactor>						
+		</statFactors>
+		<statOffsets>
+			<Wildness>-0.3</Wildness>
+		</statOffsets>
+		<familyTag>VRE_AnimalWildness</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageWildness</defName>
+		<description>Carrier of this gene exhibits standard behavioral tendencies, providing no bonuses or penalties.</description>
+		<label>average wildness</label>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Wildness</iconPath>				
+		<familyTag>VRE_AnimalWildness</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Unruly</defName>
+		<description>Carrier of this gene is difficult to handle, showing increased wildness and a higher susceptibility to aggressive behavior.</description>
+		<label>unruly</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Wildness</iconPath>			
+		<statOffsets>
+			<Wildness>0.15</Wildness>
+			<VRE_ManhunterOnDamageOffset>0.1</VRE_ManhunterOnDamageOffset>		
+			<VRE_ManhunterOnTameFailOffset>0.05</VRE_ManhunterOnTameFailOffset>		
+		</statOffsets>
+		<familyTag>VRE_AnimalWildness</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_Wild</defName>
+		<description>Carrier of this gene is feral and untamable, exhibiting high wildness and a strong tendency to turn manhunter when stressed.</description>
+		<label>wild</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Wildness</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<animalTantrumMTB>14</animalTantrumMTB>
+		<statFactors>						
+			<MarketValue>0.9</MarketValue>
+		</statFactors>
+		<statOffsets>
+			<VRE_ManhunterOnDamageOffset>0.5</VRE_ManhunterOnDamageOffset>		
+			<VRE_ManhunterOnTameFailOffset>0.3</VRE_ManhunterOnTameFailOffset>		
+			<VRE_ManhunterOnRopingChance>0.1</VRE_ManhunterOnRopingChance>
+			<Wildness>0.3</Wildness>
+		</statOffsets>
+		<familyTag>VRE_AnimalWildness</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
 </Defs>

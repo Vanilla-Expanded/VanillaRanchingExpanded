@@ -7,4 +7,9 @@
 	<VRE_AnimalGenesDesc>Genes present in this animal</VRE_AnimalGenesDesc>
 	<VRE_StatsReport_Genes>Relevant animal genes</VRE_StatsReport_Genes>
 	<VRE_MoreInfoInInfoScreen>More information is available on this feratype's information screen.</VRE_MoreInfoInInfoScreen>
+	<VRE_AnimalIllness>Animal illness MTB</VRE_AnimalIllness>
+	<VRE_AnimalTantrum>Animal tantrum MTB</VRE_AnimalTantrum>
+	<VRE_Stability>Stability</VRE_Stability>
+	<VRE_StabilityDesc>Stability represents the complexity of an animal's genetic code and affecting predictability of gene inheritance. High stability ensures offspring typically inherit the average of their parents' genes, whereas low stability increases the likelihood that offspring will deviate from parental traits towards the natural median.</VRE_StabilityDesc>
+	<VRE_Days>days</VRE_Days>
 </LanguageData>

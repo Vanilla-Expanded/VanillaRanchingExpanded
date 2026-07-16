@@ -17,13 +17,15 @@ namespace VanillaRanchingExpanded
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+
+            Pawn pawn = parent as Pawn;
+            if (pawn != null)
+            {
+                WorldComponent_AnimalGenes.Instance.AddAnimalComp(pawn, this);
+            }
             if (!respawningAfterLoad)
             {
-                Pawn pawn = parent as Pawn;
-                if (pawn != null)
-                {
-                    WorldComponent_AnimalGenes.Instance.AddAnimalComp(pawn, this);
-                }
+               
                 ApplyFeratype();
             }
             
@@ -80,7 +82,7 @@ namespace VanillaRanchingExpanded
         {
             base.PostExposeData();
             Scribe_Defs.Look(ref feratype, "feratype");
-            Scribe_Collections.Look(ref genes, "genes");
+            Scribe_Collections.Look(ref genes, "genes", LookMode.Def);
 
         }
     }

@@ -9,7 +9,9 @@
 		<animalGenes>
 			<li>VRE_HorribleVitality</li>
 			<li>VRE_VeryFast</li>
-		
+			<li>VRE_Huge</li>
+		<li>VRE_Clean</li>
+		<li>VRE_Wild</li>
 		</animalGenes>
 	</VanillaRanchingExpanded.FeratypeDef>
 </Defs>

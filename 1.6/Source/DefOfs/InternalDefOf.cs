@@ -16,7 +16,12 @@ namespace VanillaRanchingExpanded
 		}
 
 		public static StatDef VRE_HealthFromGenesScale;
-       
+        public static StatDef VRE_ManhunterOnDamageFactor;
+        public static StatDef VRE_ManhunterOnTameFailFactor;
+		public static StatDef VRE_ManhunterOnDamageOffset;
+		public static StatDef VRE_ManhunterOnTameFailOffset;
+        public static StatDef VRE_ManhunterOnRopingChance;
+
 
     }
 }

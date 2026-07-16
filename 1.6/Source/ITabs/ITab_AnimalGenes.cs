@@ -1,10 +1,11 @@
 ﻿using RimWorld;
 using System;
+using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using UnityEngine;
 using VEF.Buildings;
 using Verse;
-
+using static HarmonyLib.Code;
 
 namespace VanillaRanchingExpanded
 {
@@ -34,6 +35,8 @@ namespace VanillaRanchingExpanded
         private static readonly CachedTexture GeneBackground_Baseline = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Average");
         private static readonly CachedTexture GeneBackground_Good = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Good");
         private static readonly CachedTexture GeneBackground_Excellent = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Perfect");
+        private static readonly CachedTexture Stability = new CachedTexture("UI/VRE_Stability");
+
 
         protected Pawn SelPawnForGenes => PawnForGenes(SelThing);
 
@@ -93,32 +96,40 @@ namespace VanillaRanchingExpanded
 
             Rect rect2 = rect;
             Rect position = rect2.ContractedBy(10f);
-
             GUI.BeginGroup(position);
             float num = Text.LineHeight * 3f;
             Rect rect3 = new Rect(0f, 0f, position.width, position.height - num - 12f);
             DrawAnimalGeneSections(rect3, target, comp, ref scrollPosition);
             Rect rect4 = new Rect(0f, rect3.yMax + 6f, position.width - 140f - 4f, num);
             rect4.yMax = rect3.yMax + num + 6f;
-
-            //BiostatsTable.Draw(rect4, gcx, met, arc, drawMax: false, ignoreLimits: false);
-            TryDrawFeratype(target, rect4.xMax + 4f, rect4.y + Text.LineHeight / 2f, comp);
-            /*if (Event.current.type == EventType.Layout)
-            {
-                float num2 = endogenesHeight + xenogenesHeight + num + 12f + 70f;
-                if (num2 > initialHeight)
-                {
-                    size.y = Mathf.Min(num2, (float)(UI.screenHeight - 35) - 165f - 30f);
-                }
-                else
-                {
-                    size.y = initialHeight;
-                }
-                xenogenesHeight = 0f;
-                endogenesHeight = 0f;
-            }*/
+            Rect rect5 = new Rect(0f, rect3.yMax + 6f, position.width - 440f, num);
+            TryDrawStability(rect5, comp.genes);
+            TryDrawFeratype(target, rect4.xMax + 4f, rect4.y + Text.LineHeight / 2f, comp);         
             GUI.EndGroup();
         }
+
+        public static void TryDrawStability(Rect rect, List<AnimalGeneDef> genes)
+        {
+            int totalStability = 0;
+            foreach(AnimalGeneDef gene in genes)
+            {
+                totalStability += gene.stability;
+            }
+            Rect rect2 = rect;
+            Rect position = rect2.ContractedBy(10f);
+            Widgets.DrawHighlightIfMouseover(position);
+            TaggedString taggedString = "VRE_StabilityDesc".Translate();
+            TooltipHandler.TipRegion(position, taggedString);
+            GUI.BeginGroup(rect);
+                  
+            GUI.DrawTexture(new Rect(16, 16f, 16, 16), Stability.Texture);
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Widgets.Label(new Rect(32, 8f, 100, 32), "VRE_Stability".Translate().CapitalizeFirst());     
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Widgets.Label(new Rect(200, 8f, 90f, 32), totalStability.ToString());
+            GUI.EndGroup();
+        }
+
         private static void TryDrawFeratype(Thing target, float x, float y, CompAnimalGenes comp)
         {
 
