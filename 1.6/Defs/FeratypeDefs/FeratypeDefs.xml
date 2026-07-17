@@ -116,15 +116,14 @@
 		<iconPath>UI/FeratypeIcons/Feratype_Bison</iconPath>
 		<animalGenes>
 			<li>VRE_PerfectVitality</li>
-			<li>VRE_Slow</li>
+			<li>VRE_VerySlow</li>
 			<li>VRE_Huge</li>
 			<li>VRE_AverageCleanliness</li>
 			<li>VRE_Wild</li>
 			<li>VRE_AverageMetabolism</li>
 			<li>VRE_AverageBuild</li>
 			<li>VRE_AverageIntelligence</li>
-			<li>VRE_AverageWool</li>
-			<li>VRE_MeagerMilk</li>
+			<li>VRE_AverageWool</li>			
 		</animalGenes>
 	</VanillaRanchingExpanded.FeratypeDef>
 	<VanillaRanchingExpanded.FeratypeDef>
