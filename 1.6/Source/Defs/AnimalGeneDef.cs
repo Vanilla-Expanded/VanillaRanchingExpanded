@@ -98,17 +98,7 @@ namespace VanillaRanchingExpanded
             sb.AppendLineTagged("VRE_Stability".Translate().Colorize(ColoredText.TipSectionTitleColor) + ": " + stability.ToStringWithSign());
             sb.AppendLine();
 
-            /*bool flag2 = false;
-            if (biostatCpx != 0)
-            {
-                sb.AppendLineTagged("Complexity".Translate().Colorize(GeneUtility.GCXColor) + ": " + biostatCpx.ToStringWithSign());
-                flag2 = true;
-            }
-            
-            if (flag2)
-            {
-                sb.AppendLine();
-            }*/
+          
             bool effectsTitleWritten = false;
             if (!statFactors.NullOrEmpty())
             {
@@ -144,6 +134,12 @@ namespace VanillaRanchingExpanded
                 sb.AppendLine();
                 sb.AppendLineTagged("VRE_AnimalTantrum".Translate() + ": " + animalTantrumMTB + " " + "VRE_Days".Translate());
             }
+            if (trainabilityDef != null)
+            {
+                sb.AppendLine();
+                sb.AppendLineTagged("VRE_Trainability".Translate() + ": " + trainabilityDef.ToString());
+            }
+
             return sb.ToString().TrimEndNewlines();
             void AppendEffectLine(string text)
             {
@@ -162,7 +158,10 @@ namespace VanillaRanchingExpanded
             {
                 yield return item;
             }
-           
+
+            yield return new StatDrawEntry(StatCategoryDefOf.BasicsImportant, "VRE_Stability".Translate(), stability.ToString(), "VRE_StabilityDesc".Translate(), 4080);
+
+
             if (statOffsets != null)
             {
                 for (int k = 0; k < statOffsets.Count; k++)

@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -11,8 +12,30 @@ namespace VanillaRanchingExpanded
     {
         public FeratypeDef feratype;
         public List<AnimalGeneDef> genes = new List<AnimalGeneDef>();
+        public float cachedLifespanFactor = -1;
         
         public new CompProperties_AnimalGenes Props => (CompProperties_AnimalGenes)props;
+
+        public float LifeSpanFactor
+        {
+            get
+            {
+                if (cachedLifespanFactor == -1)
+                {
+                    int totalStability = 0;
+                    foreach (AnimalGeneDef gene in genes)
+                    {
+                        totalStability += gene.stability;
+                    }
+                    if (totalStability > 0)
+                    {
+                        totalStability = 0;
+                    }
+                    cachedLifespanFactor = (float)(1 - (0.5/Math.Log(21)*Math.Log(Math.Abs(totalStability)+1)));
+                }
+                return cachedLifespanFactor;
+            }       
+        }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {

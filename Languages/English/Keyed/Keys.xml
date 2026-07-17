@@ -9,7 +9,14 @@
 	<VRE_MoreInfoInInfoScreen>More information is available on this feratype's information screen.</VRE_MoreInfoInInfoScreen>
 	<VRE_AnimalIllness>Animal illness MTB</VRE_AnimalIllness>
 	<VRE_AnimalTantrum>Animal tantrum MTB</VRE_AnimalTantrum>
+	<VRE_Trainability>Trainability set to</VRE_Trainability>
 	<VRE_Stability>Stability</VRE_Stability>
-	<VRE_StabilityDesc>Stability represents the complexity of an animal's genetic code and affecting predictability of gene inheritance. High stability ensures offspring typically inherit the average of their parents' genes, whereas low stability increases the likelihood that offspring will deviate from parental traits towards the natural median.</VRE_StabilityDesc>
+	<VRE_StabilityDesc>Stability represents the complexity of an animal's genetic code and affecting predictability of gene inheritance.\n\nHigh stability ensures offspring typically inherit the average of their parents' genes, whereas low stability increases the likelihood that offspring will deviate from parental traits towards the natural median.</VRE_StabilityDesc>
 	<VRE_Days>days</VRE_Days>
+	<VRE_LifespanFactor>Lifespan</VRE_LifespanFactor>
+	<VRE_LifespanFactorDesc>Lifespan factor of this animal according to its genetic stability</VRE_LifespanFactorDesc>
+	<VRE_MilkYieldFactorDetails>Base milk production for this animal is {0} milk. Adjusted by its milk yield factor this will result in {1} milk instead. </VRE_MilkYieldFactorDetails>
+	<VRE_MilkIntervalOffsetDetails>Base milking interval for this animal is {0} days. Adjusted by its milk interval offset this will result in {1} days instead. This value is capped at a minimum of 1 day.</VRE_MilkIntervalOffsetDetails>
+	<VRE_WoolYieldFactorDetails>Base wool production for this animal is {0} {1}. Adjusted by its wool yield factor this will result in {2} {1} instead.</VRE_WoolYieldFactorDetails>
+	<VRE_WoolIntervalFactorDetails>Base shearing interval for this animal is {0} days. Adjusted by its wool interval factor this will result in {1} days instead. This value is capped at a minimum of 1 day.</VRE_WoolIntervalFactorDetails>
 </LanguageData>

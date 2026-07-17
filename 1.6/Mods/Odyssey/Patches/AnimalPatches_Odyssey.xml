@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Muskox"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Muskox"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Muskox"]/comps</xpath>
+		<value>
+			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/CowsBabies/MuskOxBaby</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>2</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[1]</xpath>
+		<value>
+			<femaleGraphicData>
+			<texPath>Pawn/CowsBabies/MuskOxBaby</texPath>
+				<drawSize>2</drawSize>
+				<shadowData>
+					<volume>(0.4, 0.3, 0.3)</volume>
+					<offset>(0,0,-0.2)</offset>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/MuskOx/MuskOxBull</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[2]</xpath>
+		<value>
+			<femaleGraphicData>
+				<texPath>Pawn/Cows/MuskOx/MuskOxCow</texPath>
+				<drawSize>2.25</drawSize>
+				<shadowData>
+					<volume>(0.6, 0.45, 0.45)</volume>
+					<offset>(0,0,-0.25)</offset>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/MuskOx/MuskOxBull</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[3]</xpath>
+		<value>
+			<femaleGraphicData>
+				<texPath>Pawn/Cows/MuskOx/MuskOxCow</texPath>
+				<drawSize>3</drawSize>
+				<shadowData>
+					<volume>(0.8, 0.6, 0.6)</volume>
+					<offset>(0,0,-0.3)</offset>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Muskox"]/tradeTags</xpath>
+		<value>
+			<tradeTags>
+				<li>AnimalFarmRare</li>
+			</tradeTags>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Muskox"]/statBases/Wildness</xpath>
+		<value>
+			<Wildness>0.6</Wildness>
+		</value>
+	</Operation>
+	
+</Patch>
+

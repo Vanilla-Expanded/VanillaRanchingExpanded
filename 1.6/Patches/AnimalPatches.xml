@@ -29,6 +29,18 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Cow"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.75</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Cow"]/lifeStages/li[1]/femaleGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.65</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="Cow"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
 		<value>
 			<texPath>Pawn/Cows/Cow/Bull</texPath>
@@ -87,12 +99,18 @@
 			<texPath>Pawn/CowsBabies/MuffaloBaby</texPath>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Muffalo"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>2</drawSize>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/PawnKindDef[defName="Muffalo"]/lifeStages/li[1]</xpath>
 		<value>
 			<femaleGraphicData>
 				<texPath>Pawn/CowsBabies/MuffaloBaby</texPath>
-				<drawSize>1.5</drawSize>
+				<drawSize>2</drawSize>
 				<shadowData>
 					<volume>(0.4, 0.3, 0.3)</volume>
 					<offset>(0,0,-0.2)</offset>
@@ -136,6 +154,158 @@
 					<offset>(0,0,-0.3)</offset>
 				</shadowData>
 			</femaleGraphicData>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Bison"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Bison"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Bison"]/comps</xpath>
+		<value>
+			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bison"]/tradeTags</xpath>
+		<value>
+			<tradeTags>
+				<li>AnimalFarmRare</li>
+			</tradeTags>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bison"]/statBases/Wildness</xpath>
+		<value>
+			<Wildness>0.3</Wildness>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Bison"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/CowsBabies/BisonBaby</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Bison"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>2</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Bison"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/Bison/BisonBull</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="Bison"]/lifeStages/li[2]</xpath>
+		<value>
+			<femaleGraphicData>
+				<texPath>Pawn/Cows/Bison/BisonCow</texPath>
+				<drawSize>2.25</drawSize>
+				<shadowData>
+					<volume>(0.6, 0.45, 0.45)</volume>
+					<offset>(0,0,-0.25)</offset>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Bison"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/Bison/BisonBull</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="Bison"]/lifeStages/li[3]</xpath>
+		<value>
+			<femaleGraphicData>
+				<texPath>Pawn/Cows/Bison/BisonCow</texPath>
+				<drawSize>3</drawSize>
+				<shadowData>
+					<volume>(0.8, 0.6, 0.6)</volume>
+					<offset>(0,0,-0.3)</offset>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Yak"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Yak"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Yak"]/comps</xpath>
+		<value>
+			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Yak"]/tradeTags</xpath>
+		<value>
+			<tradeTags>
+				<li>AnimalFarmRare</li>
+			</tradeTags>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Yak"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/CowsBabies/YakBaby</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Yak"]/lifeStages/li[1]/femaleGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/CowsBabies/YakBaby</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Yak"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>2</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Yak"]/lifeStages/li[1]/femaleGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.9</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Yak"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/Yak/YakBull</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Yak"]/lifeStages/li[2]/femaleGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/Yak/YakCow</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Yak"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/Yak/YakBull</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Yak"]/lifeStages/li[3]/femaleGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/Yak/YakCow</texPath>
 		</value>
 	</Operation>
 </Patch>

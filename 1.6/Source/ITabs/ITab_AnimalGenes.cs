@@ -93,7 +93,12 @@ namespace VanillaRanchingExpanded
             {
                 return;
             }
-
+            int totalStability = 0;
+            foreach (AnimalGeneDef gene in comp.genes)
+            {
+                totalStability += gene.stability;
+            }
+           
             Rect rect2 = rect;
             Rect position = rect2.ContractedBy(10f);
             GUI.BeginGroup(position);
@@ -103,18 +108,16 @@ namespace VanillaRanchingExpanded
             Rect rect4 = new Rect(0f, rect3.yMax + 6f, position.width - 140f - 4f, num);
             rect4.yMax = rect3.yMax + num + 6f;
             Rect rect5 = new Rect(0f, rect3.yMax + 6f, position.width - 440f, num);
-            TryDrawStability(rect5, comp.genes);
+            TryDrawStability(rect5, totalStability);
+            Rect rect6 = new Rect(rect5.xMax, rect3.yMax + 6f, 250, num);
+            TryDrawLifespanFactor(rect6, comp);
             TryDrawFeratype(target, rect4.xMax + 4f, rect4.y + Text.LineHeight / 2f, comp);         
             GUI.EndGroup();
         }
 
-        public static void TryDrawStability(Rect rect, List<AnimalGeneDef> genes)
+        public static void TryDrawStability(Rect rect,int totalStability)
         {
-            int totalStability = 0;
-            foreach(AnimalGeneDef gene in genes)
-            {
-                totalStability += gene.stability;
-            }
+            
             Rect rect2 = rect;
             Rect position = rect2.ContractedBy(10f);
             Widgets.DrawHighlightIfMouseover(position);
@@ -127,6 +130,24 @@ namespace VanillaRanchingExpanded
             Widgets.Label(new Rect(32, 8f, 100, 32), "VRE_Stability".Translate().CapitalizeFirst());     
             Text.Anchor = TextAnchor.MiddleCenter;
             Widgets.Label(new Rect(200, 8f, 90f, 32), totalStability.ToString());
+            GUI.EndGroup();
+        }
+
+        public static void TryDrawLifespanFactor(Rect rect, CompAnimalGenes comp)
+        {
+            float totalLifespanFactor = comp.LifeSpanFactor;
+            Rect rect2 = rect;
+            Rect position = rect2.ContractedBy(10f);
+            Widgets.DrawHighlightIfMouseover(position);
+            TaggedString taggedString = "VRE_LifespanFactorDesc".Translate();
+            TooltipHandler.TipRegion(position, taggedString);
+            GUI.BeginGroup(rect);
+
+           
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Widgets.Label(new Rect(32, 8f, 100, 32), "VRE_LifespanFactor".Translate().CapitalizeFirst()+":");
+            
+            Widgets.Label(new Rect(90, 8f, 90f, 32), "x"+totalLifespanFactor.ToStringPercent());
             GUI.EndGroup();
         }
 
@@ -145,7 +166,7 @@ namespace VanillaRanchingExpanded
             if (Mouse.IsOver(rect))
             {
                 Widgets.DrawHighlight(rect);
-                TooltipHandler.TipRegion(rect, () => ("VRE_Feratype".Translate() + ": " + comp.feratype.label).Colorize(ColoredText.TipSectionTitleColor).CapitalizeFirst() + "\n\n" + FeratypeDef.FeratypeDescWithExtra(comp.feratype), 883938493);
+                TooltipHandler.TipRegion(rect, () => ("VRE_Feratype".Translate() + ": " + comp.feratype.label.CapitalizeFirst()).Colorize(ColoredText.TipSectionTitleColor).CapitalizeFirst() + "\n\n" + FeratypeDef.FeratypeDescWithExtra(comp.feratype), 883938493);
             }
             if (Widgets.ButtonInvisible(rect))
             {
@@ -246,23 +267,7 @@ namespace VanillaRanchingExpanded
             Rect rect2 = new Rect(geneRect.width / 2f - num / 2f, 0f, num, num);
             Color iconColor = gene.IconColor;
 
-            CachedTexture cachedTexture = GeneBackground_Baseline;
-
-            switch (gene.stability)
-            {
-                case 2:
-                    cachedTexture = GeneBackground_Awful;
-                    break;
-                case 1:
-                    cachedTexture = GeneBackground_Poor;
-                    break;
-                case -1:
-                    cachedTexture = GeneBackground_Good;
-                    break;
-                case -2:
-                    cachedTexture = GeneBackground_Excellent;
-                    break;
-            }
+            CachedTexture cachedTexture = GetBackGround(gene.stability);
 
             GUI.DrawTexture(rect2, cachedTexture.Texture);
             GUI.color = gene.IconColor;
@@ -295,6 +300,26 @@ namespace VanillaRanchingExpanded
                 }
             }
             GUI.EndGroup();
+        }
+
+        public static CachedTexture GetBackGround(int stability)
+        {
+            switch (stability)
+            {
+                case 2:
+                    return GeneBackground_Awful;
+                 
+                case 1:
+                    return GeneBackground_Poor;
+                  
+                case -1:
+                    return GeneBackground_Good;
+                  
+                case -2:
+                    return GeneBackground_Excellent;
+                  
+            }
+            return GeneBackground_Baseline;
         }
 
     }

@@ -464,25 +464,29 @@
 	<!-- Intelligence genes -->
 	
 	<VanillaRanchingExpanded.AnimalGeneDef>
-		<defName>VRE_IntermediateIntelligence</defName>
-		<description>Carrier of this gene possesses an advanced intellect, enabling the learning of complex tasks and intermediate trainability.</description>
-		<label>intermediate intelligence</label>
+		<defName>VRE_AdvancedIntelligence</defName>
+		<description>Carrier of this gene possesses an advanced intellect, enabling the learning of complex tasks and advanced trainability.</description>
+		<label>advanced intelligence</label>
 		<stability>-2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Intelligence</iconPath>
 		<marketValueFactor>1.2</marketValueFactor>	
 		<statFactors>		
 			<MarketValue>1.2</MarketValue>
+			<VRE_RoamMTBFactor>10</VRE_RoamMTBFactor>
 		</statFactors>	
-		<trainabilityDef>Intermediate</trainabilityDef>
+		<trainabilityDef>Advanced</trainabilityDef>
 		<familyTag>VRE_AnimalIntelligence</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
 	<VanillaRanchingExpanded.AnimalGeneDef>
-		<defName>VRE_SimpleIntelligence</defName>
-		<description>Carrier of this gene possesses a basic level of intellect, allowing for simple training and basic command recognition.</description>
-		<label>simple intelligence</label>
+		<defName>VRE_IntermediateIntelligence</defName>
+		<description>Carrier of this gene possesses a basic level of intellect, allowing for intermediate training and command recognition.</description>
+		<label>intermediate intelligence</label>
 		<stability>-1</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Intelligence</iconPath>	
-		<trainabilityDef>Simple</trainabilityDef>
+		<trainabilityDef>Intermediate</trainabilityDef>
+		<statFactors>				
+			<VRE_RoamMTBFactor>4</VRE_RoamMTBFactor>
+		</statFactors>	
 		<familyTag>VRE_AnimalIntelligence</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
 	<VanillaRanchingExpanded.AnimalGeneDef>
@@ -533,7 +537,7 @@
 		<statFactors>		
 			<MarketValue>1.2</MarketValue>
 			<VRE_MilkYieldFactor>1.4</VRE_MilkYieldFactor>
-			<VRE_MilkIntervalFactor>0.8</VRE_MilkIntervalFactor>
+			
 		</statFactors>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
@@ -545,7 +549,6 @@
 		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>		
 		<statFactors>				
 			<VRE_MilkYieldFactor>1.15</VRE_MilkYieldFactor>
-			<VRE_MilkIntervalFactor>0.9</VRE_MilkIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
@@ -564,8 +567,11 @@
 		<stability>1</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>		
 		<statFactors>				
-			<VRE_MilkYieldFactor>0.7</VRE_MilkYieldFactor>		
-		</statFactors>		
+			<VRE_MilkYieldFactor>0.7</VRE_MilkYieldFactor>				
+		</statFactors>	
+		<statOffsets>
+			<VRE_MilkIntervalOffset>1</VRE_MilkIntervalOffset>
+		</statOffsets>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
 	<VanillaRanchingExpanded.AnimalGeneDef>
@@ -576,9 +582,12 @@
 		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>
 		<marketValueFactor>0.9</marketValueFactor>	
 		<statFactors>		
-			<MarketValue>0.3</MarketValue>
-			<VRE_MilkYieldFactor>1.4</VRE_MilkYieldFactor>			
-		</statFactors>		
+			<MarketValue>0.9</MarketValue>
+			<VRE_MilkYieldFactor>0.3</VRE_MilkYieldFactor>		
+		</statFactors>	
+		<statOffsets>
+			<VRE_MilkIntervalOffset>2</VRE_MilkIntervalOffset>
+		</statOffsets>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
 	

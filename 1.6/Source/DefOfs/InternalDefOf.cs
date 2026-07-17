@@ -23,7 +23,7 @@ namespace VanillaRanchingExpanded
         public static StatDef VRE_ManhunterOnRopingChance;
 		public static StatDef VRE_RoamMTBFactor;
         public static StatDef VRE_MilkYieldFactor;
-		public static StatDef VRE_MilkIntervalFactor;
+		public static StatDef VRE_MilkIntervalOffset;
         public static StatDef VRE_WoolYieldFactor;
         public static StatDef VRE_WoolIntervalFactor;
 

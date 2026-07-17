@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--=====================================================================-->
+	<!--=============================== Wool ================================-->
+	<!--=====================================================================-->
+	<ThingDef ParentName="WoolBase">
+		<defName>VRE_WoolCow</defName>
+		<label>cow wool</label>
+		<description>Cow's wool from a wooly cow. It provides good insulation.</description>
+		<possessionCount>30</possessionCount>
+		<statBases>
+			<MaxHitPoints>110</MaxHitPoints>
+			<MarketValue>2.6</MarketValue>
+			<Mass>0.035</Mass>
+			<Beauty>-4</Beauty>
+			<DeteriorationRate>3</DeteriorationRate>
+			<StuffPower_Armor_Sharp>0.45</StuffPower_Armor_Sharp>
+			<StuffPower_Armor_Blunt>0.10</StuffPower_Armor_Blunt>
+			<StuffPower_Insulation_Cold>28</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>12</StuffPower_Insulation_Heat>
+		</statBases>
+		<stuffProps>
+			<color>(142,85,45)</color>
+			<commonality>0</commonality>
+			<statFactors>
+				<WorkToMake>1.15</WorkToMake>
+				<WorkToBuild>1.15</WorkToBuild>
+				<Beauty>1.2</Beauty>
+				<MaxHitPoints>1.2</MaxHitPoints>
+			</statFactors>
+		</stuffProps>
+		<graphicData>
+			<color>(142,85,45)</color>
+		</graphicData>
+	</ThingDef>
+</Defs>
