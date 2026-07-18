@@ -24,7 +24,13 @@ namespace VanillaRanchingExpanded
                 GUI.DrawTexture(rect, cachedTexture.Texture);
                 Widgets.DrawTextureFitted(rect, geneDef.Icon, scale, material, alpha);
                 GUI.color = Color.white;
-                return;
+            }
+
+            FeratypeDef feratypeDef = def as FeratypeDef;
+            if (feratypeDef != null)
+            {
+                GUI.color = Color.white;
+                Widgets.DrawTextureFitted(rect, feratypeDef.Icon, scale, material, alpha);          
             }
         }
     }

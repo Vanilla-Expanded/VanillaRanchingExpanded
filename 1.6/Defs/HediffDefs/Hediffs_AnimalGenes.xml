@@ -68,4 +68,25 @@
 			</li>
 		</stages>
 	</HediffDef>
+	<HediffDef>
+		<defName>VRE_Wild</defName>
+		<label>wild</label>
+		<description>This is a hidden hediff that makes the animal get tantrum mental breaks due to high wildness.</description>
+		<defaultLabelColor>(.8,0,0)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<isBad>false</isBad>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<mentalStateGivers>
+					<li>
+						<mentalState>VRE_AnimalTantrum</mentalState>
+						<mtbDays>14</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

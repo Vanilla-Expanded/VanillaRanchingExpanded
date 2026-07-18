@@ -1,11 +1,9 @@
 ﻿using RimWorld;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Drawing2D;
+using System.Linq;
 using UnityEngine;
-using VEF.Buildings;
 using Verse;
-using static HarmonyLib.Code;
 
 namespace VanillaRanchingExpanded
 {
@@ -188,9 +186,11 @@ namespace VanillaRanchingExpanded
             containingRect.y = scrollPosition.y;
             containingRect.height = rect.height;
 
-            DrawSection(rect, comp.genes.Count, ref curY, ref genesHeight, delegate (int i, Rect r)
+            List<AnimalGeneDef> reorderedGenes = comp.genes.OrderBy(x => x.familyTag.order).ToList();
+
+            DrawSection(rect, reorderedGenes.Count, ref curY, ref genesHeight, delegate (int i, Rect r)
             {
-                DrawGene(comp.genes[i], r);
+                DrawGene(reorderedGenes[i], r);
             }, containingRect);
             curY += 12f;
 

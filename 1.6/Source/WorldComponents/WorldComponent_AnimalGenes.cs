@@ -1,15 +1,13 @@
 ﻿using RimWorld.Planet;
-using RimWorld;
 using Verse;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using VanillaRanchingExpanded;
 
-namespace VEF.Buildings
+namespace VanillaRanchingExpanded
 {
     public class WorldComponent_AnimalGenes : WorldComponent
     {
+
+        public static int maxStabilityPenalty = 5;
 
         public Dictionary<Pawn, CompAnimalGenes> pawnToCompAnimalGenes = new Dictionary<Pawn, CompAnimalGenes>();
        

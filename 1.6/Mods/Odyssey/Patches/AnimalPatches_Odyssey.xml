@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
-
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[defName="Muskox"]/comps</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -17,7 +16,31 @@
 			</li>
 		</value>
 	</Operation>
-	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Muskox"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>VRE_CowAngus</li>
+				<li>VRE_CowDairy</li>
+				<li>VRE_CowJersey</li>
+				<li>VRE_CowWooly</li>
+				<li>VRE_CowZebu</li>
+				<li>Cow</li>
+				<li>Muffalo</li>
+				<li>Bison</li>
+				<li>Yak</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="Muskox"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+			</li>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
 		<value>
@@ -34,7 +57,7 @@
 		<xpath>Defs/PawnKindDef[defName="Muskox"]/lifeStages/li[1]</xpath>
 		<value>
 			<femaleGraphicData>
-			<texPath>Pawn/CowsBabies/MuskOxBaby</texPath>
+				<texPath>Pawn/CowsBabies/MuskOxBaby</texPath>
 				<drawSize>2</drawSize>
 				<shadowData>
 					<volume>(0.4, 0.3, 0.3)</volume>
@@ -81,7 +104,6 @@
 			</femaleGraphicData>
 		</value>
 	</Operation>
-
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Muskox"]/tradeTags</xpath>
 		<value>
@@ -96,6 +118,5 @@
 			<Wildness>0.6</Wildness>
 		</value>
 	</Operation>
-	
 </Patch>
 

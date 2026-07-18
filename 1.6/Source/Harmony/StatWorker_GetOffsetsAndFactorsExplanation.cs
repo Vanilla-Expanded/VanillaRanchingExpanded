@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Emit;
+﻿using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
 using RimWorld;
-using UnityEngine;
-using VEF.Buildings;
 using Verse;
-using Verse.AI;
-using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 namespace VanillaRanchingExpanded
 {

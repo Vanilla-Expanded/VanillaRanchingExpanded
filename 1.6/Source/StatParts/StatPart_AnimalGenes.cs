@@ -1,8 +1,6 @@
-﻿
-using RimWorld;
-using UnityEngine;
-using VEF.Buildings;
+﻿using RimWorld;
 using Verse;
+
 namespace VanillaRanchingExpanded
 {
     public class StatPart_AnimalGenes : StatPart

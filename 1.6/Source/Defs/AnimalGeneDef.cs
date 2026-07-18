@@ -7,8 +7,6 @@ using Verse;
 
 namespace VanillaRanchingExpanded
 {
-   
-
     public class AnimalGeneDef: Def
     {
         [NoTranslate]
@@ -38,9 +36,13 @@ namespace VanillaRanchingExpanded
 
         public TrainabilityDef trainabilityDef = null;
 
-        public string familyTag;
+        public AnimalGeneFamilyTagDef familyTag;
+
+        public bool isSpecialized = false;
 
         public string DescriptionFull => cachedDescription ?? (cachedDescription = GetDescriptionFull());
+
+        public int GeneLevel => 3 - stability;
 
         public override IEnumerable<string> ConfigErrors()
         {
@@ -139,7 +141,9 @@ namespace VanillaRanchingExpanded
                 sb.AppendLine();
                 sb.AppendLineTagged("VRE_Trainability".Translate() + ": " + trainabilityDef.ToString());
             }
-
+            sb.AppendLine();
+            sb.AppendLineTagged("VRE_FamilyTag".Translate().Colorize(ColoredText.TipSectionTitleColor) + ": " + familyTag.LabelCap);
+            
             return sb.ToString().TrimEndNewlines();
             void AppendEffectLine(string text)
             {

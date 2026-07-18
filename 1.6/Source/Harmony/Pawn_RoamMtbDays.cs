@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Emit;
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
-using UnityEngine;
-using VEF.Buildings;
 using Verse;
-using Verse.AI;
 
 namespace VanillaRanchingExpanded
 {
 
-    [HarmonyPatch(typeof(Pawn))]
+   [HarmonyPatch(typeof(Pawn))]
     [HarmonyPatch("RoamMtbDays", MethodType.Getter)]
 
     public class VanillaRanchingExpanded_Pawn_RoamMtbDays_Patch
@@ -19,7 +13,10 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyRoamInterval(Pawn __instance, ref float? __result)
         {
-            __result *= __instance.GetStatValue(InternalDefOf.VRE_RoamMTBFactor);
+            if (WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(__instance))
+            {
+                __result *= __instance.GetStatValue(InternalDefOf.VRE_RoamMTBFactor);
+            }
 
         }
     }

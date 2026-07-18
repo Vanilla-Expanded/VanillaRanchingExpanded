@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Emit;
+﻿using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
-using UnityEngine;
-using VEF.Buildings;
 using Verse;
-using Verse.AI;
 
 namespace VanillaRanchingExpanded
 {

@@ -330,6 +330,7 @@
 			<VRE_ManhunterOnRopingChance>0.1</VRE_ManhunterOnRopingChance>
 			<Wildness>0.3</Wildness>
 		</statOffsets>
+		<hediffToAdd>VRE_Wild</hediffToAdd>
 		<familyTag>VRE_AnimalWildness</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
 	
@@ -534,10 +535,10 @@
 		<stability>-2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>
 		<marketValueFactor>1.2</marketValueFactor>	
+		<isSpecialized>true</isSpecialized>
 		<statFactors>		
 			<MarketValue>1.2</MarketValue>
-			<VRE_MilkYieldFactor>1.4</VRE_MilkYieldFactor>
-			
+			<VRE_MilkYieldFactor>1.4</VRE_MilkYieldFactor>			
 		</statFactors>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
@@ -546,7 +547,8 @@
 		<description>Carrier of this gene produces a high amount of milk, improving the yield per milking session.</description>
 		<label>abundant milk</label>
 		<stability>-1</stability>
-		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>		
+		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>	
+		<isSpecialized>true</isSpecialized>		
 		<statFactors>				
 			<VRE_MilkYieldFactor>1.15</VRE_MilkYieldFactor>
 		</statFactors>		
@@ -557,6 +559,7 @@
 		<description>Carrier of this gene produces a standard amount of milk, providing no bonuses or penalties.</description>
 		<label>average milk yield</label>
 		<stability>0</stability>
+		<isSpecialized>true</isSpecialized>
 		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>				
 		<familyTag>VRE_AnimalMilkYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
@@ -565,7 +568,8 @@
 		<description>Carrier of this gene produces a reduced amount of milk per milking session.</description>
 		<label>meager milk</label>
 		<stability>1</stability>
-		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>		
+		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>	
+		<isSpecialized>true</isSpecialized>		
 		<statFactors>				
 			<VRE_MilkYieldFactor>0.7</VRE_MilkYieldFactor>				
 		</statFactors>	
@@ -581,6 +585,7 @@
 		<stability>2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>
 		<marketValueFactor>0.9</marketValueFactor>	
+		<isSpecialized>true</isSpecialized>
 		<statFactors>		
 			<MarketValue>0.9</MarketValue>
 			<VRE_MilkYieldFactor>0.3</VRE_MilkYieldFactor>		
@@ -600,6 +605,7 @@
 		<stability>-2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>
 		<marketValueFactor>1.2</marketValueFactor>	
+		<isSpecialized>true</isSpecialized>
 		<statFactors>		
 			<MarketValue>1.2</MarketValue>
 			<VRE_WoolYieldFactor>1.5</VRE_WoolYieldFactor>
@@ -612,6 +618,7 @@
 		<description>Carrier of this gene grows a dense coat, improving the total wool yield per shearing session.</description>
 		<label>thick wool</label>
 		<stability>-1</stability>
+		<isSpecialized>true</isSpecialized>
 		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>
 		<statFactors>		
 			<VRE_WoolYieldFactor>1.15</VRE_WoolYieldFactor>
@@ -623,6 +630,7 @@
 		<defName>VRE_AverageWool</defName>
 		<description>Carrier of this gene produces a standard amount of wool, providing no bonuses or penalties.</description>
 		<label>average wool yield</label>
+		<isSpecialized>true</isSpecialized>
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>		
 		<familyTag>VRE_AnimalWoolYield</familyTag>
@@ -631,6 +639,7 @@
 		<defName>VRE_SparseWool</defName>
 		<description>Carrier of this gene produces a reduced amount of wool per shearing session.</description>
 		<label>sparse wool</label>
+		<isSpecialized>true</isSpecialized>
 		<stability>1</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>
 		<statFactors>		
@@ -643,6 +652,7 @@
 		<defName>VRE_BareWool</defName>
 		<description>Carrier of this gene produces very little wool, with significantly diminished yields per shearing session.</description>
 		<label>bare wool</label>
+		<isSpecialized>true</isSpecialized>
 		<stability>2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>
 		<marketValueFactor>0.9</marketValueFactor>	

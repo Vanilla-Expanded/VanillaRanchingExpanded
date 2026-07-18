@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<MentalStateDef ParentName="BaseMentalState">
+		<defName>VRE_AnimalTantrum</defName>
+		<stateClass>MentalState_TantrumAll</stateClass>
+		<workerClass>MentalStateWorker_TantrumAll</workerClass>
+		<label>animal tantrum</label>
+		<category>Aggro</category>
+		<blockInteractionInitiationExcept>
+			<li>Insult</li>
+		</blockInteractionInitiationExcept>
+		<blockInteractionRecipientExcept>
+			<li>Insult</li>
+		</blockInteractionRecipientExcept>
+		<blockRandomInteraction>true</blockRandomInteraction>
+		<colonistsOnly>true</colonistsOnly>
+		<minTicksBeforeRecovery>8000</minTicksBeforeRecovery>
+		<maxTicksBeforeRecovery>12000</maxTicksBeforeRecovery>
+		<recoveryMtbDays>0.033</recoveryMtbDays>
+		<recoverFromSleep>true</recoverFromSleep>
+		<blockNormalThoughts>true</blockNormalThoughts>
+		<nameColor>(0.98,0.48,0.16)</nameColor>
+		<recoveryMessage>{0} is no longer having an animal tantrum.</recoveryMessage>
+		<beginLetter>{0} is having an animal tantrum.\n\n[PAWN_pronoun] will smash up random furniture, items and structures.</beginLetter>
+		<beginLetterDef>NegativeEvent</beginLetterDef>
+		<baseInspectLine>Mental state: Animal Tantrum</baseInspectLine>
+	</MentalStateDef>
+</Defs>

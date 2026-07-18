@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<TraderKindDef>
+		<defName>VRE_Rancher_CaravanTrader</defName>
+		<label>ranching trader</label>
+		<stockGenerators>
+			<!-- Resources -->
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Silver</thingDef>
+				<countRange>750~1750</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Hay</thingDef>
+				<countRange>300~1200</countRange>
+			</li>
+			<li Class="StockGenerator_SingleDef">
+				<thingDef>Milk</thingDef>
+				<countRange>35~160</countRange>
+			</li>
+			<li Class="StockGenerator_Category">
+				<categoryDef>EggsUnfertilized</categoryDef>
+				<thingDefCountRange>2~4</thingDefCountRange>
+				<totalPriceRange>150~240</totalPriceRange>
+			</li>
+			<li Class="StockGenerator_MultiDef">
+				<thingDefs>
+					<li>Chocolate</li>
+					<li>Kibble</li>
+					<li>Pemmican</li>
+				</thingDefs>
+			</li>
+			<!-- Animals -->
+			<li Class="StockGenerator_Animals">
+				<maxWildness>0.70</maxWildness>
+				<tradeTagsSell>
+					<li>AnimalFarm</li>
+					<li>AnimalFarmUncommon</li>
+					<li>AnimalFarmRare</li>
+				</tradeTagsSell>
+				<tradeTagsBuy>
+					<li>AnimalExotic</li>
+					<li>AnimalFarm</li>
+					<li>AnimalFarmUncommon</li>
+					<li>AnimalFarmRare</li>
+					<li>AnimalPet</li>
+				</tradeTagsBuy>
+				<kindCountRange>3~5</kindCountRange>
+				<countRange>3~5</countRange>
+				<createMatingPair>
+					<li>AnimalFarm</li>
+					<li>AnimalFarmUncommon</li>
+				</createMatingPair>
+			</li>
+		</stockGenerators>
+	</TraderKindDef>
+</Defs>

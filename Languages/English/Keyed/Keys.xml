@@ -2,6 +2,7 @@
 <LanguageData>
 	<VRE_TabAnimalGenes>Genes</VRE_TabAnimalGenes>
 	<VRE_AnimalGenes>Animal genes</VRE_AnimalGenes>
+	<VRE_FamilyTag>Gene family</VRE_FamilyTag>
 	<VRE_AnimalGenesFeratypeDesc>The genes associated with this feratype.</VRE_AnimalGenesFeratypeDesc>
 	<VRE_Feratype>Feratype</VRE_Feratype>
 	<VRE_AnimalGenesDesc>Genes present in this animal</VRE_AnimalGenesDesc>
@@ -19,4 +20,9 @@
 	<VRE_MilkIntervalOffsetDetails>Base milking interval for this animal is {0} days. Adjusted by its milk interval offset this will result in {1} days instead. This value is capped at a minimum of 1 day.</VRE_MilkIntervalOffsetDetails>
 	<VRE_WoolYieldFactorDetails>Base wool production for this animal is {0} {1}. Adjusted by its wool yield factor this will result in {2} {1} instead.</VRE_WoolYieldFactorDetails>
 	<VRE_WoolIntervalFactorDetails>Base shearing interval for this animal is {0} days. Adjusted by its wool interval factor this will result in {1} days instead. This value is capped at a minimum of 1 day.</VRE_WoolIntervalFactorDetails>
+	<VRE_FeratypeFamily>Feratype family</VRE_FeratypeFamily>
+	<VRE_FeratypeFamilyDesc>The feratype family this feratype belongs to.</VRE_FeratypeFamilyDesc>
+	<VRE_AllowedPartners>Allowed partners</VRE_AllowedPartners>
+	<VRE_AllowedPartnersDesc>A list of all feratypes belonging to the {0} feratype family that this animal can make offspring with.</VRE_AllowedPartnersDesc>
+	<VRE_NotPregnant>This animal is not pregnant</VRE_NotPregnant>
 </LanguageData>

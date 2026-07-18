@@ -16,6 +16,31 @@
 			</li>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Cow"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>VRE_CowAngus</li>
+				<li>VRE_CowDairy</li>
+				<li>VRE_CowJersey</li>
+				<li>VRE_CowWooly</li>
+				<li>VRE_CowZebu</li>
+				<li>Muffalo</li>
+				<li>Bison</li>
+				<li>Yak</li>
+				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="Cow"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+			</li>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="Cow"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
 		<value>
@@ -92,6 +117,31 @@
 				</li>
 			</value>
 		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Muffalo"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>VRE_CowAngus</li>
+				<li>VRE_CowDairy</li>
+				<li>VRE_CowJersey</li>
+				<li>VRE_CowWooly</li>
+				<li>VRE_CowZebu</li>
+				<li>Cow</li>
+				<li>Bison</li>
+				<li>Yak</li>
+				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="Muffalo"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+			</li>
+		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="Muffalo"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
@@ -172,6 +222,31 @@
 			</li>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Bison"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>VRE_CowAngus</li>
+				<li>VRE_CowDairy</li>
+				<li>VRE_CowJersey</li>
+				<li>VRE_CowWooly</li>
+				<li>VRE_CowZebu</li>
+				<li>Cow</li>
+				<li>Muffalo</li>
+				<li>Yak</li>
+				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="Bison"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+			</li>
+		</value>
+	</Operation>
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Bison"]/tradeTags</xpath>
 		<value>
@@ -249,6 +324,31 @@
 		<xpath>Defs/ThingDef[defName="Yak"]/comps</xpath>
 		<value>
 			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Yak"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>VRE_CowAngus</li>
+				<li>VRE_CowDairy</li>
+				<li>VRE_CowJersey</li>
+				<li>VRE_CowWooly</li>
+				<li>VRE_CowZebu</li>
+				<li>Cow</li>
+				<li>Muffalo</li>
+				<li>Bison</li>
+				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="Yak"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
 			</li>
 		</value>
 	</Operation>

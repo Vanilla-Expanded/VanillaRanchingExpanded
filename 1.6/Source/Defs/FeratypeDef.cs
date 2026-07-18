@@ -16,6 +16,8 @@ namespace VanillaRanchingExpanded
 
         public PawnKindDef race;
 
+        public string feratypeFamily;
+
         public List<AnimalGeneDef> animalGenes = new List<AnimalGeneDef>();
 
         public static readonly Color IconColor = new Color(0.75f, 0.75f, 0.75f);
@@ -66,6 +68,11 @@ namespace VanillaRanchingExpanded
             {
                 descriptionHyperlinks.Add(new DefHyperlink(gene));
             }
+            List<FeratypeDef> allFeraTypes = DefDatabase<FeratypeDef>.AllDefsListForReading.Where(x => x.feratypeFamily == feratypeFamily && x!=this).ToList();
+            foreach (FeratypeDef feratype in allFeraTypes)
+            {
+                descriptionHyperlinks.Add(new DefHyperlink(feratype));
+            }
         }
 
         public static string FeratypeDescWithExtra(FeratypeDef feratype)
@@ -75,12 +82,16 @@ namespace VanillaRanchingExpanded
 
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
         {
+            List<FeratypeDef> allFeraTypes = DefDatabase<FeratypeDef>.AllDefsListForReading.Where(x => x.feratypeFamily == feratypeFamily).ToList();
+
             foreach (StatDrawEntry item in base.SpecialDisplayStats(req))
             {
                 yield return item;
             }
             yield return new StatDrawEntry(StatCategoryDefOf.Basics, "VRE_AnimalGenes".Translate(), animalGenes.Select((AnimalGeneDef x) => x.label).ToCommaList().CapitalizeFirst(), "VRE_AnimalGenesFeratypeDesc".Translate() + "\n\n" + animalGenes.Select((AnimalGeneDef x) => x.label).ToLineList("  - ", capitalizeItems: true), 1000);
-           
+            yield return new StatDrawEntry(StatCategoryDefOf.Basics, "VRE_FeratypeFamily".Translate(), feratypeFamily, "VRE_FeratypeFamilyDesc".Translate(), 999);
+            yield return new StatDrawEntry(StatCategoryDefOf.Basics, "VRE_AllowedPartners".Translate(), allFeraTypes.Select(x => x.label).ToCommaList().CapitalizeFirst(), "VRE_AllowedPartnersDesc".Translate(feratypeFamily) + "\n\n" + allFeraTypes.Select(x => x.label).ToLineList("  - ", capitalizeItems: true), 998);
+
         }
     }
 }

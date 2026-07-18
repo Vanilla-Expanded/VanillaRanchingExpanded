@@ -1,11 +1,10 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using RimWorld;
-using RimWorld.Planet;
-using VEF.Buildings;
 using Verse;
+
 namespace VanillaRanchingExpanded
 {
     public class CompAnimalGenes : ThingComp
@@ -27,10 +26,7 @@ namespace VanillaRanchingExpanded
                     {
                         totalStability += gene.stability;
                     }
-                    if (totalStability > 0)
-                    {
-                        totalStability = 0;
-                    }
+                    
                     cachedLifespanFactor = (float)(1 - (0.5/Math.Log(21)*Math.Log(Math.Abs(totalStability)+1)));
                 }
                 return cachedLifespanFactor;
@@ -101,7 +97,9 @@ namespace VanillaRanchingExpanded
                             pawn.health.AddHediff(gene.hediffToAdd);
                         }
                     }
-                    
+                    VanillaRanchingExpanded_Hediff_Pregnant_DoBirthSpawn_Patch.HandleMutations(this);
+
+
                 }
             }
         }
@@ -112,6 +110,33 @@ namespace VanillaRanchingExpanded
             Scribe_Defs.Look(ref feratype, "feratype");
             Scribe_Collections.Look(ref genes, "genes", LookMode.Def);
 
+        }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo item in base.CompGetGizmosExtra())
+            {
+                yield return item;
+            }
+
+            if (DebugSettings.ShowDevGizmos)
+            {
+
+                Command_Action command_Action = new Command_Action();
+                command_Action.defaultLabel = "DEV: Do birth";
+                command_Action.action = delegate
+                {
+                    Pawn pawn = parent as Pawn;
+                    Hediff pregnantHediff = pawn?.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Pregnant);
+                    if (pregnantHediff != null) {
+                        pregnantHediff.Severity = 1;
+                    }else Messages.Message("VRE_NotPregnant".Translate(), pawn, MessageTypeDefOf.RejectInput);
+
+                };
+                yield return command_Action;
+
+
+            }
         }
     }
 }

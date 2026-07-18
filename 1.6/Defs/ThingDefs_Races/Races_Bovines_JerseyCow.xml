@@ -34,6 +34,18 @@
 			<useMeatFrom>Cow</useMeatFrom>
 			<gestationPeriodDays>6.66</gestationPeriodDays>
 			<lifeExpectancy>22</lifeExpectancy>
+			<canCrossBreedWith>
+				<li>VRE_CowAngus</li>
+				<li>VRE_CowDairy</li>
+				
+				<li>VRE_CowWooly</li>
+				<li>VRE_CowZebu</li>
+				<li>Cow</li>
+				<li>Muffalo</li>
+				<li>Bison</li>
+				<li>Yak</li>
+				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>			
+			</canCrossBreedWith>
 			<lifeStageAges>
 				<li>
 					<def>AnimalBaby</def>
@@ -67,6 +79,12 @@
 			<li>AnimalCommon</li>
 			<li>AnimalFarm</li>
 		</tradeTags>
+		<modExtensions>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+			</li>
+		</modExtensions>
 		<tools>
 			<li>
 				<capacities>
