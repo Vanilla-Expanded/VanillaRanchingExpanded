@@ -25,13 +25,12 @@ namespace VanillaRanchingExpanded
             }
             if (gene.abilityToAdd != null)
             {
+                if (pawn.abilities is null)
+                {
+                    pawn.abilities = new Pawn_AbilityTracker(pawn);
+                }
                 pawn.abilities.GainAbility(gene.abilityToAdd);
-            }
-            if (gene.trainableDef != null)
-            {
-                pawn.training?.Train(gene.trainableDef, null, complete: true);
-            }
-
+            }           
         }
 
         public static void RemoveGene(CompAnimalGenes comp, AnimalGeneDef gene, Pawn pawn)
@@ -56,12 +55,7 @@ namespace VanillaRanchingExpanded
             if (gene.abilityToAdd != null)
             {
                 pawn.abilities.RemoveAbility(gene.abilityToAdd);
-            }
-            if (gene.trainableDef != null)
-            {
-                pawn.training?.Train(gene.trainableDef, null, complete: false);
-            }
-            
+            }          
         }
 
         public static int GetTotalStability(CompAnimalGenes comp)
