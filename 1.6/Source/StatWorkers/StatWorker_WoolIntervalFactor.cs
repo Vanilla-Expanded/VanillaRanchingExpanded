@@ -20,7 +20,7 @@ namespace VanillaRanchingExpanded
                 CompShearable comp = pawn.TryGetComp<CompShearable>();
                 if (comp != null)
                 {
-                    stringBuilder.AppendLine("VRE_WoolIntervalFactorDetails".Translate(comp.Props.shearIntervalDays,(int)Math.Max(comp.Props.shearIntervalDays * finalVal, 1)));
+                    stringBuilder.AppendLine("VRE_WoolIntervalFactorDetails".Translate(comp.Props.shearIntervalDays,Math.Max((int)(comp.Props.shearIntervalDays * finalVal), 1)));
                     stringBuilder.AppendLine();
                 }
 

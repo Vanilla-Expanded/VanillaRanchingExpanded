@@ -9,6 +9,6 @@ namespace VanillaRanchingExpanded
 {
     public class AnimalGeneFamilyTagDef: Def
     {
-        public int order = 0;
+        public float order = 0;
     }
 }

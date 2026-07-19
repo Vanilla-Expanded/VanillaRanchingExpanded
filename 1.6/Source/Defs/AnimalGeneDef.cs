@@ -34,7 +34,11 @@ namespace VanillaRanchingExpanded
 
         public HediffDef hediffToAdd = null;
 
+        public AbilityDef abilityToAdd = null;
+
         public TrainabilityDef trainabilityDef = null;
+
+        public TrainableDef trainableDef = null;
 
         public AnimalGeneFamilyTagDef familyTag;
 

@@ -83,47 +83,15 @@ namespace VanillaRanchingExpanded
 
                     int finalScore = (int)Math.Round(rawScore + (3 - rawScore) * pullFactor, MidpointRounding.AwayFromZero);
 
-                    comp.genes.Add(DefDatabase<AnimalGeneDef>.AllDefsListForReading.Where(x => x.familyTag == motherAnimalGene.familyTag && x.GeneLevel == finalScore).FirstOrDefault());
+                    AnimalGeneUtility.AddGene(comp, DefDatabase<AnimalGeneDef>.AllDefsListForReading.Where(x => x.familyTag == motherAnimalGene.familyTag && x.GeneLevel == finalScore).FirstOrDefault(), pawn);
+                   
                 }
             }
             //Random mutations handling
-            HandleMutations(comp);
+            AnimalGeneUtility.HandleMutations(comp,pawn);
         }
 
-        public static void HandleMutations(CompAnimalGenes comp)
-        {
-            int amountOfMutations = 0;
-            float roll = Rand.Value;
-
-            if (roll < 0.0005f)
-                amountOfMutations = 5;
-            else if (roll < 0.0021f) // 0.0005 + 0.0016
-                amountOfMutations = 4;
-            else if (roll < 0.0066f) // + 0.0045
-                amountOfMutations = 3;
-            else if (roll < 0.0196f) // + 0.013
-                amountOfMutations = 2;
-            else if (roll < 0.0616f) // + 0.042 
-                amountOfMutations = 1;
-            else
-                amountOfMutations = 0;
-
-            if (amountOfMutations > 0)
-            {
-                List<AnimalGeneDef> mutatedGenes = comp.genes.TakeRandom(amountOfMutations).ToList();
-                foreach (AnimalGeneDef mutatedGene in mutatedGenes)
-                {
-                    bool goingUpOrDown = Rand.Chance(0.5f);
-                    int geneLevel = mutatedGene.GeneLevel;
-                    AnimalGeneFamilyTagDef family = mutatedGene.familyTag;
-                    int newGeneLevel = goingUpOrDown ? Math.Min(mutatedGene.GeneLevel + 1, 5) : Math.Max(mutatedGene.GeneLevel - 1, 1);
-                    comp.genes.RemoveWhere(x => x.familyTag == family && x.GeneLevel == geneLevel);
-                    AnimalGeneDef newGene = DefDatabase<AnimalGeneDef>.AllDefsListForReading.Where(x => x.familyTag == family && x.GeneLevel == newGeneLevel).FirstOrDefault();
-                    comp.genes.Add(newGene);
-                }
-            }
-
-        }
+        
 
     }
 }

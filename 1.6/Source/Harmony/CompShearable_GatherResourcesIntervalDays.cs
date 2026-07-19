@@ -16,7 +16,7 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyWoolInterval(CompMilkable __instance, ref int __result)
         {
-            __result = (int)Math.Max(__result * __instance.parent.GetStatValue(InternalDefOf.VRE_WoolIntervalFactor),1);
+            __result = Math.Max((int)(__result * __instance.parent.GetStatValue(InternalDefOf.VRE_WoolIntervalFactor)),1);
 
         }
     }

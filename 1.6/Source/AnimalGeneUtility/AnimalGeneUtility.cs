@@ -1,0 +1,113 @@
+﻿using RimWorld;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Verse;
+
+namespace VanillaRanchingExpanded
+{
+    public static class AnimalGeneUtility
+    {
+        public static void AddGene(CompAnimalGenes comp, AnimalGeneDef gene, Pawn pawn)
+        {
+            comp.genes.Add(gene);
+            foreach (StatModifier statModifier in gene.statFactors)
+            {
+                statModifier.stat.Worker.ClearCacheForThing(pawn);
+            }
+            foreach (StatModifier statModifier2 in gene.statOffsets)
+            {
+                statModifier2.stat.Worker.ClearCacheForThing(pawn);
+            }
+            if (gene.hediffToAdd != null)
+            {
+                pawn.health.AddHediff(gene.hediffToAdd);
+            }
+            if (gene.abilityToAdd != null)
+            {
+                pawn.abilities.GainAbility(gene.abilityToAdd);
+            }
+            if (gene.trainableDef != null)
+            {
+                pawn.training?.Train(gene.trainableDef, null, complete: true);
+            }
+
+        }
+
+        public static void RemoveGene(CompAnimalGenes comp, AnimalGeneDef gene, Pawn pawn)
+        {
+            comp.genes.Remove(gene);
+            foreach (StatModifier statModifier in gene.statFactors)
+            {
+                statModifier.stat.Worker.ClearCacheForThing(pawn);
+            }
+            foreach (StatModifier statModifier2 in gene.statOffsets)
+            {
+                statModifier2.stat.Worker.ClearCacheForThing(pawn);
+            }
+            if (gene.hediffToAdd != null)
+            {
+                Hediff hediffToRemove = pawn.health.hediffSet.GetFirstHediffOfDef(gene.hediffToAdd);
+                if (hediffToRemove != null)
+                {
+                    pawn.health.RemoveHediff(hediffToRemove);
+                }
+            }
+            if (gene.abilityToAdd != null)
+            {
+                pawn.abilities.RemoveAbility(gene.abilityToAdd);
+            }
+            if (gene.trainableDef != null)
+            {
+                pawn.training?.Train(gene.trainableDef, null, complete: false);
+            }
+            
+        }
+
+        public static int GetTotalStability(CompAnimalGenes comp)
+        {
+            int totalStability = 0;
+            foreach (AnimalGeneDef gene in comp.genes)
+            {
+                totalStability += gene.stability;
+            }
+            return totalStability;
+        }
+
+        public static void HandleMutations(CompAnimalGenes comp, Pawn pawn)
+        {
+            int amountOfMutations = 0;
+            float roll = Rand.Value;
+            if (roll < 0.0005f)
+                amountOfMutations = 5;
+            else if (roll < 0.0021f) // 0.0005 + 0.0016
+                amountOfMutations = 4;
+            else if (roll < 0.0066f) // + 0.0045
+                amountOfMutations = 3;
+            else if (roll < 0.0196f) // + 0.013
+                amountOfMutations = 2;
+            else if (roll < 0.0616f) // + 0.042 
+                amountOfMutations = 1;
+            else
+                amountOfMutations = 0;
+            //For debug testing
+            amountOfMutations = 1;
+            if (amountOfMutations > 0)
+            {
+                List<AnimalGeneDef> mutatedGenes = comp.genes.TakeRandom(amountOfMutations).ToList();
+                foreach (AnimalGeneDef mutatedGene in mutatedGenes)
+                {
+                    bool goingUpOrDown = Rand.Chance(0.5f);
+                    int geneLevel = mutatedGene.GeneLevel;
+                    AnimalGeneFamilyTagDef family = mutatedGene.familyTag;
+                    int newGeneLevel = goingUpOrDown ? Math.Min(mutatedGene.GeneLevel + 1, 5) : Math.Max(mutatedGene.GeneLevel - 1, 1);
+                    AnimalGeneDef geneToRemove = comp.genes.Where(x => x.familyTag == family && x.GeneLevel == geneLevel).FirstOrDefault();
+                    RemoveGene(comp, geneToRemove, pawn);
+                    AnimalGeneDef newGene = DefDatabase<AnimalGeneDef>.AllDefsListForReading.Where(x => x.familyTag == family && x.GeneLevel == newGeneLevel).FirstOrDefault();
+                    AddGene(comp, newGene, pawn);
+                }
+            }
+
+        }
+    }
+}

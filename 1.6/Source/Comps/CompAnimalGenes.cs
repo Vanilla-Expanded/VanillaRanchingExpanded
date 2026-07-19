@@ -81,23 +81,9 @@ namespace VanillaRanchingExpanded
                     feratype = feratypeIterator;
                     foreach(AnimalGeneDef gene in feratype.animalGenes)
                     {
-                        genes.Add(gene);
-                       
-                        foreach (StatModifier statModifier in gene.statFactors)
-                        {
-                            statModifier.stat.Worker.ClearCacheForThing(pawn);
-                        }
-                        foreach (StatModifier statModifier2 in gene.statOffsets)
-                        {
-                            statModifier2.stat.Worker.ClearCacheForThing(pawn);
-                        }
-
-                        if (gene.hediffToAdd != null)
-                        {
-                            pawn.health.AddHediff(gene.hediffToAdd);
-                        }
+                        AnimalGeneUtility.AddGene(this,gene, pawn);
                     }
-                    VanillaRanchingExpanded_Hediff_Pregnant_DoBirthSpawn_Patch.HandleMutations(this);
+                    AnimalGeneUtility.HandleMutations(this,pawn);
 
 
                 }
@@ -138,5 +124,7 @@ namespace VanillaRanchingExpanded
 
             }
         }
+
+        
     }
 }

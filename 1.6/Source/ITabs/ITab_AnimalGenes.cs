@@ -35,7 +35,6 @@ namespace VanillaRanchingExpanded
         private static readonly CachedTexture GeneBackground_Excellent = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Perfect");
         private static readonly CachedTexture Stability = new CachedTexture("UI/VRE_Stability");
 
-
         protected Pawn SelPawnForGenes => PawnForGenes(SelThing);
 
         public ITab_AnimalGenes()
@@ -48,8 +47,6 @@ namespace VanillaRanchingExpanded
         {
             DrawGenesInfo(new Rect(0f, 20f, size.x, size.y - 20f), Find.Selector.SingleSelectedThing, 550f, ref size, ref scrollPosition);
         }
-
-
 
         private static Pawn PawnForGenes(Thing thing)
         {
@@ -91,12 +88,8 @@ namespace VanillaRanchingExpanded
             {
                 return;
             }
-            int totalStability = 0;
-            foreach (AnimalGeneDef gene in comp.genes)
-            {
-                totalStability += gene.stability;
-            }
-           
+            int totalStability = AnimalGeneUtility.GetTotalStability(comp);
+
             Rect rect2 = rect;
             Rect position = rect2.ContractedBy(10f);
             GUI.BeginGroup(position);
@@ -140,7 +133,6 @@ namespace VanillaRanchingExpanded
             TaggedString taggedString = "VRE_LifespanFactorDesc".Translate();
             TooltipHandler.TipRegion(position, taggedString);
             GUI.BeginGroup(rect);
-
            
             Text.Anchor = TextAnchor.MiddleCenter;
             Widgets.Label(new Rect(32, 8f, 100, 32), "VRE_LifespanFactor".Translate().CapitalizeFirst()+":");
@@ -169,9 +161,7 @@ namespace VanillaRanchingExpanded
             if (Widgets.ButtonInvisible(rect))
             {
                 Find.WindowStack.Add(new Dialog_InfoCard(comp.feratype));
-
             }
-
         }
 
 
