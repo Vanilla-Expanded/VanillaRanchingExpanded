@@ -89,4 +89,12 @@
 			</li>
 		</stages>
 	</HediffDef>
+	<HediffDef ParentName="DiseaseBase">
+		<defName>VRE_Stillborn</defName>
+		<label>stillborn animal</label>
+		<description>This animal died due to non-specific complications during pregnancy.</description>
+		<makesSickThought>true</makesSickThought>
+		<lethalSeverity>0.0</lethalSeverity>
+		<initialSeverity>0.0</initialSeverity>
+	</HediffDef>
 </Defs>

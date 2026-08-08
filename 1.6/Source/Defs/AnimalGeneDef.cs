@@ -40,7 +40,17 @@ namespace VanillaRanchingExpanded
      
         public AnimalGeneFamilyTagDef familyTag;
 
+        public SimpleCurve litterSizeCurveOverride;
+
+        public float stillbirthChance = 0f;
+
+        public List<ThingDefCountClass> extraButcherProducts;
+
+        public bool scaleButcherProductsByMeatAmount = true;
+
         public bool isSpecialized = false;
+
+        public string extraDescriptions ="";
 
         public string DescriptionFull => cachedDescription ?? (cachedDescription = GetDescriptionFull());
 
@@ -142,6 +152,11 @@ namespace VanillaRanchingExpanded
             {
                 sb.AppendLine();
                 sb.AppendLineTagged("VRE_Trainability".Translate() + ": " + trainabilityDef.ToString());
+            }
+            if (extraDescriptions != "")
+            {
+                sb.AppendLine();
+                sb.AppendLineTagged(extraDescriptions);
             }
             sb.AppendLine();
             sb.AppendLineTagged("VRE_FamilyTag".Translate().Colorize(ColoredText.TipSectionTitleColor) + ": " + familyTag.LabelCap);

@@ -126,4 +126,14 @@
 		<toStringStyle>PercentZero</toStringStyle>	
 		<displayPriorityInCategory>9826</displayPriorityInCategory>
 	</StatDef>
+	<StatDef>
+		<defName>VRE_AdditionalButcherProductsFactor</defName>
+		<label>additional butcher products yield factor</label>
+		<description>A multiplier on the amount of additional butcher products produced by this animal.</description>
+		<category>Animals</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<hideAtValue>1</hideAtValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<displayPriorityInCategory>9825</displayPriorityInCategory>
+	</StatDef>
 </Defs>

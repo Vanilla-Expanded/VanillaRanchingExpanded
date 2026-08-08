@@ -732,4 +732,97 @@
 		</statFactors>		
 		<familyTag>VRE_AnimalProductsYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Animal litter size -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_TeemingLitters</defName>
+		<description>Carrier of this gene produces vast numbers of offspring, significantly increasing the litter size per pregnancy. </description>
+		<label>teeming litters</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_LitterSize</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<extraDescriptions>Much more likely to give birth to 3 or 4 offspring.</extraDescriptions>
+		<statFactors>		
+			<MarketValue>1.2</MarketValue>
+		</statFactors>		
+		<isSpecialized>true</isSpecialized>
+		<litterSizeCurveOverride>
+			<points>
+				<li>(1, 0)</li>
+				<li>(2, 1)</li>
+				<li>(3, 1)</li>
+				<li>(4, 0)</li>
+			</points>
+		</litterSizeCurveOverride>
+		<familyTag>VRE_AnimalLitterSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_CopiousLitters</defName>
+		<description>Carrier of this gene produces a high number of offspring, improving the litter size per pregnancy.</description>
+		<label>copious litters</label>
+		<stability>-1</stability>
+		<extraDescriptions>Much more likely to give birth to 2 or 3 offspring.</extraDescriptions>
+		<iconPath>UI/AnimalGenes/AnimalGene_LitterSize</iconPath>
+		<litterSizeCurveOverride>
+			<points>
+				<li>(1, 0)</li>
+				<li>(1.7, 1)</li>
+				<li>(2, 1)</li>
+				<li>(3, 0)</li>
+			</points>
+		</litterSizeCurveOverride>
+		<isSpecialized>true</isSpecialized>
+		<familyTag>VRE_AnimalLitterSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageLitters</defName>
+		<description>Carrier of this gene has an average litter size and produces the standard amount of babies.</description>
+		<label>average litters</label>
+		<stability>0</stability>
+		<isSpecialized>true</isSpecialized>
+		<iconPath>UI/AnimalGenes/AnimalGene_LitterSize</iconPath>		
+		<familyTag>VRE_AnimalLitterSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_ScantLitters</defName>
+		<description>Carrier of this gene is unlikely to produce more than one offspring. </description>
+		<label>scant litters</label>		
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_LitterSize</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<isSpecialized>true</isSpecialized>
+		<statFactors>		
+			<MarketValue>0.9</MarketValue>
+		</statFactors>		
+		<litterSizeCurveOverride>
+			<points>
+				<li>(0.5, 0)</li>
+				<li>(1, 1)</li>
+				<li>(1.3, 1)</li>
+				<li>(1.7, 0)</li>
+			</points>
+		</litterSizeCurveOverride>
+		<extraDescriptions>Unlikely to produce more than one offspring.</extraDescriptions>
+		<familyTag>VRE_AnimalLitterSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_StuntedLitters</defName>
+		<description>Carrier of this gene cannot produce more than one offspring at a time, and has a notable chance for stillbirths.</description>
+		<label>stunted litters</label>	
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_LitterSize</iconPath>
+		<isSpecialized>true</isSpecialized>
+		<litterSizeCurveOverride>
+			<points>
+				<li>(0, 0)</li>
+				<li>(1, 1)</li>
+				<li>(1, 1)</li>
+				<li>(1, 0)</li>
+			</points>
+		</litterSizeCurveOverride>
+		<extraDescriptions>Impossible to give birth to more than one offspring.\n\nLikelihood of stillbirth.</extraDescriptions>
+		<stillbirthChance>0.35</stillbirthChance>
+		<familyTag>VRE_AnimalLitterSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
 </Defs>

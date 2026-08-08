@@ -55,4 +55,14 @@
 		<label>animal products yield</label>
 		<order>11</order>
 	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+		<defName>VRE_AnimalLitterSize</defName>
+		<label>animal litter size</label>
+		<order>12</order>
+	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+		<defName>VRE_BaconYield</defName>
+		<label>bacon yield</label>
+		<order>13</order>
+	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
 </Defs>

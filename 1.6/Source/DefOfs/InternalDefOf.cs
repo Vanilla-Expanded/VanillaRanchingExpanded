@@ -26,6 +26,9 @@ namespace VanillaRanchingExpanded
 		public static StatDef VRE_MilkIntervalOffset;
         public static StatDef VRE_WoolYieldFactor;
         public static StatDef VRE_WoolIntervalFactor;
+        public static StatDef VRE_AdditionalButcherProductsFactor;
+
+        public static HediffDef VRE_Stillborn;
 
     }
 }
