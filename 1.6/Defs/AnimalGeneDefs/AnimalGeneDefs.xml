@@ -737,7 +737,7 @@
 	
 	<VanillaRanchingExpanded.AnimalGeneDef>
 		<defName>VRE_TeemingLitters</defName>
-		<description>Carrier of this gene produces vast numbers of offspring, significantly increasing the litter size per pregnancy. </description>
+		<description>Carrier of this gene produces vast numbers of offspring, significantly increasing the litter size per pregnancy.</description>
 		<label>teeming litters</label>
 		<stability>-2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_LitterSize</iconPath>
@@ -786,7 +786,7 @@
 	</VanillaRanchingExpanded.AnimalGeneDef>
 	<VanillaRanchingExpanded.AnimalGeneDef>
 		<defName>VRE_ScantLitters</defName>
-		<description>Carrier of this gene is unlikely to produce more than one offspring. </description>
+		<description>Carrier of this gene is unlikely to produce more than one offspring.</description>
 		<label>scant litters</label>		
 		<stability>1</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_LitterSize</iconPath>
@@ -824,5 +824,84 @@
 		<extraDescriptions>Impossible to give birth to more than one offspring.\n\nLikelihood of stillbirth.</extraDescriptions>
 		<stillbirthChance>0.35</stillbirthChance>
 		<familyTag>VRE_AnimalLitterSize</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	<!-- Bacon yield -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_MaximumBaconYield</defName>
+		<description>Carrier of this gene develops massive layers of fat, producing a significantly increased amount of bacon when butchered.</description>
+		<label>maximum bacon yield</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_BaconYield</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<statFactors>		
+			<MarketValue>1.2</MarketValue>
+			<VRE_AdditionalButcherProductsFactor>2</VRE_AdditionalButcherProductsFactor>
+		</statFactors>		
+		<isSpecialized>true</isSpecialized>
+		<extraButcherProducts>
+			<VRE_Bacon>20</VRE_Bacon>
+		</extraButcherProducts>
+		<familyTag>VRE_AnimalBaconYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_HighBaconYield</defName>
+		<description>Carrier of this gene develops thicker layers of fat, producing more bacon than average when butchered.</description>
+		<label>high bacon yield</label>
+		<stability>-1</stability>
+		<extraButcherProducts>
+			<VRE_Bacon>20</VRE_Bacon>
+		</extraButcherProducts>
+		<iconPath>UI/AnimalGenes/AnimalGene_BaconYield</iconPath>
+		<statFactors>				
+			<VRE_AdditionalButcherProductsFactor>1.5</VRE_AdditionalButcherProductsFactor>
+		</statFactors>		
+		<isSpecialized>true</isSpecialized>
+		<familyTag>VRE_AnimalBaconYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AverageBaconYield</defName>
+		<description>Carrier of this gene has an average, healthy layer of fat that provides an expected bacon yield upon butchering.</description>
+		<label>average bacon yield</label>
+		<stability>0</stability>
+		<isSpecialized>true</isSpecialized>
+		<extraButcherProducts>
+			<VRE_Bacon>20</VRE_Bacon>
+		</extraButcherProducts>
+		<iconPath>UI/AnimalGenes/AnimalGene_BaconYield</iconPath>		
+		<familyTag>VRE_AnimalBaconYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_LowBaconYield</defName>
+		<description>Carrier of this gene has below-average fat reserves, producing slightly less bacon when butchered.</description>
+		<label>low bacon yield</label>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_BaconYield</iconPath>	
+		<isSpecialized>true</isSpecialized>
+		<statFactors>		
+			<VRE_AdditionalButcherProductsFactor>0.5</VRE_AdditionalButcherProductsFactor>
+		</statFactors>		
+		<extraButcherProducts>
+			<VRE_Bacon>20</VRE_Bacon>
+		</extraButcherProducts>
+		<familyTag>VRE_AnimalBaconYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_MinimalBaconYield</defName>
+		<description>Carrier of this gene has extremely low fat reserves, producing almost no bacon when butchered.</description>
+		<label>minimal bacon yield</label>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_BaconYield</iconPath>
+		<isSpecialized>true</isSpecialized>
+		<extraButcherProducts>
+			<VRE_Bacon>20</VRE_Bacon>
+		</extraButcherProducts>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<statFactors>	
+			<MarketValue>0.9</MarketValue>		
+			<VRE_AdditionalButcherProductsFactor>0.2</VRE_AdditionalButcherProductsFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalBaconYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
 </Defs>

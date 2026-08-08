@@ -25,4 +25,6 @@
 	<VRE_AllowedPartners>Allowed partners</VRE_AllowedPartners>
 	<VRE_AllowedPartnersDesc>A list of all feratypes belonging to the {0} feratype family that this animal can make offspring with.</VRE_AllowedPartnersDesc>
 	<VRE_NotPregnant>This animal is not pregnant</VRE_NotPregnant>
+	<VRE_StillbornLabel>Stillborn {0}</VRE_StillbornLabel>
+	<VRE_StillbornDesc>Your {0}, {1} gave birth to a stillborn offspring.</VRE_StillbornDesc>
 </LanguageData>

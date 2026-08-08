@@ -12,7 +12,8 @@ namespace VanillaRanchingExpanded
         public FeratypeDef feratype;
         public List<AnimalGeneDef> genes = new List<AnimalGeneDef>();
         public float cachedLifespanFactor = -1;
-        
+        private bool feratypeApplied;
+
         public new CompProperties_AnimalGenes Props => (CompProperties_AnimalGenes)props;
 
         public float LifeSpanFactor
@@ -36,39 +37,18 @@ namespace VanillaRanchingExpanded
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-
+           
             Pawn pawn = parent as Pawn;
             if (pawn != null)
             {
                 WorldComponent_AnimalGenes.Instance.AddAnimalComp(pawn, this);
             }
-            if (!respawningAfterLoad)
+            if (!respawningAfterLoad && !feratypeApplied)
             {
-               
                 ApplyFeratype();
+                feratypeApplied = true;
             }
-            
-        }
 
-        public override void PostDestroy(DestroyMode mode, Map previousMap)
-        {
-            Pawn pawn = parent as Pawn;
-            if (pawn != null)
-            {
-                WorldComponent_AnimalGenes.Instance.RemoveAnimalComp(pawn);
-            }
-            base.PostDestroy(mode, previousMap);
-
-        }
-
-        public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
-        {
-            Pawn pawn = parent as Pawn;
-            if (pawn != null)
-            {
-                WorldComponent_AnimalGenes.Instance.RemoveAnimalComp(pawn);
-            }
-            base.PostDeSpawn(map, mode);
         }
 
         public void ApplyFeratype()
@@ -94,6 +74,7 @@ namespace VanillaRanchingExpanded
         {
             base.PostExposeData();
             Scribe_Defs.Look(ref feratype, "feratype");
+            Scribe_Values.Look(ref feratypeApplied, "feratypeApplied");
             Scribe_Collections.Look(ref genes, "genes", LookMode.Def);
 
         }

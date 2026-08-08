@@ -78,7 +78,7 @@ namespace VanillaRanchingExpanded
 
         public static void DrawGenesInfo(Rect rect, Thing target, float initialHeight, ref Vector2 size, ref Vector2 scrollPosition, GeneSet pregnancyGenes = null)
         {
-            Pawn sourcePawn = target as Pawn;
+            Pawn sourcePawn = PawnForGenes(target);
             if (sourcePawn == null || !WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(sourcePawn))
             {
                 return;

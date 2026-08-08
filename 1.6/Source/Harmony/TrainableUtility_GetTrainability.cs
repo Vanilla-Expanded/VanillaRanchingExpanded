@@ -13,7 +13,7 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyTrainability(Pawn pawn, ref TrainabilityDef __result)
         {
-            if (WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn))
+            if (pawn!=null&&WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn))
             {
                 CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[pawn];
                 if (comp != null)

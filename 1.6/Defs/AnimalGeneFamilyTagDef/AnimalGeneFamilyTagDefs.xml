@@ -61,7 +61,7 @@
 		<order>12</order>
 	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
 	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-		<defName>VRE_BaconYield</defName>
+		<defName>VRE_AnimalBaconYield</defName>
 		<label>bacon yield</label>
 		<order>13</order>
 	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>

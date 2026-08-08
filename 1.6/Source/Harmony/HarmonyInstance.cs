@@ -7,10 +7,10 @@ using HarmonyLib;
 using System.Reflection;
 namespace VanillaRanchingExpanded
 {
-    [StaticConstructorOnStartup]
-    public class Main
+    
+    public class VanillaRanchingExpanded_Mod : Mod
     {
-        static Main()
+        public VanillaRanchingExpanded_Mod(ModContentPack content) : base(content)
         {
             var harmony = new Harmony("com.VanillaRanchingExpanded");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
