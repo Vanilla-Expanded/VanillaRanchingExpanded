@@ -29,6 +29,10 @@
 				<li>Bison</li>
 				<li>Yak</li>
 				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+				<li MayRequire="sarg.alphaanimals">AA_Bobeene</li>
+				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
+				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
+				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
 			</canCrossBreedWith>
 		</value>
 	</Operation>
@@ -131,6 +135,10 @@
 				<li>Bison</li>
 				<li>Yak</li>
 				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+				<li MayRequire="sarg.alphaanimals">AA_Bobeene</li>
+				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
+				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
+				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
 			</canCrossBreedWith>
 		</value>
 	</Operation>
@@ -235,6 +243,10 @@
 				<li>Muffalo</li>
 				<li>Yak</li>
 				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+				<li MayRequire="sarg.alphaanimals">AA_Bobeene</li>
+				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
+				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
+				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
 			</canCrossBreedWith>
 		</value>
 	</Operation>
@@ -340,6 +352,10 @@
 				<li>Muffalo</li>
 				<li>Bison</li>
 				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+				<li MayRequire="sarg.alphaanimals">AA_Bobeene</li>
+				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
+				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
+				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
 			</canCrossBreedWith>
 		</value>
 	</Operation>

@@ -663,4 +663,73 @@
 		</statFactors>		
 		<familyTag>VRE_AnimalWoolYield</familyTag>
 	</VanillaRanchingExpanded.AnimalGeneDef>
+	
+	
+	<!-- Animal products genes -->
+	
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AnimalProductsYield_VeryHigh</defName>
+		<description>Carrier of this gene produces exceptionally abundant animal products, dramatically increasing the amount produced while allowing for more frequent collection.</description>
+		<label>abundant animal products</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_AnimalProducts</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>	
+		<isSpecialized>true</isSpecialized>
+		<statFactors>		
+			<MarketValue>1.2</MarketValue>
+			<VEF_AnimalProductYieldFactor>1.5</VEF_AnimalProductYieldFactor>
+			<VEF_AnimalProductIntervalFactor>0.8</VEF_AnimalProductIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalProductsYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AnimalProductsYield_High</defName>
+		<description>Carrier of this gene produces a high amount of animal products, improving the total yield from each collection.</description>
+		<label>high animal product yield</label>
+		<stability>-1</stability>
+		<isSpecialized>true</isSpecialized>
+		<iconPath>UI/AnimalGenes/AnimalGene_AnimalProducts</iconPath>
+		<statFactors>		
+			<VEF_AnimalProductYieldFactor>1.15</VEF_AnimalProductYieldFactor>
+			<VEF_AnimalProductIntervalFactor>0.9</VEF_AnimalProductIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalProductsYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AnimalProductsYield_Average</defName>
+		<description>Carrier of this gene produces a standard amount of animal products, providing no bonuses or penalties.</description>
+		<label>average animal product yield</label>
+		<isSpecialized>true</isSpecialized>
+		<stability>0</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_AnimalProducts</iconPath>		
+		<familyTag>VRE_AnimalProductsYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AnimalProductsYield_Low</defName>
+		<description>Carrier of this gene produces a reduced amount of animal products, lowering the total yield from each collection.</description>
+		<label>low animal product yield</label>
+		<isSpecialized>true</isSpecialized>
+		<stability>1</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_AnimalProducts</iconPath>
+		<statFactors>		
+			<VEF_AnimalProductYieldFactor>0.8</VEF_AnimalProductYieldFactor>
+			<VEF_AnimalProductIntervalFactor>1.25</VEF_AnimalProductIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalProductsYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
+	<VanillaRanchingExpanded.AnimalGeneDef>
+		<defName>VRE_AnimalProductsYield_VeryLow</defName>
+		<description>Carrier of this gene produces very few animal products, with significantly diminished yields from each collection.</description>
+		<label>scarce animal products</label>
+		<isSpecialized>true</isSpecialized>
+		<stability>2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_AnimalProducts</iconPath>
+		<marketValueFactor>0.9</marketValueFactor>	
+		<statFactors>		
+			<MarketValue>0.9</MarketValue>
+			<VEF_AnimalProductYieldFactor>0.5</VEF_AnimalProductYieldFactor>
+			<VEF_AnimalProductIntervalFactor>1.5</VEF_AnimalProductIntervalFactor>
+		</statFactors>		
+		<familyTag>VRE_AnimalProductsYield</familyTag>
+	</VanillaRanchingExpanded.AnimalGeneDef>
 </Defs>

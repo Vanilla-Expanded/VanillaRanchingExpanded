@@ -50,4 +50,9 @@
 		<label>animal wool yield</label>
 		<order>10</order>
 	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+		<defName>VRE_AnimalProductsYield</defName>
+		<label>animal products yield</label>
+		<order>11</order>
+	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
 </Defs>

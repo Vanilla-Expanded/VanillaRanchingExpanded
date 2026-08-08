@@ -42,7 +42,10 @@
 				<li>VRE_CowAngus</li>
 				<li>VRE_CowDairy</li>
 				<li>VRE_CowJersey</li>
-			
+				<li MayRequire="sarg.alphaanimals">AA_Bobeene</li>
+				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
+				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
+				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
 				<li>VRE_CowZebu</li>
 				<li>Cow</li>
 				<li>Muffalo</li>

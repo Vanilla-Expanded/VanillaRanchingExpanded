@@ -85,7 +85,7 @@ namespace VanillaRanchingExpanded
             else
                 amountOfMutations = 0;
             //For debug testing
-            amountOfMutations = 1;
+            // amountOfMutations = 1;
             if (amountOfMutations > 0)
             {
                 List<AnimalGeneDef> mutatedGenes = comp.genes.TakeRandom(amountOfMutations).ToList();
