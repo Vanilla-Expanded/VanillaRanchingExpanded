@@ -21,4 +21,46 @@
 		</animalGenes>
 	</VanillaRanchingExpanded.FeratypeDef>
 	
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_WildPig</defName>
+		<description>The wild boar is a fast, highly feral ancestor of the domestic pig. Adapted for survival with a highly efficient metabolism and perfect vitality, it is an incredibly tough animal.</description>
+		<feratypeFamily>Suidae</feratypeFamily>
+		<label>wild pig</label>
+		<race>WildBoar</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Wild</iconPath>
+		<animalGenes>
+			<li>VRE_PerfectVitality</li>
+			<li>VRE_VeryFast</li>
+			<li>VRE_Small</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_Wild</li>
+			<li>VRE_VerySlowMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_ScantLitters</li>
+			<li>VRE_MinimalBaconYield</li>
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_IberianPig</defName>
+		<description>The Iberian pig is an excellent forager with a slightly untamed streak, requiring minimal upkeep at the cost of smaller litters.</description>
+		<feratypeFamily>Suidae</feratypeFamily>
+		<label>iberian pig</label>
+		<race>VRE_IberianPig</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Iberian</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_Unruly</li>
+			<li>VRE_VerySlowMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_ScantLitters</li>
+			<li>VRE_AverageBaconYield</li>
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	
 </Defs>

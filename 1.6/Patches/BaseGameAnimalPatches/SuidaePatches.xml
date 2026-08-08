@@ -20,7 +20,8 @@
 		<xpath>Defs/ThingDef[defName="Pig"]/race</xpath>
 		<value>
 			<canCrossBreedWith>
-				
+				<li>WildBoar</li>
+				<li>VRE_IberianPig</li>
 			</canCrossBreedWith>
 		</value>
 	</Operation>
@@ -39,7 +40,6 @@
 			<texPath>Pawn/PigsBabies/Pig/PigBaby</texPath>
 		</value>
 	</Operation>
-	
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="Pig"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
 		<value>
@@ -52,8 +52,6 @@
 			<drawSize>1.75</drawSize>
 		</value>
 	</Operation>
-	
-
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="Pig"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
 		<value>
@@ -76,6 +74,118 @@
 		<xpath>Defs/PawnKindDef[defName="Pig"]/lifeStages/li[3]/femaleGraphicData/texPath</xpath>
 		<value>
 			<texPath>Pawn/Pigs/Pig/Sow</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="WildBoar"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="WildBoar"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="WildBoar"]/comps</xpath>
+		<value>
+			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="WildBoar"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>Pig</li>
+				<li>VRE_IberianPig</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="WildBoar"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/PigsBabies/Wild/WildBoarBaby</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[1]/dessicatedBodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Pigs/Wild/WildBoar</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[2]</xpath>
+		<value>
+			<femaleGraphicData>
+				<texPath>Pawn/Pigs/Wild/WildSow</texPath>
+				<drawSize>1.2</drawSize>
+				<shadowData>
+					<volume>(0.375, 0.375, 0.375)</volume>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[2]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.25</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[2]/dessicatedBodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.25</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Pigs/Wild/WildBoar</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[3]</xpath>
+		<value>
+			<femaleGraphicData>
+				<texPath>Pawn/Pigs/Wild/WildSow</texPath>
+				<drawSize>1.45</drawSize>
+				<shadowData>
+					<volume>(0.375, 0.375, 0.375)</volume>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[3]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.5</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="WildBoar"]/lifeStages/li[3]/dessicatedBodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.5</drawSize>
 		</value>
 	</Operation>
 </Patch>
