@@ -1,9 +1,10 @@
-﻿
+
 using System;
 using System.Collections.Generic;
 
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace VanillaRanchingExpanded
 {
@@ -13,6 +14,8 @@ namespace VanillaRanchingExpanded
         public List<AnimalGeneDef> genes = new List<AnimalGeneDef>();
         public float cachedLifespanFactor = -1;
         private bool feratypeApplied;
+        public bool isAlpha;
+        public int soloTicks;
 
         public new CompProperties_AnimalGenes Props => (CompProperties_AnimalGenes)props;
 
@@ -76,7 +79,18 @@ namespace VanillaRanchingExpanded
             Scribe_Defs.Look(ref feratype, "feratype");
             Scribe_Values.Look(ref feratypeApplied, "feratypeApplied");
             Scribe_Collections.Look(ref genes, "genes", LookMode.Def);
+            Scribe_Values.Look(ref isAlpha, "isAlpha", false);
+            Scribe_Values.Look(ref soloTicks, "soloTicks", 0);
 
+        }
+
+        public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
+        {
+            base.Notify_Killed(prevMap, dinfo);
+            if (isAlpha)
+            {
+                BecomeAlpha(false);
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -106,6 +120,25 @@ namespace VanillaRanchingExpanded
             }
         }
 
-        
+        public void BecomeAlpha(bool alpha)
+        {
+            isAlpha = alpha;
+            if (!alpha)
+            {
+                soloTicks = 0;
+            }
+            var pawn = (Pawn)parent;
+            var suffix = " (" + "VRE_Alpha".Translate() + ")";
+            var name = pawn.Name.ToString().Replace(suffix, "");
+            if (alpha)
+            {
+                pawn.Name = new NameSingle(name + suffix, false);
+            }
+            else
+            {
+                bool numerical = name.Length > 0 && char.IsDigit(name[name.Length - 1]);
+                pawn.Name = new NameSingle(name, numerical);
+            }
+        }
     }
 }

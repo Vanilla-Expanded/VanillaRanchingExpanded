@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<MentalStateDef ParentName="BaseMentalState">
 		<defName>VRE_AnimalTantrum</defName>
-		<stateClass>MentalState_TantrumAll</stateClass>
-		<workerClass>MentalStateWorker_TantrumAll</workerClass>
+		<stateClass>VanillaRanchingExpanded.MentalState_AnimalTantrumFences</stateClass>
+		<workerClass>VanillaRanchingExpanded.MentalStateWorker_AnimalTantrumFences</workerClass>
 		<label>animal tantrum</label>
 		<category>Aggro</category>
 		<blockInteractionInitiationExcept>
@@ -13,10 +13,10 @@
 			<li>Insult</li>
 		</blockInteractionRecipientExcept>
 		<blockRandomInteraction>true</blockRandomInteraction>
-		<colonistsOnly>true</colonistsOnly>
+		<colonistsOnly>false</colonistsOnly>
 		<minTicksBeforeRecovery>8000</minTicksBeforeRecovery>
 		<maxTicksBeforeRecovery>12000</maxTicksBeforeRecovery>
-		<recoveryMtbDays>0.033</recoveryMtbDays>
+		<recoveryMtbDays>0.166</recoveryMtbDays>
 		<recoverFromSleep>true</recoverFromSleep>
 		<blockNormalThoughts>true</blockNormalThoughts>
 		<nameColor>(0.98,0.48,0.16)</nameColor>
@@ -24,5 +24,16 @@
 		<beginLetter>{0} is having an animal tantrum.\n\n[PAWN_pronoun] will smash up random furniture, items and structures.</beginLetter>
 		<beginLetterDef>NegativeEvent</beginLetterDef>
 		<baseInspectLine>Mental state: Animal Tantrum</baseInspectLine>
+	</MentalStateDef>
+
+	<MentalStateDef ParentName="BaseMentalState">
+		<defName>VRE_AlphaFighting</defName>
+		<stateClass>VanillaRanchingExpanded.MentalState_AlphaFighting</stateClass>
+		<label>alpha fighting</label>
+		<category>Aggro</category>
+		<nameColor>(0.88,0.48,0.16)</nameColor>
+		<baseInspectLine>Mental state: Alpha fighting</baseInspectLine>
+		<inCaravanCanDo>false</inCaravanCanDo>
+		<allowBeatfire>true</allowBeatfire>
 	</MentalStateDef>
 </Defs>

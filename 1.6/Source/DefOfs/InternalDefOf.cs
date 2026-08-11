@@ -29,6 +29,7 @@ namespace VanillaRanchingExpanded
         public static StatDef VRE_AdditionalButcherProductsFactor;
 
         public static HediffDef VRE_Stillborn;
-
+        public static MentalStateDef VRE_AnimalTantrum;
+        public static MentalStateDef VRE_AlphaFighting;
     }
 }

@@ -27,4 +27,6 @@
 	<VRE_NotPregnant>This animal is not pregnant</VRE_NotPregnant>
 	<VRE_StillbornLabel>Stillborn {0}</VRE_StillbornLabel>
 	<VRE_StillbornDesc>Your {0}, {1} gave birth to a stillborn offspring.</VRE_StillbornDesc>
+	<VRE_Alpha>alpha</VRE_Alpha>
+	<VRE_AlphaFighting>{0} and {1} are fighting for the alpha title.</VRE_AlphaFighting>
 </LanguageData>

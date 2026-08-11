@@ -1,6 +1,6 @@
 {
     "dotnet.preferCSharpExtension": true,
-	"dotnet.defaultSolution": "1.6/Source/ModSourceTemplate.sln",
+	"dotnet.defaultSolution": "1.6/Source/VanillaRanchingExpanded.sln",
     "files.exclude": {
         "1.3/": true,
         "1.4/": true,

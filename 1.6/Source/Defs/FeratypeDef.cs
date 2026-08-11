@@ -17,7 +17,7 @@ namespace VanillaRanchingExpanded
         public PawnKindDef race;
 
         public string feratypeFamily;
-
+        public bool canBeAlpha;
         public List<AnimalGeneDef> animalGenes = new List<AnimalGeneDef>();
 
         public static readonly Color IconColor = new Color(0.75f, 0.75f, 0.75f);
