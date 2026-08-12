@@ -63,4 +63,46 @@
 		</animalGenes>
 	</VanillaRanchingExpanded.FeratypeDef>
 	
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_DurocPig</defName>
+		<description>The Duroc is an agricultural heavyweight. Bred for resilience and rapid muscle growth, this pig eats voraciously to support its large frame and excellent meat yield, though it generates more filth than average.</description>
+		<feratypeFamily>Suidae</feratypeFamily>
+		<label>duroc pig</label>
+		<race>VRE_DurocPig</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Duroc</iconPath>
+		<animalGenes>
+			<li>VRE_GoodVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_Large</li>
+			<li>VRE_Filthy</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_VeryFastMetabolism</li>
+			<li>VRE_Bulky</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageLitters</li>
+			<li>VRE_AverageBaconYield</li>
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_BerkshirePig</defName>
+		<description>The Berkshire is a luxury animal. It features a ravenous metabolism needed to build its signature fat marbling, resulting in an unmatched bacon yield. Kept as a prized heritage breed, it is remarkably clean and compliant, though it moves slowly and produces scant litters.</description>
+		<feratypeFamily>Suidae</feratypeFamily>
+		<label>berkshire pig</label>
+		<race>VRE_BerkshirePig</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Berkshire</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_Slow</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_Tidy</li>
+			<li>VRE_Compliant</li>
+			<li>VRE_VeryFastMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_ScantLitters</li>
+			<li>VRE_MaximumBaconYield</li>
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	
 </Defs>

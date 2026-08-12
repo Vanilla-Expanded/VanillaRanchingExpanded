@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="AnimalThingBase">
-		<defName>VRE_IberianPig</defName>
-		<label>iberian pig</label>
-		<description>A dark-skinned heritage breed known for its hardiness and ability to forage for its own food in wild environments. While they possess a slightly wilder temperament and produce smaller litters than commercial pigs, their highly efficient metabolism makes them a prized animal for hands-off ranching.</description>
+		<defName>VRE_BerkshirePig</defName>
+		<label>berkshire pig</label>
+		<description>A premium heritage breed famous for producing excellent pork. While they require immense amounts of food to build their prized fat reserves and produce smaller litters, they are exceptionally docile, surprisingly clean, and yield the absolute maximum amount of bacon possible.</description>
 		<statBases>
-			<MoveSpeed>3.9</MoveSpeed>
+			<MoveSpeed>3.5</MoveSpeed>
 			<ComfyTemperatureMin>-5</ComfyTemperatureMin>
-			<MarketValue>350</MarketValue>
-			<FilthRate>16</FilthRate>
-			<Wildness>0.15</Wildness>
+			<MarketValue>450</MarketValue>
+			<FilthRate>12</FilthRate>
+			<Wildness>0</Wildness>
 		</statBases>
 		<comps>
 			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
@@ -19,13 +19,13 @@
 			<canCrossBreedWith>
 				<li>Pig</li>
 				<li>WildBoar</li>
-				<li>VRE_BerkshirePig</li>
+				<li>VRE_IberianPig</li>
 				<li>VRE_DurocPig</li>
 			</canCrossBreedWith>
 			<body>QuadrupedAnimalWithHooves</body>
 			<baseBodySize>1.7</baseBodySize>
 			<baseHealthScale>0.7</baseHealthScale>
-			<baseHungerRate>0.50</baseHungerRate>
+			<baseHungerRate>0.75</baseHungerRate>
 			<foodType>OmnivoreRoughAnimal</foodType>
 			<leatherDef>Leather_Pig</leatherDef>
 			<roamMtbDays>3</roamMtbDays>
@@ -80,7 +80,7 @@
 			</li>
 		</modExtensions>
 		<tradeTags>
-			<li>AnimalFarmUncommon</li>
+			<li>AnimalFarmRare</li>
 		</tradeTags>
 		<tools>
 			<li>
@@ -106,18 +106,19 @@
 		</tools>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VRE_IberianPig</defName>
-		<race>VRE_IberianPig</race>
-		<label>iberian pig</label>
-		<labelMale>iberian boar</labelMale>
-		<labelFemale>iberian sow</labelFemale>
+		<defName>VRE_BerkshirePig</defName>
+		<label>berkshire pig</label>
+		<race>VRE_BerkshirePig</race>
+	
+		<labelMale>berkshire boar</labelMale>
+		<labelFemale>berkshire sow</labelFemale>
 		<combatPower>45</combatPower>
 		<ecoSystemWeight>0.5</ecoSystemWeight>
 		<lifeStages>
 			<li>
-				<label>iberian piglet</label>
+				<label>berkshire piglet</label>
 				<bodyGraphicData>
-					<texPath>Pawn/PigsBabies/Iberian/IberianPigBaby</texPath>
+					<texPath>Pawn/PigsBabies/Berkshire/BerkshirePigBaby</texPath>
 					<drawSize>0.6</drawSize>
 					<shadowData>
 						<volume>(0.25, 0.25, 0.25)</volume>
@@ -131,7 +132,7 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Pawn/Pigs/Iberian/IberianBoar</texPath>
+					<texPath>Pawn/Pigs/Berkshire/BerkshireBoar</texPath>
 					<drawSize>1.15</drawSize>
 					<shadowData>
 						<volume>(0.375, 0.375, 0.375)</volume>
@@ -139,7 +140,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<femaleGraphicData>
-					<texPath>Pawn/Pigs/Iberian/IberianPig</texPath>
+					<texPath>Pawn/Pigs/Berkshire/BerkshireSow</texPath>
 					<drawSize>1.15</drawSize>
 					<shadowData>
 						<volume>(0.375, 0.375, 0.375)</volume>
@@ -157,7 +158,7 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Pawn/Pigs/Iberian/IberianBoar</texPath>
+					<texPath>Pawn/Pigs/Berkshire/BerkshireBoar</texPath>
 					<drawSize>1.6</drawSize>
 					<shadowData>
 						<volume>(0.5, 0.5, 0.5)</volume>
@@ -165,7 +166,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<femaleGraphicData>
-					<texPath>Pawn/Pigs/Iberian/IberianPig</texPath>
+					<texPath>Pawn/Pigs/Berkshire/BerkshireSow</texPath>
 					<drawSize>1.6</drawSize>
 					<shadowData>
 						<volume>(0.5, 0.5, 0.4)</volume>

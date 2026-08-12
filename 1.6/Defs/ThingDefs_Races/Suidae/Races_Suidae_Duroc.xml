@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="AnimalThingBase">
-		<defName>VRE_IberianPig</defName>
-		<label>iberian pig</label>
-		<description>A dark-skinned heritage breed known for its hardiness and ability to forage for its own food in wild environments. While they possess a slightly wilder temperament and produce smaller litters than commercial pigs, their highly efficient metabolism makes them a prized animal for hands-off ranching.</description>
+		<defName>VRE_DurocPig</defName>
+		<label>duroc pig</label>
+		<description>A large, reddish-brown breed heavily favored by ranchers for its rapid muscle growth and hardiness. While they require a significant amount of food to maintain their massive frames and generate a bit more mess in their pens, they yield exceptional amounts of meat and are highly resistant to disease.</description>
 		<statBases>
 			<MoveSpeed>3.9</MoveSpeed>
-			<ComfyTemperatureMin>-5</ComfyTemperatureMin>
-			<MarketValue>350</MarketValue>
-			<FilthRate>16</FilthRate>
-			<Wildness>0.15</Wildness>
+			<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+			<MarketValue>300</MarketValue>
+			<FilthRate>24</FilthRate>
+			<Wildness>0</Wildness>
 		</statBases>
 		<comps>
 			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
@@ -19,13 +19,13 @@
 			<canCrossBreedWith>
 				<li>Pig</li>
 				<li>WildBoar</li>
+				<li>VRE_IberianPig</li>
 				<li>VRE_BerkshirePig</li>
-				<li>VRE_DurocPig</li>
 			</canCrossBreedWith>
 			<body>QuadrupedAnimalWithHooves</body>
-			<baseBodySize>1.7</baseBodySize>
-			<baseHealthScale>0.7</baseHealthScale>
-			<baseHungerRate>0.50</baseHungerRate>
+			<baseBodySize>1.85</baseBodySize>
+			<baseHealthScale>0.85</baseHealthScale>
+			<baseHungerRate>0.75</baseHungerRate>
 			<foodType>OmnivoreRoughAnimal</foodType>
 			<leatherDef>Leather_Pig</leatherDef>
 			<roamMtbDays>3</roamMtbDays>
@@ -80,7 +80,7 @@
 			</li>
 		</modExtensions>
 		<tradeTags>
-			<li>AnimalFarmUncommon</li>
+			<li>AnimalFarm</li>
 		</tradeTags>
 		<tools>
 			<li>
@@ -106,18 +106,19 @@
 		</tools>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VRE_IberianPig</defName>
-		<race>VRE_IberianPig</race>
-		<label>iberian pig</label>
-		<labelMale>iberian boar</labelMale>
-		<labelFemale>iberian sow</labelFemale>
+		<defName>VRE_DurocPig</defName>
+		<label>duroc pig</label>
+		<race>VRE_DurocPig</race>
+	
+		<labelMale>duroc boar</labelMale>
+		<labelFemale>duroc sow</labelFemale>
 		<combatPower>45</combatPower>
 		<ecoSystemWeight>0.5</ecoSystemWeight>
 		<lifeStages>
 			<li>
-				<label>iberian piglet</label>
+				<label>duroc piglet</label>
 				<bodyGraphicData>
-					<texPath>Pawn/PigsBabies/Iberian/IberianPigBaby</texPath>
+					<texPath>Pawn/PigsBabies/Duroc/DurocPigBaby</texPath>
 					<drawSize>0.6</drawSize>
 					<shadowData>
 						<volume>(0.25, 0.25, 0.25)</volume>
@@ -131,7 +132,7 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Pawn/Pigs/Iberian/IberianBoar</texPath>
+					<texPath>Pawn/Pigs/Duroc/DurocBoar</texPath>
 					<drawSize>1.15</drawSize>
 					<shadowData>
 						<volume>(0.375, 0.375, 0.375)</volume>
@@ -139,7 +140,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<femaleGraphicData>
-					<texPath>Pawn/Pigs/Iberian/IberianPig</texPath>
+					<texPath>Pawn/Pigs/Duroc/DurocSow</texPath>
 					<drawSize>1.15</drawSize>
 					<shadowData>
 						<volume>(0.375, 0.375, 0.375)</volume>
@@ -157,7 +158,7 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Pawn/Pigs/Iberian/IberianBoar</texPath>
+					<texPath>Pawn/Pigs/Duroc/DurocBoar</texPath>
 					<drawSize>1.6</drawSize>
 					<shadowData>
 						<volume>(0.5, 0.5, 0.5)</volume>
@@ -165,7 +166,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<femaleGraphicData>
-					<texPath>Pawn/Pigs/Iberian/IberianPig</texPath>
+					<texPath>Pawn/Pigs/Duroc/DurocSow</texPath>
 					<drawSize>1.6</drawSize>
 					<shadowData>
 						<volume>(0.5, 0.5, 0.4)</volume>

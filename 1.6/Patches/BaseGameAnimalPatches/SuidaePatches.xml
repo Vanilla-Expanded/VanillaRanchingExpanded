@@ -22,6 +22,8 @@
 			<canCrossBreedWith>
 				<li>WildBoar</li>
 				<li>VRE_IberianPig</li>
+				<li>VRE_BerkshirePig</li>
+				<li>VRE_DurocPig</li>
 			</canCrossBreedWith>
 		</value>
 	</Operation>
@@ -98,6 +100,8 @@
 			<canCrossBreedWith>
 				<li>Pig</li>
 				<li>VRE_IberianPig</li>
+				<li>VRE_BerkshirePig</li>
+				<li>VRE_DurocPig</li>
 			</canCrossBreedWith>
 		</value>
 	</Operation>
