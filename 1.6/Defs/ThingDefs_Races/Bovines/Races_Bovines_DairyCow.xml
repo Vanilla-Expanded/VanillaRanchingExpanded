@@ -46,7 +46,8 @@
 				<li>Muffalo</li>
 				<li>Bison</li>
 				<li>Yak</li>
-				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>			
+				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+				<li MayRequire="VanillaExpanded.VAEWaste">VAEWaste_Wasteffalo</li>
 			</canCrossBreedWith>
 			<lifeStageAges>
 				<li>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_Sheep</defName>
+		<description>The baseliner sheep is a relatively small domesticated herbivore, usually with yellowish wool and medium sized horns.</description>
+		<feratypeFamily>Ovis</feratypeFamily>
+		<label>sheep</label>
+		<race>Sheep</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Sheep</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageWool</li>	
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	
+	
+	
+</Defs>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAEWaste_Wasteffalo"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAEWaste_Wasteffalo"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAEWaste_Wasteffalo"]/comps</xpath>
+		<value>
+			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAEWaste_Wasteffalo"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>VRE_CowAngus</li>
+				<li>VRE_CowDairy</li>
+				<li>VRE_CowJersey</li>
+				<li>VRE_CowWooly</li>
+				<li>VRE_CowZebu</li>
+				<li>Cow</li>
+				<li>Muffalo</li>
+				<li>Bison</li>
+				<li>Yak</li>
+				<li MayRequire="sarg.alphaanimals">AA_Bobeene</li>
+				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
+				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
+				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
+				<li MayRequire="Ludeon.RimWorld.Odyssey">Muskox</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="VAEWaste_Wasteffalo"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/CowsBabies/WastefalloBaby</texPath>
+		</value>
+	</Operation>
+	<!--<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>2</drawSize>
+		</value>
+	</Operation>-->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/Wastefallo/WastefalloBull</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[2]</xpath>
+		<value>
+			<femaleGraphicData>
+				<texPath>Pawn/Cows/Wastefallo/WastefalloCow</texPath>
+				<drawSize>2.15</drawSize>
+				<shadowData>
+					<volume>(0.6, 0.45, 0.45)</volume>
+					<offset>(0,0,-0.25)</offset>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Cows/Wastefallo/WastefalloBull</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[3]</xpath>
+		<value>
+			<femaleGraphicData>
+				<texPath>Pawn/Cows/Wastefallo/WastefalloCow</texPath>
+				<drawSize>2.9</drawSize>
+				<shadowData>
+					<volume>(0.8, 0.6, 0.6)</volume>
+					<offset>(0,0,-0.3)</offset>
+				</shadowData>
+			</femaleGraphicData>
+		</value>
+	</Operation>
+	
+</Patch>
+
