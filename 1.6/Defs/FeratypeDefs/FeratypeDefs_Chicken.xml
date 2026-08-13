@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_Chicken</defName>
+		<description>Cluck.</description>
+		<feratypeFamily>VRE_Ovines</feratypeFamily>
+		<label>chicken</label>
+		<race>Chicken</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Sheep</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	-->
+
+	
+</Defs>

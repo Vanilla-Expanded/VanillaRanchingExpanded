@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--<ThingDef Name="VRE_GeneToolBase" Abstract="True">
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>0.5</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<thingClass>ThingWithComps</thingClass>
+		<tradeTags>
+			<li>Artifact</li>
+		</tradeTags>
+		<stackLimit>1</stackLimit>
+		<preventSpawningInResourcePod>true</preventSpawningInResourcePod>
+		<tradeNeverGenerateStacked>true</tradeNeverGenerateStacked>
+		<tradeNeverStack>true</tradeNeverStack>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>true</alwaysHaulable>
+		<rotatable>false</rotatable>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<tradeability>All</tradeability>
+		<pathCost>14</pathCost>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="VRE_GeneToolBase">
+		<defName>VRE_GeneToolAdd</defName>
+		<label>animal gene tool</label>
+		<description>A gene tool to add a specific gene to an animal.</description>
+		<thingClass>VanillaRanchingExpanded.AnimalGeneInjector</thingClass>
+		<tickerType>Rare</tickerType>
+		<useHitPoints>true</useHitPoints>
+		<stackLimit>1</stackLimit>
+		<canDeteriorateUnspawned>true</canDeteriorateUnspawned>
+		<deteriorateFromEnvironmentalEffects>false</deteriorateFromEnvironmentalEffects>
+		<graphicData>
+			<texPath>Things/Item/Artifact/PsychicShockLance/PsychicShockLance</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>850</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<thingSetMakerTags>
+			<li>NotForGuests</li>
+			<li>RewardStandardHighFreq</li>
+		</thingSetMakerTags>
+		<thingCategories>
+			<li>Artifacts</li>
+		</thingCategories>
+		<comps>
+			<li Class="CompProperties_Targetable">
+				<compClass>VanillaRanchingExpanded.CompTargetable_AnimalGenecarrier</compClass>
+			</li>
+			<li Class="CompProperties_Usable">
+				<useLabel>Use {0_label}</useLabel>
+				<useJob>VRE_UseGeneTool</useJob>
+				<showUseGizmo>true</showUseGizmo>
+				<useDuration>60</useDuration>
+			</li>
+			<li Class="VanillaRanchingExpanded.CompProperties_TargetEffect_AddGene">
+				
+			</li>
+		</comps>
+		
+	</ThingDef>-->
+	
+</Defs>

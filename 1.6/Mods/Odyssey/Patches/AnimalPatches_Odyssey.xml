@@ -82,7 +82,7 @@
 		<value>
 			<femaleGraphicData>
 				<texPath>Pawn/Cows/MuskOx/MuskOxCow</texPath>
-				<drawSize>2.25</drawSize>
+				<drawSize>2</drawSize>
 				<shadowData>
 					<volume>(0.6, 0.45, 0.45)</volume>
 					<offset>(0,0,-0.25)</offset>
@@ -101,7 +101,7 @@
 		<value>
 			<femaleGraphicData>
 				<texPath>Pawn/Cows/MuskOx/MuskOxCow</texPath>
-				<drawSize>3</drawSize>
+				<drawSize>2.4</drawSize>
 				<shadowData>
 					<volume>(0.8, 0.6, 0.6)</volume>
 					<offset>(0,0,-0.3)</offset>

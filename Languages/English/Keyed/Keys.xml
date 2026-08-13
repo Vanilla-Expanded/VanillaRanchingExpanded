@@ -31,4 +31,6 @@
 	<VRE_AlphaFighting>{0} and {1} are fighting for the alpha title.</VRE_AlphaFighting>
 	<VRE_SpecializedGene>Specialized gene</VRE_SpecializedGene>
 	<VRE_SpecializedGeneDesc>This gene is only inherited by offspring whose feratype contains a gene from this family.</VRE_SpecializedGeneDesc>
+	<VRE_ToolGene>Animal gene in this gene tool: "{0}"</VRE_ToolGene>
+	<VRE_CantApply>Can't apply animal gene "{0}" to {1}</VRE_CantApply>
 </LanguageData>

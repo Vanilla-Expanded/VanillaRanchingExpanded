@@ -128,7 +128,7 @@ namespace VanillaRanchingExpanded
 
                 if (inheritedGene != null)
                 {
-                    AnimalGeneUtility.AddGene(comp, inheritedGene, pawn);
+                    AnimalGeneUtility.AddGene(comp, inheritedGene);
                 }
 
                 // Stillbirth calculations

@@ -40,12 +40,9 @@ namespace VanillaRanchingExpanded
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-           
-            Pawn pawn = parent as Pawn;
-            if (pawn != null)
-            {
-                WorldComponent_AnimalGenes.Instance.AddAnimalComp(pawn, this);
-            }
+            
+            WorldComponent_AnimalGenes.Instance.AddAnimalComp(parent, this);
+            
             if (!respawningAfterLoad && !feratypeApplied)
             {
                 ApplyFeratype();
@@ -57,19 +54,22 @@ namespace VanillaRanchingExpanded
         public void ApplyFeratype()
         {
             Pawn pawn = parent as Pawn;
+            PawnKindDef kindDef = pawn?.kindDef ?? parent.TryGetComp<CompHatcher>()?.Props.hatcherPawn;
+
             foreach (FeratypeDef feratypeIterator in DefDatabase<FeratypeDef>.AllDefsListForReading)
             {
-                if(feratypeIterator.race == pawn.kindDef)
-                {
-                    feratype = feratypeIterator;
-                    foreach(AnimalGeneDef gene in feratype.animalGenes)
+                if (kindDef != null) {
+                    if (feratypeIterator.race == kindDef)
                     {
-                        AnimalGeneUtility.AddGene(this,gene, pawn);
+                        feratype = feratypeIterator;
+                        foreach (AnimalGeneDef gene in feratype.animalGenes)
+                        {
+                            AnimalGeneUtility.AddGene(this, gene);
+                        }
+                        AnimalGeneUtility.HandleMutations(this, pawn);
                     }
-                    AnimalGeneUtility.HandleMutations(this,pawn);
-
-
                 }
+                
             }
         }
 

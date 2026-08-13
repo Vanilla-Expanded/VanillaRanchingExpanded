@@ -35,7 +35,7 @@ namespace VanillaRanchingExpanded
         private static readonly CachedTexture GeneBackground_Excellent = new CachedTexture("UI/AnimalGenes/AnimalGeneBackground_Perfect");
         private static readonly CachedTexture Stability = new CachedTexture("UI/VRE_Stability");
 
-        protected Pawn SelPawnForGenes => PawnForGenes(SelThing);
+        protected Thing SelPawnForGenes => ThingForGenes(SelThing);
 
         public ITab_AnimalGenes()
         {
@@ -48,7 +48,7 @@ namespace VanillaRanchingExpanded
             DrawGenesInfo(new Rect(0f, 20f, size.x, size.y - 20f), Find.Selector.SingleSelectedThing, 550f, ref size, ref scrollPosition);
         }
 
-        private static Pawn PawnForGenes(Thing thing)
+        private static Thing ThingForGenes(Thing thing)
         {
             Pawn pawn = thing as Pawn;
             if (pawn != null)
@@ -60,25 +60,30 @@ namespace VanillaRanchingExpanded
             {
                 return corpse.InnerPawn;
             }
+            if (thing.HasThingCategory(ThingCategoryDefOf.EggsFertilized))
+            {
+                return thing;
+            }
             return null;
         }
+
 
         public static bool CanShowGenesTab()
         {
 
-            Pawn pawn = PawnForGenes(Find.Selector.SingleSelectedThing);
+            Thing thing = ThingForGenes(Find.Selector.SingleSelectedThing);
 
-            if (pawn != null && WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn))
+            if (thing != null && WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(thing))
             {
                 return true;
             }
-
+            
             return false;
         }
 
         public static void DrawGenesInfo(Rect rect, Thing target, float initialHeight, ref Vector2 size, ref Vector2 scrollPosition, GeneSet pregnancyGenes = null)
         {
-            Pawn sourcePawn = PawnForGenes(target);
+            Thing sourcePawn = ThingForGenes(target);
             if (sourcePawn == null || !WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(sourcePawn))
             {
                 return;

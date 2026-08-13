@@ -11,15 +11,13 @@ namespace VanillaRanchingExpanded
 
         public static int maxStabilityPenalty = 5;
 
-        public Dictionary<Pawn, CompAnimalGenes> pawnToCompAnimalGenes = new Dictionary<Pawn, CompAnimalGenes>();
+        public Dictionary<Thing, CompAnimalGenes> pawnToCompAnimalGenes = new Dictionary<Thing, CompAnimalGenes>();
        
         public static WorldComponent_AnimalGenes Instance;
 
-
         public WorldComponent_AnimalGenes(World world) : base(world) => Instance = this;
-
-       
-        public void AddAnimalComp(Pawn pawn, CompAnimalGenes comp)
+     
+        public void AddAnimalComp(Thing pawn, CompAnimalGenes comp)
         {
             if (!pawnToCompAnimalGenes.ContainsKey(pawn))
             {
@@ -27,16 +25,13 @@ namespace VanillaRanchingExpanded
             }
         }
 
-        public void RemoveAnimalComp(Pawn pawn)
-        {
-          
+        public void RemoveAnimalComp(Thing pawn)
+        {          
             if (pawnToCompAnimalGenes.ContainsKey(pawn))
             {
                 pawnToCompAnimalGenes.Remove(pawn);
             }
-        }
-
-      
+        }     
 
         public override void WorldComponentTick()
         {
@@ -45,20 +40,21 @@ namespace VanillaRanchingExpanded
             if (Find.TickManager.TicksGame % 2000 != 0)
                 return;
 
-            List<Pawn> toRemove = null;
+            List<Thing> toRemove = null;
 
-            foreach (Pawn pawn in pawnToCompAnimalGenes.Keys)
+            foreach (Thing thing in pawnToCompAnimalGenes.Keys)
             {
-                if (pawn.Dead && pawn.Corpse == null)
+                Pawn pawn = thing as Pawn;
+                if (pawn != null && pawn.Dead && pawn.Corpse == null)
                 {
-                    toRemove ??= new List<Pawn>();
+                    toRemove ??= new List<Thing>();
                     toRemove.Add(pawn);
                 }
             }
 
             if (toRemove != null)
             {
-                foreach (Pawn pawn in toRemove)
+                foreach (Thing pawn in toRemove)
                 {
                     pawnToCompAnimalGenes.Remove(pawn);
                 }

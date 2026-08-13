@@ -50,6 +50,10 @@ namespace VanillaRanchingExpanded
 
         public bool isSpecialized = false;
 
+        public bool singleRankGene = false;
+
+        public bool dontGenerateInGeneTweakTools = false;
+
         public string extraDescriptions ="";
 
         public string DescriptionFull => cachedDescription ?? (cachedDescription = GetDescriptionFull());

@@ -8,54 +8,61 @@ namespace VanillaRanchingExpanded
 {
     public static class AnimalGeneUtility
     {
-        public static void AddGene(CompAnimalGenes comp, AnimalGeneDef gene, Pawn pawn)
+        public static void AddGene(CompAnimalGenes comp, AnimalGeneDef gene)
         {
             comp.genes.Add(gene);
-            foreach (StatModifier statModifier in gene.statFactors)
-            {
-                statModifier.stat.Worker.ClearCacheForThing(pawn);
-            }
-            foreach (StatModifier statModifier2 in gene.statOffsets)
-            {
-                statModifier2.stat.Worker.ClearCacheForThing(pawn);
-            }
-            if (gene.hediffToAdd != null)
-            {
-                pawn.health.AddHediff(gene.hediffToAdd);
-            }
-            if (gene.abilityToAdd != null)
-            {
-                if (pawn.abilities is null)
+            Pawn pawn = comp.parent as Pawn;
+            if (pawn != null) {
+                foreach (StatModifier statModifier in gene.statFactors)
                 {
-                    pawn.abilities = new Pawn_AbilityTracker(pawn);
+                    statModifier.stat.Worker.ClearCacheForThing(pawn);
                 }
-                pawn.abilities.GainAbility(gene.abilityToAdd);
+                foreach (StatModifier statModifier2 in gene.statOffsets)
+                {
+                    statModifier2.stat.Worker.ClearCacheForThing(pawn);
+                }
+                if (gene.hediffToAdd != null)
+                {
+                    pawn.health.AddHediff(gene.hediffToAdd);
+                }
+                if (gene.abilityToAdd != null)
+                {
+                    if (pawn.abilities is null)
+                    {
+                        pawn.abilities = new Pawn_AbilityTracker(pawn);
+                    }
+                    pawn.abilities.GainAbility(gene.abilityToAdd);
+                }
             }           
         }
 
-        public static void RemoveGene(CompAnimalGenes comp, AnimalGeneDef gene, Pawn pawn)
+        public static void RemoveGene(CompAnimalGenes comp, AnimalGeneDef gene)
         {
             comp?.genes?.Remove(gene);
-            foreach (StatModifier statModifier in gene.statFactors)
+            Pawn pawn = comp.parent as Pawn;
+            if (pawn != null)
             {
-                statModifier.stat.Worker.ClearCacheForThing(pawn);
-            }
-            foreach (StatModifier statModifier2 in gene.statOffsets)
-            {
-                statModifier2.stat.Worker.ClearCacheForThing(pawn);
-            }
-            if (gene.hediffToAdd != null)
-            {
-                Hediff hediffToRemove = pawn.health.hediffSet.GetFirstHediffOfDef(gene.hediffToAdd);
-                if (hediffToRemove != null)
+                foreach (StatModifier statModifier in gene.statFactors)
                 {
-                    pawn.health.RemoveHediff(hediffToRemove);
+                    statModifier.stat.Worker.ClearCacheForThing(pawn);
                 }
-            }
-            if (gene.abilityToAdd != null)
-            {
-                pawn.abilities.RemoveAbility(gene.abilityToAdd);
-            }          
+                foreach (StatModifier statModifier2 in gene.statOffsets)
+                {
+                    statModifier2.stat.Worker.ClearCacheForThing(pawn);
+                }
+                if (gene.hediffToAdd != null)
+                {
+                    Hediff hediffToRemove = pawn.health.hediffSet.GetFirstHediffOfDef(gene.hediffToAdd);
+                    if (hediffToRemove != null)
+                    {
+                        pawn.health.RemoveHediff(hediffToRemove);
+                    }
+                }
+                if (gene.abilityToAdd != null)
+                {
+                    pawn.abilities.RemoveAbility(gene.abilityToAdd);
+                }
+            }       
         }
 
         public static int GetTotalStability(CompAnimalGenes comp)
@@ -81,7 +88,7 @@ namespace VanillaRanchingExpanded
             }
         }
 
-        public static void HandleMutations(CompAnimalGenes comp, Pawn pawn)
+        public static void HandleMutations(CompAnimalGenes comp, Thing pawn)
         {
             int amountOfMutations = 0;
             float roll = Rand.Value;
@@ -101,7 +108,7 @@ namespace VanillaRanchingExpanded
             // amountOfMutations = 1;
             if (amountOfMutations > 0)
             {
-                List<AnimalGeneDef> mutatedGenes = comp.genes.TakeRandom(amountOfMutations).ToList();
+                List<AnimalGeneDef> mutatedGenes = comp.genes.Where(x=>!x.singleRankGene).ToList().TakeRandom(amountOfMutations).ToList();
                 foreach (AnimalGeneDef mutatedGene in mutatedGenes)
                 {
                     bool goingUpOrDown = Rand.Chance(0.5f);
@@ -111,10 +118,10 @@ namespace VanillaRanchingExpanded
                     AnimalGeneDef geneToRemove = comp.genes.Where(x => x.familyTag == family && x.GeneLevel == geneLevel).FirstOrDefault();
                     if(geneToRemove != null)
                     {
-                        RemoveGene(comp, geneToRemove, pawn);
+                        RemoveGene(comp, geneToRemove);
                     }                 
                     AnimalGeneDef newGene = DefDatabase<AnimalGeneDef>.AllDefsListForReading.Where(x => x.familyTag == family && x.GeneLevel == newGeneLevel).FirstOrDefault();
-                    AddGene(comp, newGene, pawn);
+                    AddGene(comp, newGene);
                 }
             }
 
