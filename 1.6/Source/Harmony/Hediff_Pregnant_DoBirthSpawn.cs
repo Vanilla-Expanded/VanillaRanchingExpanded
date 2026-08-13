@@ -47,25 +47,30 @@ namespace VanillaRanchingExpanded
 
         public static void AdjustGenes(Pawn pawn, Pawn mother, Pawn father)
         {
-           
-            if (!WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn)){return;}
+            if (!WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn)) { return; }
             CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[pawn];
-            if (comp is null){ return; }
-            if (mother is null || !WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(mother)){return;}
+            if (comp is null) { return; }
+            if (mother is null || !WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(mother)) { return; }
             CompAnimalGenes compMother = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[mother];
             if (compMother is null) { return; }
+
+            HashSet<AnimalGeneFamilyTagDef> childFamilies = comp.genes.Select(x => x.familyTag).ToHashSet();
             if (father is null || !WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(father))
-            {               
-                comp.genes = compMother.genes;
+            {
+                comp.genes = compMother.genes.ToList();
                 return;
             }
             CompAnimalGenes compFather = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[father];
             if (compFather is null) { return; }
 
-            comp.genes.Clear();
             List<AnimalGeneDef> motherGenes = compMother.genes;
             List<AnimalGeneDef> fatherGenes = compFather.genes;
 
+            HashSet<AnimalGeneFamilyTagDef> geneFamilies = motherGenes.Select(x => x.familyTag).ToHashSet();
+
+            geneFamilies.UnionWith(fatherGenes.Select(x => x.familyTag));
+
+            // Stability and pull factor from the parents
             int totalMotherStability = 0;
             foreach (AnimalGeneDef gene in compMother.genes)
             {
@@ -81,39 +86,61 @@ namespace VanillaRanchingExpanded
             float pullFactor = 0;
             if (avgStability < 0)
             {
-                pullFactor = Math.Min(Math.Abs(avgStability) / WorldComponent_AnimalGenes.maxStabilityPenalty,1);
+                pullFactor = Math.Min(Math.Abs(avgStability) / WorldComponent_AnimalGenes.maxStabilityPenalty, 1);
             }
 
-            foreach (AnimalGeneDef motherAnimalGene in motherGenes)
+            comp.genes.Clear();
+
+            foreach (AnimalGeneFamilyTagDef familyTag in geneFamilies)
             {
-                if(!motherAnimalGene.isSpecialized || fatherGenes.Where(x=> x.familyTag == motherAnimalGene.familyTag).Any())
+                AnimalGeneDef motherGene = motherGenes.FirstOrDefault(x => x.familyTag == familyTag);
+
+                AnimalGeneDef fatherGene = fatherGenes.FirstOrDefault(x => x.familyTag == familyTag);
+
+                AnimalGeneDef inheritedGene = null;
+
+                // Both parent have the gene for this family
+                
+                if (motherGene != null && fatherGene != null)
                 {
-                    AnimalGeneDef fatherAnimalGene = fatherGenes.Where(x => x.familyTag == motherAnimalGene.familyTag).FirstOrDefault();
-                    float rawScore = (float)(motherAnimalGene.GeneLevel + fatherAnimalGene.GeneLevel) / 2;          
-
-                    int finalScore = (int)Math.Round(rawScore + (3 - rawScore) * pullFactor, MidpointRounding.AwayFromZero);
-
-                    AnimalGeneUtility.AddGene(comp, DefDatabase<AnimalGeneDef>.AllDefsListForReading.Where(x => x.familyTag == motherAnimalGene.familyTag && x.GeneLevel == finalScore).FirstOrDefault(), pawn);
-                   
+                    float rawScore =(motherGene.GeneLevel + fatherGene.GeneLevel) / 2f;
+                    int finalScore = (int)Math.Round(rawScore + (3f - rawScore) * pullFactor,MidpointRounding.AwayFromZero);
+                    inheritedGene = DefDatabase<AnimalGeneDef>.AllDefsListForReading.FirstOrDefault(x =>x.familyTag == familyTag && x.GeneLevel == finalScore);
                 }
-
-                if (!Find.Storyteller.difficulty.babiesAreHealthy && motherAnimalGene.stillbirthChance>0)
+                // Only mother has the gene for this family
+                else if (motherGene != null)
                 {
-                    if (Rand.Chance(motherAnimalGene.stillbirthChance))
+                    if (!motherGene.isSpecialized || childFamilies.Contains(familyTag))
                     {
-                        Find.LetterStack.ReceiveLetter("VRE_StillbornLabel".Translate(pawn.def.label), "VRE_StillbornDesc".Translate(pawn.def.label,pawn.Name.ToString()), LetterDefOf.NeutralEvent, pawn);
-                        Hediff culpritHediff = pawn.health.AddHediff(InternalDefOf.VRE_Stillborn);                      
-                        Find.BattleLog.Add(new BattleLogEntry_StateTransition(pawn, pawn.RaceProps.DeathActionWorker.DeathRules, null, culpritHediff, null));
+                        int finalScore = (int)Math.Round(motherGene.GeneLevel +(3f - motherGene.GeneLevel) * pullFactor,MidpointRounding.AwayFromZero);
+                        inheritedGene = DefDatabase<AnimalGeneDef>.AllDefsListForReading.FirstOrDefault(x => x.familyTag == familyTag && x.GeneLevel == finalScore);
                     }
-
                 }
+                // Only father has the gene for this family              
+                else if (fatherGene != null)
+                {
+                    if (!fatherGene.isSpecialized || childFamilies.Contains(familyTag))
+                    {
+                        int finalScore = (int)Math.Round(fatherGene.GeneLevel +(3f - fatherGene.GeneLevel) * pullFactor,MidpointRounding.AwayFromZero);
+                        inheritedGene = DefDatabase<AnimalGeneDef>.AllDefsListForReading.FirstOrDefault(x => x.familyTag == familyTag && x.GeneLevel == finalScore);
+                    }
+                }
+
+                if (inheritedGene != null)
+                {
+                    AnimalGeneUtility.AddGene(comp, inheritedGene, pawn);
+                }
+
+                // Stillbirth calculations
+                float stillbirthChance = motherGene?.stillbirthChance ?? fatherGene.stillbirthChance;       
+                AnimalGeneUtility.TryDoStillBirth(pawn,stillbirthChance);                
             }
-            //Random mutations handling
+
+            // Random mutations handling
             if (!pawn.Dead)
             {
                 AnimalGeneUtility.HandleMutations(comp, pawn);
             }
-            
         }
 
         public static SimpleCurve AdjustLitterSize(SimpleCurve existingCurve,Pawn mother)
@@ -132,6 +159,8 @@ namespace VanillaRanchingExpanded
             }
             return existingCurve;
         }
+
+        
 
     }
 }

@@ -3,7 +3,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_Cow</defName>
 		<description>The baseliner cow is a large domesticated ungulate that has been selectively bred over millennia to serve as a versatile source of milk, meat, and leather.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>cow</label>
 		<race>Cow</race>
@@ -23,7 +23,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_CowAngus</defName>
 		<description>A specialized beef breed prized for its superior meat quality and hardy nature, Angus is an efficient choice for ranchers seeking to maximize beef production.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>angus</label>
 		<race>VRE_CowAngus</race>
@@ -42,7 +42,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_CowDairy</defName>
 		<description>A highly specialized breed optimized for consistent and high-volume milk production.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>dairy cow</label>
 		<race>VRE_CowDairy</race>
@@ -62,7 +62,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_CowWooly</defName>
 		<description>A specialized breed optimized for consistent wool production, perfect for textile-focused ranches.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>wooly cow</label>
 		<race>VRE_CowWooly</race>
@@ -83,7 +83,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_CowJersey</defName>
 		<description>A compact dairy breed optimized for efficient, high-quality milk production.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>jersey cow</label>
 		<race>VRE_CowJersey</race>
@@ -103,7 +103,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_CowZebu</defName>
 		<description>A hardy, spirited breed adapted to hot climates, known for their wild temperament and heat tolerance.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>zebu cow</label>
 		<race>VRE_CowZebu</race>
@@ -123,7 +123,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_Bison</defName>
 		<description>A massive and resilient bovine breed, naturally adapted to harsh environments and valued for its sheer size and resource yield.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>bison</label>
 		<race>Bison</race>
@@ -143,7 +143,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_Yak</defName>
 		<description>A robust, cold-adapted breed known for its hardiness, useful as both a pack animal and a source of dairy in harsh environments.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>yak</label>
 		<race>Yak</race>
@@ -163,7 +163,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_Muffalo</defName>
 		<description>A large, hardy, blue-furred herd animal optimized for cold environments and heavy transport.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>muffalo</label>
 		<race>Muffalo</race>

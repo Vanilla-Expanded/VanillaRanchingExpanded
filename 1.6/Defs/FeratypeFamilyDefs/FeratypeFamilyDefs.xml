@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VanillaRanchingExpanded.FeratypeFamilyDef>
+		<defName>VRE_Bovines</defName>
+		<label>cows</label>		
+	</VanillaRanchingExpanded.FeratypeFamilyDef>
+	<VanillaRanchingExpanded.FeratypeFamilyDef>
+		<defName>VRE_Suines</defName>
+		<label>pigs</label>
+	</VanillaRanchingExpanded.FeratypeFamilyDef>
+	<VanillaRanchingExpanded.FeratypeFamilyDef>
+		<defName>VRE_Ovines</defName>
+		<label>sheep</label>
+	</VanillaRanchingExpanded.FeratypeFamilyDef>
+	
+</Defs>

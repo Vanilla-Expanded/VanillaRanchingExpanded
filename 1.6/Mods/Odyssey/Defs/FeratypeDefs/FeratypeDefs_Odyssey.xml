@@ -3,7 +3,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_Muskox</defName>
 		<description>A shaggy, cold-hardy mammal prized for its thick, protective wool and resilient nature in freezing environments.</description>
-		<feratypeFamily>Bovines</feratypeFamily>
+		<feratypeFamily>VRE_Bovines</feratypeFamily>
 		<canBeAlpha>true</canBeAlpha>
 		<label>muskox</label>
 		<race>Muskox</race>

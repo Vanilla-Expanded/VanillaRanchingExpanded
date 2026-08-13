@@ -157,7 +157,7 @@ namespace VanillaRanchingExpanded
             {
                 Widgets.DrawHighlight(rect);
                 TooltipHandler.TipRegion(rect, () => ("VRE_Feratype".Translate() + ": " + comp.feratype.label.CapitalizeFirst()).Colorize(ColoredText.TipSectionTitleColor).CapitalizeFirst() + "\n\n" + FeratypeDef.FeratypeDescWithExtra(comp.feratype) + "\n\n" 
-                + "VRE_FeratypeFamily".Translate().Colorize(ColoredText.TipSectionTitleColor).CapitalizeFirst() + ": "+ comp.feratype.feratypeFamily, 883938493);
+                + "VRE_FeratypeFamily".Translate().Colorize(ColoredText.TipSectionTitleColor).CapitalizeFirst() + ": "+ comp.feratype.feratypeFamily.LabelCap, 883938493);
             }
             if (Widgets.ButtonInvisible(rect))
             {

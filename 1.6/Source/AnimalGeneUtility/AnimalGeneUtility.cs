@@ -68,6 +68,19 @@ namespace VanillaRanchingExpanded
             return totalStability;
         }
 
+        public static void TryDoStillBirth(Pawn pawn, float stillbirthChance)
+        {
+            if (!Find.Storyteller.difficulty.babiesAreHealthy)
+            {
+                if (Rand.Chance(stillbirthChance))
+                {
+                    Find.LetterStack.ReceiveLetter("VRE_StillbornLabel".Translate(pawn.def.label), "VRE_StillbornDesc".Translate(pawn.def.label, pawn.Name.ToString()), LetterDefOf.NeutralEvent, pawn);
+                    Hediff culpritHediff = pawn.health.AddHediff(InternalDefOf.VRE_Stillborn);
+                    Find.BattleLog.Add(new BattleLogEntry_StateTransition(pawn, pawn.RaceProps.DeathActionWorker.DeathRules, null, culpritHediff, null));
+                }
+            }
+        }
+
         public static void HandleMutations(CompAnimalGenes comp, Pawn pawn)
         {
             int amountOfMutations = 0;

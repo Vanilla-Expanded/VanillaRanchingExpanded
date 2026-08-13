@@ -153,6 +153,11 @@ namespace VanillaRanchingExpanded
                 sb.AppendLine();
                 sb.AppendLineTagged("VRE_Trainability".Translate() + ": " + trainabilityDef.ToString());
             }
+            if (isSpecialized)
+            {
+                sb.AppendLine();
+                sb.AppendLineTagged("VRE_SpecializedGene".Translate().Colorize(ColoredText.TipSectionTitleColor) + ": " + "VRE_SpecializedGeneDesc".Translate());
+            }
             if (extraDescriptions != "")
             {
                 sb.AppendLine();

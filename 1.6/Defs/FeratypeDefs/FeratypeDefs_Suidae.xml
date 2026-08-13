@@ -3,7 +3,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_Pig</defName>
 		<description>The baseliner pig is a sturdy, omnivorous farm animal known for its adaptability and efficiency as a meat source.</description>
-		<feratypeFamily>Suidae</feratypeFamily>
+		<feratypeFamily>VRE_Suines</feratypeFamily>
 		<label>pig</label>
 		<race>Pig</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Pig</iconPath>
@@ -24,7 +24,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_WildPig</defName>
 		<description>The wild boar is a fast, highly feral ancestor of the domestic pig. Adapted for survival with a highly efficient metabolism and perfect vitality, it is an incredibly tough animal.</description>
-		<feratypeFamily>Suidae</feratypeFamily>
+		<feratypeFamily>VRE_Suines</feratypeFamily>
 		<label>wild pig</label>
 		<race>WildBoar</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Wild</iconPath>
@@ -45,7 +45,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_IberianPig</defName>
 		<description>The Iberian pig is an excellent forager with a slightly untamed streak, requiring minimal upkeep at the cost of smaller litters.</description>
-		<feratypeFamily>Suidae</feratypeFamily>
+		<feratypeFamily>VRE_Suines</feratypeFamily>
 		<label>iberian pig</label>
 		<race>VRE_IberianPig</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Iberian</iconPath>
@@ -66,7 +66,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_DurocPig</defName>
 		<description>The Duroc is an agricultural heavyweight. Bred for resilience and rapid muscle growth, this pig eats voraciously to support its large frame and excellent meat yield, though it generates more filth than average.</description>
-		<feratypeFamily>Suidae</feratypeFamily>
+		<feratypeFamily>VRE_Suines</feratypeFamily>
 		<label>duroc pig</label>
 		<race>VRE_DurocPig</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Duroc</iconPath>
@@ -87,7 +87,7 @@
 	<VanillaRanchingExpanded.FeratypeDef>
 		<defName>VRE_BerkshirePig</defName>
 		<description>The Berkshire is a luxury animal. It features a ravenous metabolism needed to build its signature fat marbling, resulting in an unmatched bacon yield. Kept as a prized heritage breed, it is remarkably clean and compliant, though it moves slowly and produces scant litters.</description>
-		<feratypeFamily>Suidae</feratypeFamily>
+		<feratypeFamily>VRE_Suines</feratypeFamily>
 		<label>berkshire pig</label>
 		<race>VRE_BerkshirePig</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Berkshire</iconPath>

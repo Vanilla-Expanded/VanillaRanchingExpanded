@@ -17,7 +17,7 @@ namespace VanillaRanchingExpanded
     public class PenFamilyState : IExposable
     {
         public ThingWithComps penMarker;
-        public string family;
+        public FeratypeFamilyDef family;
         public int cooldownUntilTick = -1;
         public int fightTargetTick = -1;
         public TriggerType pendingTrigger;
@@ -27,7 +27,7 @@ namespace VanillaRanchingExpanded
         public void ExposeData()
         {
             Scribe_References.Look(ref penMarker, "penMarker");
-            Scribe_Values.Look(ref family, "family");
+            Scribe_Defs.Look(ref family, "family");
             Scribe_Values.Look(ref cooldownUntilTick, "cooldownUntilTick", -1);
             Scribe_Values.Look(ref fightTargetTick, "fightTargetTick", -1);
             Scribe_Values.Look(ref pendingTrigger, "pendingTrigger", TriggerType.None);
@@ -105,7 +105,7 @@ namespace VanillaRanchingExpanded
         private void UpdateAlphas()
         {
             penStates.RemoveAll(x => x.penMarker == null || x.penMarker.Destroyed);
-            var compsByPenFamily = new Dictionary<ThingWithComps, Dictionary<string, List<(Pawn pawn, CompAnimalGenes comp)>>>();
+            var compsByPenFamily = new Dictionary<ThingWithComps, Dictionary<FeratypeFamilyDef, List<(Pawn pawn, CompAnimalGenes comp)>>>();
             foreach (var pawn in map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer))
             {
                 var comp = pawn.GetComp<CompAnimalGenes>();
@@ -137,7 +137,7 @@ namespace VanillaRanchingExpanded
 
                 if (!compsByPenFamily.ContainsKey(penMarker.parent))
                 {
-                    compsByPenFamily[penMarker.parent] = new Dictionary<string, List<(Pawn, CompAnimalGenes)>>();
+                    compsByPenFamily[penMarker.parent] = new Dictionary<FeratypeFamilyDef, List<(Pawn, CompAnimalGenes)>>();
                 }
                 if (!compsByPenFamily[penMarker.parent].ContainsKey(comp.feratype.feratypeFamily))
                 {
@@ -157,7 +157,7 @@ namespace VanillaRanchingExpanded
             }
         }
 
-        private void ProcessPenFamily(ThingWithComps penBuilding, string family, List<(Pawn pawn, CompAnimalGenes comp)> comps)
+        private void ProcessPenFamily(ThingWithComps penBuilding, FeratypeFamilyDef family, List<(Pawn pawn, CompAnimalGenes comp)> comps)
         {
             var state = GetOrCreateState(penBuilding, family);
             var currentAlphas = comps.Where(c => c.comp.isAlpha).Select(c => c.pawn).ToList();
@@ -255,7 +255,7 @@ namespace VanillaRanchingExpanded
             }
         }
 
-        private PenFamilyState GetOrCreateState(ThingWithComps penMarker, string family)
+        private PenFamilyState GetOrCreateState(ThingWithComps penMarker, FeratypeFamilyDef family)
         {
             var state = penStates.FirstOrDefault(x => x.penMarker == penMarker && x.family == family);
             if (state == null)
