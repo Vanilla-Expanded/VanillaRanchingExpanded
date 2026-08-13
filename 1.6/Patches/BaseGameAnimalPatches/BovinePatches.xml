@@ -33,6 +33,7 @@
 				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
 				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
 				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
+				<li MayRequire="sarg.alphaanimals">AA_ChameleonYak</li>
 				<li MayRequire="VanillaExpanded.VAEWaste">VAEWaste_Wasteffalo</li>
 			</canCrossBreedWith>
 		</value>
@@ -140,6 +141,7 @@
 				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
 				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
 				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
+				<li MayRequire="sarg.alphaanimals">AA_ChameleonYak</li>
 				<li MayRequire="VanillaExpanded.VAEWaste">VAEWaste_Wasteffalo</li>
 			</canCrossBreedWith>
 		</value>
@@ -249,6 +251,7 @@
 				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
 				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
 				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
+				<li MayRequire="sarg.alphaanimals">AA_ChameleonYak</li>
 				<li MayRequire="VanillaExpanded.VAEWaste">VAEWaste_Wasteffalo</li>
 			</canCrossBreedWith>
 		</value>
@@ -359,6 +362,7 @@
 				<li MayRequire="sarg.alphaanimals">AA_SpinedGow</li>
 				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
 				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>
+				<li MayRequire="sarg.alphaanimals">AA_ChameleonYak</li>
 				<li MayRequire="VanillaExpanded.VAEWaste">VAEWaste_Wasteffalo</li>
 			</canCrossBreedWith>
 		</value>

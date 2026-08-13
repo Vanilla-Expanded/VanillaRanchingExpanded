@@ -35,7 +35,7 @@ namespace VanillaRanchingExpanded
 
         public static void RemoveGene(CompAnimalGenes comp, AnimalGeneDef gene, Pawn pawn)
         {
-            comp.genes.Remove(gene);
+            comp?.genes?.Remove(gene);
             foreach (StatModifier statModifier in gene.statFactors)
             {
                 statModifier.stat.Worker.ClearCacheForThing(pawn);
@@ -96,7 +96,10 @@ namespace VanillaRanchingExpanded
                     AnimalGeneFamilyTagDef family = mutatedGene.familyTag;
                     int newGeneLevel = goingUpOrDown ? Math.Min(mutatedGene.GeneLevel + 1, 5) : Math.Max(mutatedGene.GeneLevel - 1, 1);
                     AnimalGeneDef geneToRemove = comp.genes.Where(x => x.familyTag == family && x.GeneLevel == geneLevel).FirstOrDefault();
-                    RemoveGene(comp, geneToRemove, pawn);
+                    if(geneToRemove != null)
+                    {
+                        RemoveGene(comp, geneToRemove, pawn);
+                    }                 
                     AnimalGeneDef newGene = DefDatabase<AnimalGeneDef>.AllDefsListForReading.Where(x => x.familyTag == family && x.GeneLevel == newGeneLevel).FirstOrDefault();
                     AddGene(comp, newGene, pawn);
                 }

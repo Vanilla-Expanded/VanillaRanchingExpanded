@@ -20,6 +20,85 @@
 		</animalGenes>
 	</VanillaRanchingExpanded.FeratypeDef>
 	
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_MerinoSheep</defName>
+		<description>The merino sheep is a highly specialized breed of domesticated herbivore. Bred selectively over generations for maximum fleece production, it sacrifices muscle mass, speed, and vitality to support its luxuriant wool growth, becoming completely docile in the process.</description>
+		<feratypeFamily>Ovis</feratypeFamily>
+		<label>merino sheep</label>
+		<race>VRE_MerinoSheep</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Merino</iconPath>
+		<animalGenes>
+			<li>VRE_PoorVitality</li>
+			<li>VRE_Slow</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_Docile</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_Skeletal</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_LuxuriantWool</li>	
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
 	
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_DorperSheep</defName>
+		<description>The dorper sheep is a heavy-set hair sheep specialized for maximum meat yield. Its dense muscle mass requires a rapid metabolism to sustain, and its bulky frame makes it slightly slower than a baseline sheep. It does not produce wool.</description>
+		<feratypeFamily>Ovis</feratypeFamily>
+		<label>dorper sheep</label>
+		<race>VRE_DorperSheep</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Dorper</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_Slow</li>
+			<li>VRE_Large</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_VeryFastMetabolism</li>
+			<li>VRE_Hulking</li>
+			<li>VRE_AverageIntelligence</li>
+		
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_DairySheep</defName>
+		<description>The dairy sheep is a large domestic herbivore optimized for milk production. While it provides an abundant supply of milk and a standard yield of wool, its specialized breeding has compromised its vitality, leaving it somewhat frail and requiring a steady diet to fuel its fast metabolism.</description>
+		<feratypeFamily>Ovis</feratypeFamily>
+		<label>dairy sheep</label>
+		<race>VRE_DairySheep</race>
+		<iconPath>UI/FeratypeIcons/Feratype_DairySheep</iconPath>
+		<animalGenes>
+			<li>VRE_PoorVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_Large</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_FastMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageWool</li>	
+			<li>VRE_AbundantMilk</li>
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
+	
+	<VanillaRanchingExpanded.FeratypeDef>
+		<defName>VRE_ShaggySheep</defName>
+		<description>A large, bulky species of sheep with a dirt-gathering dreadlocked fleece. It sacrifices speed and cleanliness to yield a sparse but highly durable rough wool and abundant meat.</description>
+		<feratypeFamily>Ovis</feratypeFamily>
+		<label>shaggy sheep</label>
+		<race>VRE_ShaggySheep</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Shaggy</iconPath>
+		<animalGenes>
+			<li>VRE_GoodVitality</li>
+			<li>VRE_Slow</li>
+			<li>VRE_Large</li>
+			<li>VRE_Filthy</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_Bulky</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_SparseWool</li>	
+		</animalGenes>
+	</VanillaRanchingExpanded.FeratypeDef>
 	
 </Defs>

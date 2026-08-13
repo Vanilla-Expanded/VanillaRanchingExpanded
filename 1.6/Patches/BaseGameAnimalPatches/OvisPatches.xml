@@ -20,7 +20,11 @@
 		<xpath>Defs/ThingDef[defName="Sheep"]/race</xpath>
 		<value>
 			<canCrossBreedWith>
-				
+				<li>VRE_MerinoSheep</li>
+				<li>VRE_DorperSheep</li>
+				<li>VRE_DairySheep</li>
+				<li>VRE_ShaggySheep</li>
+				<li MayRequire="sarg.alphaanimals">AA_DevilSheep</li>
 			</canCrossBreedWith>
 		</value>
 	</Operation>
@@ -58,19 +62,19 @@
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/PawnKindDef[defName="Pig"]/lifeStages/li[2]/femaleGraphicData/texPath</xpath>
+		<xpath>Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[2]/femaleGraphicData/texPath</xpath>
 		<value>
 			<texPath>Pawn/Sheep/Sheep/Sheep</texPath>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/PawnKindDef[defName="Pig"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<xpath>Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
 		<value>
 			<texPath>Pawn/Sheep/Sheep/Ram</texPath>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/PawnKindDef[defName="Pig"]/lifeStages/li[3]/femaleGraphicData/texPath</xpath>
+		<xpath>Defs/PawnKindDef[defName="Sheep"]/lifeStages/li[3]/femaleGraphicData/texPath</xpath>
 		<value>
 			<texPath>Pawn/Sheep/Sheep/Sheep</texPath>
 		</value>
