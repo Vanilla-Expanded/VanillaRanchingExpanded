@@ -12,5 +12,9 @@
 		<defName>VRE_Ovines</defName>
 		<label>sheep</label>
 	</VanillaRanchingExpanded.FeratypeFamilyDef>
+	<VanillaRanchingExpanded.FeratypeFamilyDef>
+		<defName>VRE_Boomalope</defName>
+		<label>boomalope</label>
+	</VanillaRanchingExpanded.FeratypeFamilyDef>
 	
 </Defs>
