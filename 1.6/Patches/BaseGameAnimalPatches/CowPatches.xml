@@ -38,6 +38,22 @@
 			</canCrossBreedWith>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="Cow"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>Defs/ThingDef[defName="Cow"]</xpath>
 		<value>
@@ -146,6 +162,22 @@
 			</canCrossBreedWith>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="Muffalo"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>Defs/ThingDef[defName="Muffalo"]</xpath>
 		<value>
@@ -256,6 +288,22 @@
 			</canCrossBreedWith>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="Bison"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>Defs/ThingDef[defName="Bison"]</xpath>
 		<value>
@@ -367,6 +415,22 @@
 			</canCrossBreedWith>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="Yak"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>Defs/ThingDef[defName="Yak"]</xpath>
 		<value>
@@ -432,5 +496,88 @@
 			<texPath>Pawn/Cows/Yak/YakCow</texPath>
 		</value>
 	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VRE_CowAngus"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VRE_CowDairy"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VRE_CowJersey"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VRE_CowWooly"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VRE_CowZebu"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
+	
+	
 </Patch>
 

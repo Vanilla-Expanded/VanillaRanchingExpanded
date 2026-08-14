@@ -38,6 +38,22 @@
 			</canCrossBreedWith>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Animals Expanded</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+            <nomatch Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="VAEWaste_Wasteffalo"]/race/canCrossBreedWith</xpath>
+                <value>
+                    <li>AEXP_Muskox</li>
+                </value>
+            </nomatch>
+        </match>
+    </Operation>
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>Defs/ThingDef[defName="VAEWaste_Wasteffalo"]</xpath>
 		<value>
