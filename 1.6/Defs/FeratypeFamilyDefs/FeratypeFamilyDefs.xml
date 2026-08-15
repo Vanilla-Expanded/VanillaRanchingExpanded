@@ -2,19 +2,23 @@
 <Defs>
 	<VanillaRanchingExpanded.FeratypeFamilyDef>
 		<defName>VRE_Bovines</defName>
-		<label>cows</label>		
+		<label>cows</label>	
+		<description>Descended from the great bovines of Old Earth, this family encompasses hardy grazing animals bred for meat, milk, labor, and other useful traits.</description>		
 	</VanillaRanchingExpanded.FeratypeFamilyDef>
 	<VanillaRanchingExpanded.FeratypeFamilyDef>
 		<defName>VRE_Suines</defName>
 		<label>pigs</label>
+		<description>Versatile omnivores prized for their rapid growth and efficient conversion of food into meat, with numerous breeds adapted to different forms of husbandry.</description>
 	</VanillaRanchingExpanded.FeratypeFamilyDef>
 	<VanillaRanchingExpanded.FeratypeFamilyDef>
 		<defName>VRE_Ovines</defName>
 		<label>sheep</label>
+		<description>Herding animals traditionally valued for their fiber and meat, selectively bred into breeds ranging from hardy pasture grazers to specialized producers.</description>
 	</VanillaRanchingExpanded.FeratypeFamilyDef>
 	<VanillaRanchingExpanded.FeratypeFamilyDef>
 		<defName>VRE_Boomalope</defName>
 		<label>boomalope</label>
+		<description>Strange, fire-prone livestock descended from engineered animals, selectively bred for their volatile biology and unusual adaptations.</description>
 	</VanillaRanchingExpanded.FeratypeFamilyDef>
 	
 </Defs>

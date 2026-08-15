@@ -27,8 +27,11 @@ namespace VanillaRanchingExpanded
         public static StatDef VRE_WoolYieldFactor;
         public static StatDef VRE_WoolIntervalFactor;
         public static StatDef VRE_AdditionalButcherProductsFactor;
+        public static StatDef VRE_EggIntervalFactor;
+        public static StatDef VRE_EggYieldOffset;
 
         public static HediffDef VRE_Stillborn;
+
         public static MentalStateDef VRE_AnimalTantrum;
         public static MentalStateDef VRE_AlphaFighting;
     }

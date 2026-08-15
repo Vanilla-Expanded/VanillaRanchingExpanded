@@ -73,6 +73,11 @@ namespace VanillaRanchingExpanded
             }
         }
 
+        public void ResetCaches()
+        {
+             cachedLifespanFactor = -1;
+        }
+
         public override void PostExposeData()
         {
             base.PostExposeData();

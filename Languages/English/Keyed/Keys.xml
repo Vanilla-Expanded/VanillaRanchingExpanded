@@ -15,13 +15,9 @@
 	<VRE_StabilityDesc>Stability represents the complexity of an animal's genetic code and affecting predictability of gene inheritance.\n\nHigh stability ensures offspring typically inherit the average of their parents' genes, whereas low stability increases the likelihood that offspring will deviate from parental traits towards the natural median.</VRE_StabilityDesc>
 	<VRE_Days>days</VRE_Days>
 	<VRE_LifespanFactor>Lifespan</VRE_LifespanFactor>
-	<VRE_LifespanFactorDesc>Lifespan factor of this animal according to its genetic stability</VRE_LifespanFactorDesc>
-	<VRE_MilkYieldFactorDetails>Base milk production for this animal is {0} milk. Adjusted by its milk yield factor this will result in {1} milk instead. </VRE_MilkYieldFactorDetails>
-	<VRE_MilkIntervalOffsetDetails>Base milking interval for this animal is {0} days. Adjusted by its milk interval offset this will result in {1} days instead. This value is capped at a minimum of 1 day.</VRE_MilkIntervalOffsetDetails>
-	<VRE_WoolYieldFactorDetails>Base wool production for this animal is {0} {1}. Adjusted by its wool yield factor this will result in {2} {1} instead.</VRE_WoolYieldFactorDetails>
-	<VRE_WoolIntervalFactorDetails>Base shearing interval for this animal is {0} days. Adjusted by its wool interval factor this will result in {1} days instead. This value is capped at a minimum of 1 day.</VRE_WoolIntervalFactorDetails>
-	<VRE_FeratypeFamily>Feratype family</VRE_FeratypeFamily>
-	<VRE_FeratypeFamilyDesc>The feratype family this feratype belongs to.</VRE_FeratypeFamilyDesc>
+	<VRE_LifespanFactorDesc>Lifespan factor of this animal according to its genetic stability</VRE_LifespanFactorDesc>	
+	<VRE_FeratypeFamily>feratype family</VRE_FeratypeFamily>
+	<VRE_FeratypeFamilyDesc>This feratype belongs to the {0} feratype family:\n\n{1}</VRE_FeratypeFamilyDesc>
 	<VRE_AllowedPartners>Allowed partners</VRE_AllowedPartners>
 	<VRE_AllowedPartnersDesc>A list of all feratypes belonging to the {0} feratype family that this animal can make offspring with.</VRE_AllowedPartnersDesc>
 	<VRE_NotPregnant>This animal is not pregnant</VRE_NotPregnant>
@@ -33,4 +29,13 @@
 	<VRE_SpecializedGeneDesc>This gene is only inherited by offspring whose feratype contains a gene from this family.</VRE_SpecializedGeneDesc>
 	<VRE_ToolGene>Animal gene in this gene tool: "{0}"</VRE_ToolGene>
 	<VRE_CantApply>Can't apply animal gene "{0}" to {1}</VRE_CantApply>
+	
+	<!-- Stats -->
+	
+	<VRE_MilkYieldFactorDetails>Base milk production for this animal is {0} milk. Adjusted by its milk yield factor this will result in {1} milk instead. </VRE_MilkYieldFactorDetails>
+	<VRE_MilkIntervalOffsetDetails>Base milking interval for this animal is {0} days. Adjusted by its milk interval offset this will result in {1} days instead. This value is capped at a minimum of 1 day.</VRE_MilkIntervalOffsetDetails>
+	<VRE_WoolYieldFactorDetails>Base wool production for this animal is {0} {1}. Adjusted by its wool yield factor this will result in {2} {1} instead.</VRE_WoolYieldFactorDetails>
+	<VRE_WoolIntervalFactorDetails>Base shearing interval for this animal is {0} days. Adjusted by its wool interval factor this will result in {1} days instead. This value is capped at a minimum of 1 day.</VRE_WoolIntervalFactorDetails>
+	<VRE_EggIntervalFactorDetails>Egg laying interval for this animal is {0} days. Adjusted by its egg interval factor this will result in {1} days instead.</VRE_EggIntervalFactorDetails>
+	<VRE_EggYieldOffsetDetails>Base egg yield for this animal is {0}-{1} eggs. Adjusted by its egg yield offset this will result in {2}-{3} eggs instead. This value is capped at a minimum of 1 eggs.</VRE_EggYieldOffsetDetails>
 </LanguageData>

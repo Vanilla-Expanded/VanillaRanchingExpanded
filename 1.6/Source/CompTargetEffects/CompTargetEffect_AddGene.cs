@@ -26,12 +26,8 @@ namespace VanillaRanchingExpanded
                     AnimalGeneDef gene = kit.animalGene;
                    
                     CompAnimalGenes comp = target.TryGetComp<CompAnimalGenes>();
-                    if (comp != null) { 
-                        if(comp.genes.ContainsAny(x=>x.familyTag == gene.familyTag))
-                        {
-                            AnimalGeneUtility.RemoveGene(comp, comp.genes.Where(x => x.familyTag == gene.familyTag).First());
-                        }
-                        AnimalGeneUtility.AddGene(comp, gene);
+                    if (comp != null) {
+                        AnimalGeneUtility.AddGeneRespectingFamily(comp, gene);
                     }
                     else
                     {

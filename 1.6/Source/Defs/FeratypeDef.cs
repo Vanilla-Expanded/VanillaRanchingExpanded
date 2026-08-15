@@ -89,7 +89,7 @@ namespace VanillaRanchingExpanded
                 yield return item;
             }
             yield return new StatDrawEntry(StatCategoryDefOf.Basics, "VRE_AnimalGenes".Translate(), animalGenes.Select((AnimalGeneDef x) => x.label).ToCommaList().CapitalizeFirst(), "VRE_AnimalGenesFeratypeDesc".Translate() + "\n\n" + animalGenes.Select((AnimalGeneDef x) => x.label).ToLineList("  - ", capitalizeItems: true), 1000);
-            yield return new StatDrawEntry(StatCategoryDefOf.Basics, "VRE_FeratypeFamily".Translate(), feratypeFamily.LabelCap, "VRE_FeratypeFamilyDesc".Translate(), 999);
+            yield return new StatDrawEntry(StatCategoryDefOf.Basics, "VRE_FeratypeFamily".Translate(), feratypeFamily.LabelCap, "VRE_FeratypeFamilyDesc".Translate(feratypeFamily.label, feratypeFamily.description), 999);
             yield return new StatDrawEntry(StatCategoryDefOf.Basics, "VRE_AllowedPartners".Translate(), allFeraTypes.Select(x => x.label).ToCommaList().CapitalizeFirst(), "VRE_AllowedPartnersDesc".Translate(feratypeFamily.label) + "\n\n" + allFeraTypes.Select(x => x.label).ToLineList("  - ", capitalizeItems: true), 998);
 
         }
