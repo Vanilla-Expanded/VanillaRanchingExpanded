@@ -117,10 +117,10 @@ namespace VanillaRanchingExpanded
             else
                 amountOfMutations = 0;
             //For debug testing
-            // amountOfMutations = 1;
+            // amountOfMutations = 5;
             if (amountOfMutations > 0)
             {
-                List<AnimalGeneDef> mutatedGenes = comp.genes.Where(x => !x.singleRankGene).ToList().TakeRandom(amountOfMutations).ToList();
+                List<AnimalGeneDef> mutatedGenes = comp.genes.Where(x => !x.singleRankGene).ToList().InRandomOrder().Take(amountOfMutations).ToList();
                 foreach (AnimalGeneDef mutatedGene in mutatedGenes)
                 {
                     bool goingUpOrDown = Rand.Chance(0.5f);

@@ -43,6 +43,7 @@
 				<li MayRequire="sarg.alphaanimals">AA_Radyak</li>
 				<li MayRequire="sarg.alphaanimals">AA_Thunderox</li>	
 				<li MayRequire="sarg.alphaanimals">AA_ChameleonYak</li>
+				<li MayRequire="sarg.alphaanimals">AA_ShadowCharger</li>
 				<li MayRequire="VanillaExpanded.VAEWaste">VAEWaste_Wasteffalo</li>				
 			</canCrossBreedWith>
 			<lifeStageAges>
