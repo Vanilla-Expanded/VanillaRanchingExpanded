@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalVitality</defName>
 		<label>animal vitality</label>
 		<order>1</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalSpeed</defName>
 		<label>animal speed</label>
 		<order>2</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalSize</defName>
 		<label>animal size</label>
 		<order>3</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalFilth</defName>
 		<label>animal filth</label>
 		<order>4</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalWildness</defName>
 		<label>animal wildness</label>
 		<order>5</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalHungerRate</defName>
 		<label>animal hunger rate</label>
 		<order>6</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalMeatYield</defName>
 		<label>animal meat yield</label>
 		<order>7</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalIntelligence</defName>
 		<label>animal intelligence</label>
 		<order>8</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalMilkYield</defName>
 		<label>animal milk yield</label>
 		<order>9</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalWoolYield</defName>
 		<label>animal wool yield</label>
 		<order>10</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalProductsYield</defName>
 		<label>animal products yield</label>
 		<order>11</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalLitterSize</defName>
 		<label>animal litter size</label>
 		<order>12</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
-	<VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 		<defName>VRE_AnimalBaconYield</defName>
 		<label>bacon yield</label>
 		<order>13</order>
-	</VanillaRanchingExpanded.AnimalGeneFamilyTagDef>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 </Defs>

@@ -3,7 +3,7 @@
 
 	<!-- Vitality genes -->
 
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_PerfectVitality</defName>
 		<description>Carrier of this gene gains unparalleled physical resilience, allowing for rapid recovery from wounds and infections. They possess a robust constitution that renders them impervious to environmental hazards and toxins, while significantly bolstering their overall durability.</description>
 		<label>perfect vitality</label>
@@ -21,8 +21,8 @@
 			<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
 		</statOffsets>
 		<familyTag>VRE_AnimalVitality</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_GoodVitality</defName>
 		<description>Carrier of this gene gains physical resilience, which accelerates wound recovery and immunity gain speed, while also improving the animal's overall durability.</description>
 		<label>good vitality</label>
@@ -34,16 +34,16 @@
 			<VRE_HealthFromGenesScale>1.25</VRE_HealthFromGenesScale>
 		</statFactors>
 		<familyTag>VRE_AnimalVitality</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageVitality</defName>
 		<description>Carrier of this gene represents a baseline state of vitality and provides no bonuses or penalties.</description>
 		<label>average vitality</label>
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Vitality</iconPath>
 		<familyTag>VRE_AnimalVitality</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_PoorVitality</defName>
 		<description>Carrier of this gene exhibits reduced physical constitution, resulting in slower wound recovery and a weakened immune system.</description>
 		<label>poor vitality</label>
@@ -55,8 +55,8 @@
 			<VRE_HealthFromGenesScale>0.9</VRE_HealthFromGenesScale>
 		</statFactors>
 		<familyTag>VRE_AnimalVitality</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_HorribleVitality</defName>
 		<description>Carrier of this gene possesses a fragile constitution, making them highly susceptible to injury and infection, with significantly diminished physical resilience.</description>
 		<label>horrible vitality</label>
@@ -70,11 +70,11 @@
 			<MarketValue>0.9</MarketValue>
 		</statFactors>
 		<familyTag>VRE_AnimalVitality</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Speed genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_VeryFast</defName>
 		<description>Carrier of this gene moves with incredible speed, allowing them to traverse local area rapidly and keep fast pace with caravans.</description>
 		<label>very fast</label>
@@ -87,8 +87,8 @@
 			<MarketValue>1.2</MarketValue>
 		</statFactors>
 		<familyTag>VRE_AnimalSpeed</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Fast</defName>
 		<description>Carrier of this gene moves with above-average speed, allowing them to traverse the local area more efficiently and keep pace with caravans.</description>
 		<label>fast</label>
@@ -99,16 +99,16 @@
 			<CaravanRidingSpeedFactor>1.1</CaravanRidingSpeedFactor>			
 		</statFactors>
 		<familyTag>VRE_AnimalSpeed</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageSpeed</defName>
 		<description>Carrier of this gene exhibits a standard movement pace, providing no bonuses or penalties.</description>
 		<label>average speed</label>
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Speed</iconPath>		
 		<familyTag>VRE_AnimalSpeed</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Slow</defName>
 		<description>Carrier of this gene exhibits a sluggish movement pace, resulting in slower travel across the local area and caravans.</description>
 		<label>slow</label>
@@ -119,8 +119,8 @@
 			<CaravanRidingSpeedFactor>0.9</CaravanRidingSpeedFactor>			
 		</statFactors>
 		<familyTag>VRE_AnimalSpeed</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_VerySlow</defName>
 		<description>Carrier of this gene moves with extreme lethargy, significantly hindering their ability to travel and keep up with caravans.</description>
 		<label>very slow</label>
@@ -133,11 +133,11 @@
 			<MarketValue>0.9</MarketValue>
 		</statFactors>
 		<familyTag>VRE_AnimalSpeed</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Size genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Huge</defName>
 		<description>Carrier of this gene possesses a massive frame, significantly increasing their physical presence and body mass.</description>
 		<label>huge</label>
@@ -149,8 +149,8 @@
 			<MarketValue>1.2</MarketValue>
 		</statFactors>
 		<familyTag>VRE_AnimalSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Large</defName>
 		<description>Carrier of this gene possesses an above-average frame, increasing their physical stature and presence.</description>
 		<label>large</label>
@@ -160,16 +160,16 @@
 			<VEF_BodySize_Multiplier>1.15</VEF_BodySize_Multiplier>			
 		</statFactors>
 		<familyTag>VRE_AnimalSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageSize</defName>
 		<description>Carrier of this gene represents a baseline physical size and provides no bonuses or penalties.</description>
 		<label>average size</label>
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Size</iconPath>		
 		<familyTag>VRE_AnimalSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Small</defName>
 		<description>Carrier of this gene is noticeably smaller than average, resulting in a reduced physical stature.</description>
 		<label>small</label>
@@ -179,8 +179,8 @@
 			<VEF_BodySize_Multiplier>0.8</VEF_BodySize_Multiplier>		
 		</statFactors>
 		<familyTag>VRE_AnimalSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Tiny</defName>
 		<description>Carrier of this gene possesses a diminutive frame, significantly decreasing their physical size and presence.</description>
 		<label>tiny</label>
@@ -192,11 +192,11 @@
 			<MarketValue>0.9</MarketValue>
 		</statFactors>
 		<familyTag>VRE_AnimalSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Filth genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Clean</defName>
 		<description>Carrier of this gene is exceptionally hygienic, generating almost no filth and exhibiting a high resistance to common animal illnesses.</description>
 		<label>clean</label>
@@ -209,8 +209,8 @@
 			<MarketValue>1.2</MarketValue>
 		</statFactors>
 		<familyTag>VRE_AnimalFilth</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Tidy</defName>
 		<description>Carrier of this gene is well-groomed and clean, resulting in reduced filth generation and improved resistance to illness.</description>
 		<label>tidy</label>
@@ -221,8 +221,8 @@
 			<FilthRate>0.5</FilthRate>					
 		</statFactors>
 		<familyTag>VRE_AnimalFilth</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageCleanliness</defName>
 		<description>Carrier of this gene maintains a baseline level of hygiene, providing no bonuses or penalties.</description>
 		<label>average cleanliness</label>
@@ -230,8 +230,8 @@
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>		
 		
 		<familyTag>VRE_AnimalFilth</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Filthy</defName>
 		<description>Carrier of this gene is prone to creating messes, increasing the rate of filth generation and slightly increasing susceptibility to disease.</description>
 		<label>filthy</label>
@@ -242,8 +242,8 @@
 			<FilthRate>1.5</FilthRate>					
 		</statFactors>
 		<familyTag>VRE_AnimalFilth</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_VeryFilthy</defName>
 		<description>Carrier of this gene produces excessive amounts of filth, significantly increasing the mess in their environment and making them highly prone to illness.</description>
 		<label>very filthy</label>
@@ -256,11 +256,11 @@
 			<MarketValue>0.9</MarketValue>
 		</statFactors>
 		<familyTag>VRE_AnimalFilth</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Wildness genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Docile</defName>
 		<description>Carrier of this gene is remarkably calm and obedient, reducing wildness significantly and virtually eliminating the chance of manhunting behavior.</description>
 		<label>docile</label>
@@ -276,8 +276,8 @@
 			<Wildness>-0.8</Wildness>
 		</statOffsets>
 		<familyTag>VRE_AnimalWildness</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Compliant</defName>
 		<description>Carrier of this gene is easy to manage, lowering wildness levels and significantly reducing the likelihood of aggressive outbursts.</description>
 		<label>compliant</label>
@@ -291,16 +291,16 @@
 			<Wildness>-0.3</Wildness>
 		</statOffsets>
 		<familyTag>VRE_AnimalWildness</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageWildness</defName>
 		<description>Carrier of this gene exhibits standard behavioral tendencies, providing no bonuses or penalties.</description>
 		<label>average wildness</label>
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Wildness</iconPath>				
 		<familyTag>VRE_AnimalWildness</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Unruly</defName>
 		<description>Carrier of this gene is difficult to handle, showing increased wildness and a higher susceptibility to aggressive behavior.</description>
 		<label>unruly</label>
@@ -312,8 +312,8 @@
 			<VRE_ManhunterOnTameFailOffset>0.05</VRE_ManhunterOnTameFailOffset>		
 		</statOffsets>
 		<familyTag>VRE_AnimalWildness</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Wild</defName>
 		<description>Carrier of this gene is feral and untamable, exhibiting high wildness and a strong tendency to turn manhunter when stressed.</description>
 		<label>wild</label>
@@ -332,11 +332,11 @@
 		</statOffsets>
 		<hediffToAdd>VRE_Wild</hediffToAdd>
 		<familyTag>VRE_AnimalWildness</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Hunger genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_VerySlowMetabolism</defName>
 		<description>Carrier of this gene has a highly efficient metabolism, drastically reducing the frequency of hunger while optimizing nutrient intake.</description>
 		<label>very slow metabolism</label>
@@ -351,8 +351,8 @@
 		</statFactors>
 		<hediffToAdd>VRE_VerySlowMetabolism</hediffToAdd>
 		<familyTag>VRE_AnimalHungerRate</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_SlowMetabolism</defName>
 		<description>Carrier of this gene has an efficient metabolism, reducing the amount of food required and allowing for slower, more deliberate eating.</description>
 		<label>slow metabolism</label>
@@ -364,16 +364,16 @@
 		</statFactors>
 		<hediffToAdd>VRE_SlowMetabolism</hediffToAdd>
 		<familyTag>VRE_AnimalHungerRate</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageMetabolism</defName>
 		<description>Carrier of this gene has a standard metabolic rate, providing no bonuses or penalties.</description>
 		<label>average metabolism</label>
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_HungerRate</iconPath>	
 		<familyTag>VRE_AnimalHungerRate</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_FastMetabolism</defName>
 		<description>Carrier of this gene has an accelerated metabolism, requiring more frequent feeding to maintain energy levels.</description>
 		<label>fast metabolism</label>
@@ -385,8 +385,8 @@
 		</statFactors>
 		<hediffToAdd>VRE_FastMetabolism</hediffToAdd>
 		<familyTag>VRE_AnimalHungerRate</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_VeryFastMetabolism</defName>
 		<description>Carrier of this gene has a ravenous metabolism, needing near-constant food intake to survive, though they process nutrition less efficiently.</description>
 		<label>very fast metabolism</label>
@@ -401,11 +401,11 @@
 		</statFactors>
 		<hediffToAdd>VRE_VeryFastMetabolism</hediffToAdd>
 		<familyTag>VRE_AnimalHungerRate</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Meat yield genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Hulking</defName>
 		<description>Carrier of this gene possesses a massive amount of muscle mass, significantly increasing the total meat yield upon butchering.</description>
 		<label>hulking</label>
@@ -417,8 +417,8 @@
 			<MarketValue>1.2</MarketValue>
 		</statFactors>	
 		<familyTag>VRE_AnimalMeatYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Bulky</defName>
 		<description>Carrier of this gene has increased muscle density, resulting in a higher meat yield.</description>
 		<label>bulky</label>
@@ -428,16 +428,16 @@
 			<MeatAmount>1.15</MeatAmount>					
 		</statFactors>	
 		<familyTag>VRE_AnimalMeatYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageBuild</defName>
 		<description>Carrier of this gene represents a standard build, providing no bonuses or penalties to meat yield.</description>
 		<label>average build</label>
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_MeatYield</iconPath>		
 		<familyTag>VRE_AnimalMeatYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Lean</defName>
 		<description>Carrier of this gene has a slender build, resulting in a reduced meat yield.</description>
 		<label>lean</label>
@@ -447,8 +447,8 @@
 			<MeatAmount>0.7</MeatAmount>					
 		</statFactors>	
 		<familyTag>VRE_AnimalMeatYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_Skeletal</defName>
 		<description>Carrier of this gene has minimal muscle and body mass, resulting in very low meat yields upon butchering.</description>
 		<label>skeletal</label>
@@ -460,11 +460,11 @@
 			<MarketValue>0.9</MarketValue>
 		</statFactors>	
 		<familyTag>VRE_AnimalMeatYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Intelligence genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AdvancedIntelligence</defName>
 		<description>Carrier of this gene possesses an advanced intellect, enabling the learning of complex tasks and advanced trainability.</description>
 		<label>advanced intelligence</label>
@@ -477,8 +477,8 @@
 		</statFactors>	
 		<trainabilityDef>Advanced</trainabilityDef>
 		<familyTag>VRE_AnimalIntelligence</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_IntermediateIntelligence</defName>
 		<description>Carrier of this gene possesses a basic level of intellect, allowing for intermediate training and command recognition.</description>
 		<label>intermediate intelligence</label>
@@ -489,8 +489,8 @@
 			<VRE_RoamMTBFactor>4</VRE_RoamMTBFactor>
 		</statFactors>	
 		<familyTag>VRE_AnimalIntelligence</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageIntelligence</defName>
 		<description>Carrier of this gene exhibits standard animal intelligence, offering no special trainability.</description>
 		<label>average intelligence</label>
@@ -498,8 +498,8 @@
 		<iconPath>UI/AnimalGenes/AnimalGene_Intelligence</iconPath>		
 		<trainabilityDef>None</trainabilityDef>
 		<familyTag>VRE_AnimalIntelligence</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_ObliviousIntelligence</defName>
 		<description>Carrier of this gene is somewhat slower to process their surroundings, resulting in increased idle wandering.</description>
 		<label>oblivious intelligence</label>
@@ -510,8 +510,8 @@
 		</statFactors>
 		<trainabilityDef>None</trainabilityDef>
 		<familyTag>VRE_AnimalIntelligence</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_MindlessIntelligence</defName>
 		<description>Carrier of this gene is almost entirely driven by instinct, showing little awareness of their environment and frequently wandering aimlessly.</description>
 		<label>mindless intelligence</label>
@@ -524,11 +524,11 @@
 		</statFactors>	
 		<trainabilityDef>None</trainabilityDef>
 		<familyTag>VRE_AnimalIntelligence</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Milk yield genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_BountifulMilk</defName>
 		<description>Carrier of this gene produces vast quantities of milk, significantly increasing the resource yield per milking session while optimizing production intervals.</description>
 		<label>bountiful milk</label>
@@ -541,8 +541,8 @@
 			<VRE_MilkYieldFactor>1.4</VRE_MilkYieldFactor>			
 		</statFactors>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AbundantMilk</defName>
 		<description>Carrier of this gene produces a high amount of milk, improving the yield per milking session.</description>
 		<label>abundant milk</label>
@@ -553,8 +553,8 @@
 			<VRE_MilkYieldFactor>1.15</VRE_MilkYieldFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageMilk</defName>
 		<description>Carrier of this gene produces a standard amount of milk, providing no bonuses or penalties.</description>
 		<label>average milk yield</label>
@@ -562,8 +562,8 @@
 		<isSpecialized>true</isSpecialized>
 		<iconPath>UI/AnimalGenes/AnimalGene_MilkYield</iconPath>				
 		<familyTag>VRE_AnimalMilkYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_MeagerMilk</defName>
 		<description>Carrier of this gene produces a reduced amount of milk per milking session.</description>
 		<label>meager milk</label>
@@ -577,8 +577,8 @@
 			<VRE_MilkIntervalOffset>1</VRE_MilkIntervalOffset>
 		</statOffsets>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_DryMilk</defName>
 		<description>Carrier of this gene produces very little milk, with significantly diminished yields per milking session.</description>
 		<label>dry milk</label>
@@ -594,11 +594,11 @@
 			<VRE_MilkIntervalOffset>2</VRE_MilkIntervalOffset>
 		</statOffsets>		
 		<familyTag>VRE_AnimalMilkYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Wool yield genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_LuxuriantWool</defName>
 		<description>Carrier of this gene grows an incredibly thick and dense coat, dramatically increasing wool yield while allowing for more frequent shearing sessions.</description>
 		<label>luxuriant wool</label>
@@ -612,8 +612,8 @@
 			<VRE_WoolIntervalFactor>0.8</VRE_WoolIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalWoolYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_ThickWool</defName>
 		<description>Carrier of this gene grows a dense coat, improving the total wool yield per shearing session.</description>
 		<label>thick wool</label>
@@ -625,8 +625,8 @@
 			<VRE_WoolIntervalFactor>0.9</VRE_WoolIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalWoolYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageWool</defName>
 		<description>Carrier of this gene produces a standard amount of wool, providing no bonuses or penalties.</description>
 		<label>average wool yield</label>
@@ -634,8 +634,8 @@
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_WoolYield</iconPath>		
 		<familyTag>VRE_AnimalWoolYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_SparseWool</defName>
 		<description>Carrier of this gene produces a reduced amount of wool per shearing session.</description>
 		<label>sparse wool</label>
@@ -647,8 +647,8 @@
 			<VRE_WoolIntervalFactor>1.25</VRE_WoolIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalWoolYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_BareWool</defName>
 		<description>Carrier of this gene produces very little wool, with significantly diminished yields per shearing session.</description>
 		<label>bare wool</label>
@@ -662,12 +662,12 @@
 			<VRE_WoolIntervalFactor>1.5</VRE_WoolIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalWoolYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	
 	<!-- Animal products genes -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AnimalProductsYield_VeryHigh</defName>
 		<description>Carrier of this gene produces exceptionally abundant animal products, dramatically increasing the amount produced while allowing for more frequent collection.</description>
 		<label>abundant animal products</label>
@@ -681,8 +681,8 @@
 			<VEF_AnimalProductIntervalFactor>0.8</VEF_AnimalProductIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalProductsYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AnimalProductsYield_High</defName>
 		<description>Carrier of this gene produces a high amount of animal products, improving the total yield from each collection.</description>
 		<label>high animal product yield</label>
@@ -694,8 +694,8 @@
 			<VEF_AnimalProductIntervalFactor>0.9</VEF_AnimalProductIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalProductsYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AnimalProductsYield_Average</defName>
 		<description>Carrier of this gene produces a standard amount of animal products, providing no bonuses or penalties.</description>
 		<label>average animal product yield</label>
@@ -703,8 +703,8 @@
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_AnimalProducts</iconPath>		
 		<familyTag>VRE_AnimalProductsYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AnimalProductsYield_Low</defName>
 		<description>Carrier of this gene produces a reduced amount of animal products, lowering the total yield from each collection.</description>
 		<label>low animal product yield</label>
@@ -716,8 +716,8 @@
 			<VEF_AnimalProductIntervalFactor>1.25</VEF_AnimalProductIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalProductsYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AnimalProductsYield_VeryLow</defName>
 		<description>Carrier of this gene produces very few animal products, with significantly diminished yields from each collection.</description>
 		<label>scarce animal products</label>
@@ -731,11 +731,11 @@
 			<VEF_AnimalProductIntervalFactor>1.5</VEF_AnimalProductIntervalFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalProductsYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Animal litter size -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_TeemingLitters</defName>
 		<description>Carrier of this gene produces vast numbers of offspring, significantly increasing the litter size per pregnancy.</description>
 		<label>teeming litters</label>
@@ -756,8 +756,8 @@
 			</points>
 		</litterSizeCurveOverride>
 		<familyTag>VRE_AnimalLitterSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_CopiousLitters</defName>
 		<description>Carrier of this gene produces a high number of offspring, improving the litter size per pregnancy.</description>
 		<label>copious litters</label>
@@ -774,8 +774,8 @@
 		</litterSizeCurveOverride>
 		<isSpecialized>true</isSpecialized>
 		<familyTag>VRE_AnimalLitterSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageLitters</defName>
 		<description>Carrier of this gene has an average litter size and produces the standard amount of babies.</description>
 		<label>average litters</label>
@@ -783,8 +783,8 @@
 		<isSpecialized>true</isSpecialized>
 		<iconPath>UI/AnimalGenes/AnimalGene_LitterSize</iconPath>		
 		<familyTag>VRE_AnimalLitterSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_ScantLitters</defName>
 		<description>Carrier of this gene is unlikely to produce more than one offspring.</description>
 		<label>scant litters</label>		
@@ -805,8 +805,8 @@
 		</litterSizeCurveOverride>
 		<extraDescriptions>Unlikely to produce more than one offspring.</extraDescriptions>
 		<familyTag>VRE_AnimalLitterSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_StuntedLitters</defName>
 		<description>Carrier of this gene cannot produce more than one offspring at a time, and has a notable chance for stillbirths.</description>
 		<label>stunted litters</label>	
@@ -824,11 +824,11 @@
 		<extraDescriptions>Impossible to give birth to more than one offspring.\n\nLikelihood of stillbirth.</extraDescriptions>
 		<stillbirthChance>0.35</stillbirthChance>
 		<familyTag>VRE_AnimalLitterSize</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 	
 	<!-- Bacon yield -->
 	
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_MaximumBaconYield</defName>
 		<description>Carrier of this gene develops massive layers of fat, producing a significantly increased amount of bacon when butchered.</description>
 		<label>maximum bacon yield</label>
@@ -844,8 +844,8 @@
 			<VRE_Bacon>20</VRE_Bacon>
 		</extraButcherProducts>
 		<familyTag>VRE_AnimalBaconYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_HighBaconYield</defName>
 		<description>Carrier of this gene develops thicker layers of fat, producing more bacon than average when butchered.</description>
 		<label>high bacon yield</label>
@@ -859,8 +859,8 @@
 		</statFactors>		
 		<isSpecialized>true</isSpecialized>
 		<familyTag>VRE_AnimalBaconYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_AverageBaconYield</defName>
 		<description>Carrier of this gene has an average, healthy layer of fat that provides an expected bacon yield upon butchering.</description>
 		<label>average bacon yield</label>
@@ -871,8 +871,8 @@
 		</extraButcherProducts>
 		<iconPath>UI/AnimalGenes/AnimalGene_BaconYield</iconPath>		
 		<familyTag>VRE_AnimalBaconYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_LowBaconYield</defName>
 		<description>Carrier of this gene has below-average fat reserves, producing slightly less bacon when butchered.</description>
 		<label>low bacon yield</label>
@@ -886,8 +886,8 @@
 			<VRE_Bacon>20</VRE_Bacon>
 		</extraButcherProducts>
 		<familyTag>VRE_AnimalBaconYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
-	<VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
 		<defName>VRE_MinimalBaconYield</defName>
 		<description>Carrier of this gene has extremely low fat reserves, producing almost no bacon when butchered.</description>
 		<label>minimal bacon yield</label>
@@ -903,5 +903,5 @@
 			<VRE_AdditionalButcherProductsFactor>0.2</VRE_AdditionalButcherProductsFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalBaconYield</familyTag>
-	</VanillaRanchingExpanded.AnimalGeneDef>
+	</VEF.AnimalGenes.AnimalGeneDef>
 </Defs>

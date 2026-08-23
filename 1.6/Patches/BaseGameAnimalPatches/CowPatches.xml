@@ -12,7 +12,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Cow"]/comps</xpath>
 		<value>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 		</value>
 	</Operation>
@@ -124,7 +124,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Muffalo"]/comps</xpath>
 		<value>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 		</value>
 	</Operation>
@@ -264,7 +264,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Bison"]/comps</xpath>
 		<value>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 		</value>
 	</Operation>
@@ -392,7 +392,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Yak"]/comps</xpath>
 		<value>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 		</value>
 	</Operation>

@@ -4,6 +4,7 @@ using Verse;
 using LudeonTK;
 using static UnityEngine.GraphicsBuffer;
 using System.Linq;
+using VEF.AnimalGenes;
 
 namespace VanillaRanchingExpanded
 {

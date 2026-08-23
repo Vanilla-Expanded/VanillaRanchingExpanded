@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VAEWaste_Wasteffalo</defName>
 		<description>The wastefallo is a massive, heavily mutated descendant of the muffalo. While its unstable genetic code grants it a huge frame and perfect immunity to toxic environments, it also renders the beast highly aggressive, difficult to tame, and incredibly filthy as it sheds irradiated dander.</description>
 		<feratypeFamily>VRE_Bovines</feratypeFamily>
@@ -16,8 +16,7 @@
 			<li>VRE_Wild</li>
 			<li>VRE_AverageMetabolism</li>
 			<li>VRE_AverageBuild</li>
-			<li>VRE_AverageIntelligence</li>
-			
+			<li>VRE_AverageIntelligence</li>		
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 </Defs>

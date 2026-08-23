@@ -3,6 +3,7 @@ using Verse;
 using Verse.AI;
 using System;
 using System.Linq;
+using VEF.AnimalGenes;
 
 namespace VanillaRanchingExpanded
 {

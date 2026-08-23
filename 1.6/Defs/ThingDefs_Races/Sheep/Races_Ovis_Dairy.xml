@@ -24,7 +24,7 @@
 				<milkIntervalDays>2</milkIntervalDays>
 				<milkAmount>10</milkAmount>
 			</li>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 		</comps>
 		<race>

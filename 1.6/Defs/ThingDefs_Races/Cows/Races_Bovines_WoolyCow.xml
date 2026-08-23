@@ -12,7 +12,7 @@
 			<Wildness>0</Wildness>
 		</statBases>
 		<comps>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 			<li Class="CompProperties_Shearable">
 				<woolDef>VRE_WoolCow</woolDef>

@@ -13,7 +13,7 @@
 			<Wildness>0.45</Wildness>
 		</statBases>
 		<comps>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 			<li Class="CompProperties_Milkable">
 				<milkDef>Milk</milkDef>

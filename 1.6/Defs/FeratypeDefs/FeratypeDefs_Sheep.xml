@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_Sheep</defName>
 		<description>The baseliner sheep is a relatively small domesticated herbivore, usually with yellowish wool and medium sized horns.</description>
 		<feratypeFamily>VRE_Ovines</feratypeFamily>
@@ -18,9 +18,9 @@
 			<li>VRE_AverageIntelligence</li>
 			<li>VRE_AverageWool</li>	
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_MerinoSheep</defName>
 		<description>The merino sheep is a highly specialized breed of domesticated herbivore. Bred selectively over generations for maximum fleece production, it sacrifices muscle mass, speed, and vitality to support its luxuriant wool growth, becoming completely docile in the process.</description>
 		<feratypeFamily>VRE_Ovines</feratypeFamily>
@@ -38,9 +38,9 @@
 			<li>VRE_AverageIntelligence</li>
 			<li>VRE_LuxuriantWool</li>	
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_DorperSheep</defName>
 		<description>The dorper sheep is a heavy-set hair sheep specialized for maximum meat yield. Its dense muscle mass requires a rapid metabolism to sustain, and its bulky frame makes it slightly slower than a baseline sheep. It does not produce wool.</description>
 		<feratypeFamily>VRE_Ovines</feratypeFamily>
@@ -58,9 +58,9 @@
 			<li>VRE_AverageIntelligence</li>
 		
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_DairySheep</defName>
 		<description>The dairy sheep is a large domestic herbivore optimized for milk production. While it provides an abundant supply of milk and a standard yield of wool, its specialized breeding has compromised its vitality, leaving it somewhat frail and requiring a steady diet to fuel its fast metabolism.</description>
 		<feratypeFamily>VRE_Ovines</feratypeFamily>
@@ -79,9 +79,9 @@
 			<li>VRE_AverageWool</li>	
 			<li>VRE_AbundantMilk</li>
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_ShaggySheep</defName>
 		<description>A large, bulky species of sheep with a dirt-gathering dreadlocked fleece. It sacrifices speed and cleanliness to yield a sparse but highly durable rough wool and abundant meat.</description>
 		<feratypeFamily>VRE_Ovines</feratypeFamily>
@@ -99,6 +99,6 @@
 			<li>VRE_AverageIntelligence</li>
 			<li>VRE_SparseWool</li>	
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
 </Defs>

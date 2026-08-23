@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_Muskox</defName>
 		<description>A shaggy, cold-hardy mammal prized for its thick, protective wool and resilient nature in freezing environments.</description>
 		<feratypeFamily>VRE_Bovines</feratypeFamily>
@@ -19,5 +19,5 @@
 			<li>VRE_AverageIntelligence</li>
 			<li>VRE_LuxuriantWool</li>
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 </Defs>

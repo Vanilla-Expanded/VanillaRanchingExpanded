@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_Pig</defName>
 		<description>The baseliner pig is a sturdy, omnivorous farm animal known for its adaptability and efficiency as a meat source.</description>
 		<feratypeFamily>VRE_Suines</feratypeFamily>
@@ -19,9 +19,9 @@
 			<li>VRE_AverageLitters</li>
 			<li>VRE_AverageBaconYield</li>
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_WildPig</defName>
 		<description>The wild boar is a fast, highly feral ancestor of the domestic pig. Adapted for survival with a highly efficient metabolism and perfect vitality, it is an incredibly tough animal.</description>
 		<feratypeFamily>VRE_Suines</feratypeFamily>
@@ -40,9 +40,9 @@
 			<li>VRE_ScantLitters</li>
 			<li>VRE_MinimalBaconYield</li>
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_IberianPig</defName>
 		<description>The Iberian pig is an excellent forager with a slightly untamed streak, requiring minimal upkeep at the cost of smaller litters.</description>
 		<feratypeFamily>VRE_Suines</feratypeFamily>
@@ -61,9 +61,9 @@
 			<li>VRE_ScantLitters</li>
 			<li>VRE_AverageBaconYield</li>
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_DurocPig</defName>
 		<description>The Duroc is an agricultural heavyweight. Bred for resilience and rapid muscle growth, this pig eats voraciously to support its large frame and excellent meat yield, though it generates more filth than average.</description>
 		<feratypeFamily>VRE_Suines</feratypeFamily>
@@ -82,9 +82,9 @@
 			<li>VRE_AverageLitters</li>
 			<li>VRE_AverageBaconYield</li>
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
-	<VanillaRanchingExpanded.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_BerkshirePig</defName>
 		<description>The Berkshire is a luxury animal. It features a ravenous metabolism needed to build its signature fat marbling, resulting in an unmatched bacon yield. Kept as a prized heritage breed, it is remarkably clean and compliant, though it moves slowly and produces scant litters.</description>
 		<feratypeFamily>VRE_Suines</feratypeFamily>
@@ -103,6 +103,6 @@
 			<li>VRE_ScantLitters</li>
 			<li>VRE_MaximumBaconYield</li>
 		</animalGenes>
-	</VanillaRanchingExpanded.FeratypeDef>
+	</VEF.AnimalGenes.FeratypeDef>
 	
 </Defs>

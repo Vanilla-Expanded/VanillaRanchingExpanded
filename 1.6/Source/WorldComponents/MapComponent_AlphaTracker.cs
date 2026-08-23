@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using VEF.AnimalGenes;
 using Verse;
 using Verse.AI;
 

@@ -15,7 +15,7 @@
 		<uiIconScale>1.3</uiIconScale>
 		<comps>
 			
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 		</comps>
 		<race>

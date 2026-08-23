@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using VanillaRanchingExpanded;
 using Verse;
-
+using VEF.AnimalGenes;
 
 namespace VanillaRanchingExpanded
 {

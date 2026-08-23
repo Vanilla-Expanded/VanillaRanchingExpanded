@@ -19,7 +19,7 @@
 				<shearIntervalDays>8</shearIntervalDays>
 				<woolAmount>60</woolAmount>
 			</li>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 		</comps>
 		<race>

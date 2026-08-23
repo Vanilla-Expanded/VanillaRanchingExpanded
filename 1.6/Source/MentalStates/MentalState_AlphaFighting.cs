@@ -1,6 +1,7 @@
 using RimWorld;
 using Verse;
 using Verse.AI;
+using VEF.AnimalGenes;
 
 namespace VanillaRanchingExpanded
 {

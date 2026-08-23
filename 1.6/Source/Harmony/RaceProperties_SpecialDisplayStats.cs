@@ -6,6 +6,7 @@ using System.Reflection.Emit;
 using Verse;
 using System;
 using System.Reflection;
+using VEF.AnimalGenes;
 
 namespace VanillaRanchingExpanded
 {

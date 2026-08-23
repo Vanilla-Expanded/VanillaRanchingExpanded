@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using Verse;
+using VEF.AnimalGenes;
 
 namespace VanillaRanchingExpanded
 {

@@ -12,7 +12,7 @@
 			<Wildness>0.15</Wildness>
 		</statBases>
 		<comps>
-			<li Class="VanillaRanchingExpanded.CompProperties_AnimalGenes">      
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
 		</comps>
 		<race>
