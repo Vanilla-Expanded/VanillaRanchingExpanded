@@ -5,6 +5,10 @@
 	<VRE_AlphaFighting>{0} and {1} are fighting for the alpha title.</VRE_AlphaFighting>
 	<VRE_ToolGene>Animal gene in this gene tool: "{0}"</VRE_ToolGene>
 	<VRE_CantApply>Can't apply animal gene "{0}" to {1}</VRE_CantApply>
+	<VRE_AnimalDisease>Animal disease: {0}</VRE_AnimalDisease>
+	<VRE_AnimalDiseaseDesc>{0} has acquired an animal disease, {1}. They should be treated as soon as possible.</VRE_AnimalDiseaseDesc>
+	<VRE_OldAge>Old age: {0}</VRE_OldAge>
+	<VRE_OldAgeDesc>{0} is showing signs of old age. Their time may be growing short.</VRE_OldAgeDesc>
 	
 	<!-- Stats -->
 	

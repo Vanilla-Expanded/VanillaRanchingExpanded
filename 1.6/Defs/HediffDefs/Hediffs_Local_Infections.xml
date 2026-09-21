@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef ParentName="InfectionBase">
+		<defName>VRE_Parasites</defName>
+		<label>parasites</label>
+		<description>Parasitic worms in the gut. They cause vomiting. They also consume the animal’s food, which greatly increases hunger.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<makesSickThought>true</makesSickThought>
+		<tendable>true</tendable>
+		<stages>
+			<li>
+				<painOffset>0.2</painOffset>
+				<hungerRateFactorOffset>1</hungerRateFactorOffset>
+				<vomitMtbDays>1.0</vomitMtbDays>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<baseTendDurationHours>72</baseTendDurationHours>
+				<disappearsAtTotalTendQuality>3</disappearsAtTotalTendQuality>
+			</li>
+		</comps>
+	</HediffDef>
+	<HediffDef ParentName="WoundInfection">
+		<defName>VRE_ScariaInfection</defName>
+		<label>scaria infection</label>
+		<labelNoun>a scaria infection</labelNoun>
+		<description>An infection caused by scaria bacterium. If not treated, the infection will eventually drive the host into a berserk rage. Animal with scaria infection needs to be put down.</description>
+		<lethalSeverity>-1</lethalSeverity>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<comps>
+			<li Class="HediffCompProperties_GiveHediff">
+				<hediffDef>Scaria</hediffDef>
+				<atSeverity>1</atSeverity>
+				<disappearsAfterGiving>true</disappearsAfterGiving>
+				<letterDef>ThreatBig</letterDef>
+				<letterLabel>Scaria: {PAWN_nameDef}</letterLabel>
+				<letterText>{PAWN_nameDef} has developed scaria and has been driven into a manhunting rage.</letterText>
+			</li>
+		</comps>
+		<stages Inherit="False">
+			<li>
+				<label>minor</label>
+				<painOffset>0.05</painOffset>
+				<statOffsets>
+					<Wildness>0.1</Wildness>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.33</minSeverity>
+				<label>major</label>
+				<painOffset>0.1</painOffset>
+				<statOffsets>
+					<Wildness>0.3</Wildness>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.78</minSeverity>
+				<label>extreme</label>
+				<painOffset>0.16</painOffset>
+				<statOffsets>
+					<Wildness>0.6</Wildness>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VRE_OldAge</defName>
+		<label>old age</label>
+		<description>A degenerative, age-related condition that slowly weakens an animal's constitution as their lifespan draws to a close.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+		<lethalSeverity>1</lethalSeverity>
+		<initialSeverity>0.001</initialSeverity>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<preventsPregnancy>true</preventsPregnancy>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.066</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>early</label>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.5</minSeverity>
+				<label>advanced</label>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

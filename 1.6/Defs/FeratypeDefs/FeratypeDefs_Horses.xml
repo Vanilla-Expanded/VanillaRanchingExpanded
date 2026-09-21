@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Horse</defName>
+		<description>The baseliner horse is a large herbivore with a long mane and short coat. It’s an excellent pack animal, but requires some upkeep.</description>
+		<feratypeFamily>VRE_Horses</feratypeFamily>
+		<label>horse</label>
+		<race>Horse</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Horse</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AveragePackCapacity</li>	
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_HorseArabian</defName>
+		<description>A desert-adapted equine breed prized for swiftness, intelligence, and unmatched endurance. Its high speed requires a faster metabolism to fuel.</description>
+		<feratypeFamily>VRE_Horses</feratypeFamily>
+		<label>arabian horse</label>
+		<race>VRE_HorseArabian</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Arabian</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_VeryFast</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_Unruly</li>
+			<li>VRE_VeryFastMetabolism</li>
+			<li>VRE_Lean</li>
+			<li>VRE_IntermediateIntelligence</li>
+			<li>VRE_LowPackCapacity</li>	
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_HorseDraft</defName>
+		<description>A powerful, heavy-set equine feratype engineered for heavy transport and work. It features the largest physical frame and highest pack capacity of all horse breeds, offset by slow movement and high feed consumption.</description>
+		<feratypeFamily>VRE_Horses</feratypeFamily>
+		<label>draft horse</label>
+		<race>VRE_HorseDraft</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Draft</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_VerySlow</li>
+			<li>VRE_Huge</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_VeryFastMetabolism</li>
+			<li>VRE_Bulky</li>
+			<li>VRE_ObliviousIntelligence</li>
+			<li>VRE_SuperPackAnimal</li>	
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_HorseKonik</defName>
+		<description>A compact, remarkably hardy horse breed known for its primitive resilience, exceptional disease resistance, and ability to thrive on minimal forage in harsh conditions.</description>
+		<feratypeFamily>VRE_Horses</feratypeFamily>
+		<label>konik horse</label>
+		<race>VRE_HorseKonik</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Konik</iconPath>
+		<animalGenes>
+			<li>VRE_PerfectVitality</li>
+			<li>VRE_Slow</li>
+			<li>VRE_Small</li>
+			<li>VRE_Filthy</li>
+			<li>VRE_Unruly</li>
+			<li>VRE_VerySlowMetabolism</li>
+			<li>VRE_Bulky</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_LowPackCapacity</li>	
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Donkey</defName>
+		<description>The baseliner donkey which is a working beast built for rough terrain and arid climates. Though slower and smaller than a horse, its low metabolism, calm temperament, and natural resilience make it an efficient, low-maintenance beast of burden.</description>
+		<feratypeFamily>VRE_Horses</feratypeFamily>
+		<label>donkey</label>
+		<race>Donkey</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Donkey</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_Filthy</li>
+			<li>VRE_Compliant</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_Lean</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_HighPackCapacity</li>	
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Mule</defName>
+		<description>An infertile hybrid between an equine and an ass. It possesses remarkable stamina, high disease resistance, and hybrid vigor, making it an exceptionally reliable pack beast.</description>
+		<feratypeFamily>VRE_Horses</feratypeFamily>
+		<label>mule</label>
+		<race>VRE_Mule</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Mule</iconPath>
+		<animalGenes>
+			<li>VRE_GoodVitality</li>
+			<li>VRE_Slow</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_Docile</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_HighPackCapacity</li>	
+			<li>VRE_Infertile</li>
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+</Defs>

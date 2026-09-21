@@ -203,6 +203,7 @@
 		<stability>-2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>
 		<marketValueFactor>1.2</marketValueFactor>
+		<isIllnessGene>true</isIllnessGene>
 		<animalIllnessMTB>120</animalIllnessMTB>
 		<statFactors>
 			<FilthRate>0</FilthRate>			
@@ -217,6 +218,7 @@
 		<stability>-1</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>		
 		<animalIllnessMTB>60</animalIllnessMTB>
+		<isIllnessGene>true</isIllnessGene>
 		<statFactors>
 			<FilthRate>0.5</FilthRate>					
 		</statFactors>
@@ -228,7 +230,7 @@
 		<label>average cleanliness</label>
 		<stability>0</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>		
-		
+		<isIllnessGene>true</isIllnessGene>
 		<familyTag>VRE_AnimalFilth</familyTag>
 	</VEF.AnimalGenes.AnimalGeneDef>
 	<VEF.AnimalGenes.AnimalGeneDef>
@@ -236,7 +238,8 @@
 		<description>Carrier of this gene is prone to creating messes, increasing the rate of filth generation and slightly increasing susceptibility to disease.</description>
 		<label>filthy</label>
 		<stability>1</stability>
-		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>		
+		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>	
+		<isIllnessGene>true</isIllnessGene>		
 		<animalIllnessMTB>30</animalIllnessMTB>
 		<statFactors>
 			<FilthRate>1.5</FilthRate>					
@@ -250,6 +253,7 @@
 		<stability>2</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>
 		<marketValueFactor>0.9</marketValueFactor>
+		<isIllnessGene>true</isIllnessGene>
 		<animalIllnessMTB>18</animalIllnessMTB>
 		<statFactors>
 			<FilthRate>2</FilthRate>			
@@ -903,5 +907,86 @@
 			<VRE_AdditionalButcherProductsFactor>0.2</VRE_AdditionalButcherProductsFactor>
 		</statFactors>		
 		<familyTag>VRE_AnimalBaconYield</familyTag>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<!-- Pack capacity -->
+	<VEF.AnimalGenes.AnimalGeneDef>
+		<defName>VRE_SuperPackAnimal</defName>
+		<description>Carrier of this gene possesses an extraordinary capacity for heavy transport, allowing them to carry immense loads during long caravan journeys.</description>
+		<label>super pack animal</label>
+		<stability>-2</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_PackCapacity</iconPath>
+		<marketValueFactor>1.2</marketValueFactor>
+		<isSpecialized>true</isSpecialized>
+		<statFactors>
+			<VEF_MassCarryCapacity>2</VEF_MassCarryCapacity>
+			<MarketValue>1.2</MarketValue>
+		</statFactors>
+		<familyTag>VRE_PackCapacity</familyTag>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
+		<defName>VRE_HighPackCapacity</defName>
+		<description>Carrier of this gene is optimized for transport, allowing them to carry significantly more weight than their peers.</description>
+		<label>high pack capacity</label>
+		<stability>-1</stability>
+		<isSpecialized>true</isSpecialized>
+		<iconPath>UI/AnimalGenes/AnimalGene_PackCapacity</iconPath>
+		<statFactors>
+			<VEF_MassCarryCapacity>1.5</VEF_MassCarryCapacity>
+		</statFactors>
+		<familyTag>VRE_PackCapacity</familyTag>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
+		<defName>VRE_AveragePackCapacity</defName>
+		<description>Carrier of this gene represents a baseline capacity for transport and provides no bonuses or penalties.</description>
+		<label>average pack capacity</label>
+		<stability>0</stability>
+		<isSpecialized>true</isSpecialized>
+		<iconPath>UI/AnimalGenes/AnimalGene_PackCapacity</iconPath>
+		<familyTag>VRE_PackCapacity</familyTag>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
+		<defName>VRE_LowPackCapacity</defName>
+		<description>Carrier of this gene has a reduced capacity for carrying heavy loads, limiting their utility in caravans.</description>
+		<label>low pack capacity</label>
+		<stability>1</stability>
+		<isSpecialized>true</isSpecialized>
+		<iconPath>UI/AnimalGenes/AnimalGene_PackCapacity</iconPath>
+		<statFactors>
+			<VEF_MassCarryCapacity>0.75</VEF_MassCarryCapacity>
+		</statFactors>
+		<familyTag>VRE_PackCapacity</familyTag>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	<VEF.AnimalGenes.AnimalGeneDef>
+		<defName>VRE_PoorPackCapacity</defName>
+		<description>Carrier of this gene is physically unsuited for heavy loads, significantly hindering their ability to assist in caravan transport.</description>
+		<label>poor pack capacity</label>
+		<stability>2</stability>
+		<isSpecialized>true</isSpecialized>
+		<marketValueFactor>0.9</marketValueFactor>
+		<iconPath>UI/AnimalGenes/AnimalGene_PackCapacity</iconPath>
+		<statFactors>
+			<VEF_MassCarryCapacity>0.5</VEF_MassCarryCapacity>
+			<MarketValue>0.9</MarketValue>
+		</statFactors>
+		<familyTag>VRE_PackCapacity</familyTag>
+	</VEF.AnimalGenes.AnimalGeneDef>
+	
+	<!-- Sterility -->
+	<VEF.AnimalGenes.AnimalGeneDef>
+		<defName>VRE_Infertile</defName>
+		<description>Carrier of this gene cannot produce offspring and will never fight for alpha status.</description>
+		<label>infertile</label>
+		<stability>3</stability>
+		<iconPath>UI/AnimalGenes/AnimalGene_Infertile</iconPath>
+		<singleRankGene>true</singleRankGene>
+		<isSpecialized>true</isSpecialized>
+		<makeAnimalSterile>true</makeAnimalSterile>
+		<marketValueFactor>0.8</marketValueFactor>
+		<statFactors>		
+			<MarketValue>0.8</MarketValue>
+		</statFactors>
+		<extraDescriptions>This animal can't produce offspring.</extraDescriptions>
+		<familyTag>VRE_Fertility</familyTag>
+		<hediffToAdd>Sterilized</hediffToAdd>
 	</VEF.AnimalGenes.AnimalGeneDef>
 </Defs>

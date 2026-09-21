@@ -25,4 +25,9 @@
 		<label>goats</label>
 		<description>Hardy, domesticated mammals valued for their milk, their ability to digest tough foliage and a remarkable climbing ability.</description>
 	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Horses</defName>
+		<label>horses</label>
+		<description>A family of hardy, hoofed animals valued for their strength, speed, and endurance, serving as reliable mounts and beasts of burden.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
 </Defs>

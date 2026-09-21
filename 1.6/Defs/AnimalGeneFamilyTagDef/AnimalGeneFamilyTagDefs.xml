@@ -65,4 +65,14 @@
 		<label>bacon yield</label>
 		<order>13</order>
 	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+		<defName>VRE_PackCapacity</defName>
+		<label>pack capacity</label>
+		<order>19</order>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+	<VEF.AnimalGenes.AnimalGeneFamilyTagDef>
+		<defName>VRE_Fertility</defName>
+		<label>fertility</label>
+		<order>20</order>
+	</VEF.AnimalGenes.AnimalGeneFamilyTagDef>
 </Defs>

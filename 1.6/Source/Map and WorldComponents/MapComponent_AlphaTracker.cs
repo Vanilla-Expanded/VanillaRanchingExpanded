@@ -110,7 +110,7 @@ namespace VanillaRanchingExpanded
             foreach (var pawn in map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer))
             {
                 var comp = pawn.GetComp<CompAnimalGenes>();
-                if (comp == null || comp.feratype == null || !comp.feratype.canBeAlpha)
+                if (comp == null || comp.feratype == null || !comp.feratype.canBeAlpha || comp.genes.Any(x => x.makeAnimalSterile))
                 {
                     continue;
                 }

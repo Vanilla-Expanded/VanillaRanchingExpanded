@@ -32,5 +32,11 @@ namespace VanillaRanchingExpanded
 
         public static MentalStateDef VRE_AnimalTantrum;
         public static MentalStateDef VRE_AlphaFighting;
+
+        public static HediffDef Animal_Flu;
+        public static HediffDef VRE_Parasites;
+        public static HediffDef VRE_ScariaInfection;
+        public static HediffDef VRE_OldAge;
+
     }
 }

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Horse"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Horse"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Horse"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Horse"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>VRE_HorseArabian</li>
+				<li>VRE_HorseDraft</li>
+				<li>VRE_HorseKonik</li>
+				<li>Donkey</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="Horse"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+				<specificCombinationsOverride>
+					<combinations>
+						<li>
+							<firstparent>Horse</firstparent>
+							<secondparent>Donkey</secondparent>
+							<offspring>VRE_Mule</offspring>
+						</li>
+					</combinations>
+				</specificCombinationsOverride>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Horse"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/HorseBabies/HorseBaby/HorseBaby</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Horse"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.75</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Horse"]/lifeStages/li[1]/dessicatedBodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.75</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Horse"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Horses/Horse/Horse</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Horse"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Horses/Horse/Horse</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Horse"]/alternateGraphics</xpath>
+		<value>
+			<alternateGraphics>
+				<li>
+					<color>(0.7059,0.4039,0.2392,1)</color>
+				</li>
+				<li>
+					<color>(0.8392,0.7490,0.6235,1)</color>
+				</li>
+				<li>
+					<color>(0.7451,0.7608,0.8039,1)</color>
+				</li>
+				<li>
+					<color>(0.2784,0.2784,0.2627,1)</color>
+				</li>
+				<li>
+					<color>(0.7843,0.6196,0.4706,1)</color>
+				</li>
+				<li>
+					<color>(0.4431,0.3333,0.2392,1)</color>
+				</li>
+			</alternateGraphics>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Donkey"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Donkey"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Donkey"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Donkey"]/race</xpath>
+		<value>
+			<canCrossBreedWith>
+				<li>Horse</li>
+				<li>VRE_HorseArabian</li>
+				<li>VRE_HorseDraft</li>
+				<li>VRE_HorseKonik</li>
+			</canCrossBreedWith>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName="Donkey"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+				<weightForMother>0.6</weightForMother>
+				<specificCombinationsOverride>
+					<combinations>
+						<li>
+							<firstparent>Donkey</firstparent>
+							<secondparent>Horse</secondparent>
+							<offspring>VRE_Mule</offspring>
+						</li>
+						<li>
+							<firstparent>Donkey</firstparent>
+							<secondparent>VRE_HorseArabian</secondparent>
+							<offspring>VRE_Mule</offspring>
+						</li>
+						<li>
+							<firstparent>Donkey</firstparent>
+							<secondparent>VRE_HorseDraft</secondparent>
+							<offspring>VRE_Mule</offspring>
+						</li>
+						<li>
+							<firstparent>Donkey</firstparent>
+							<secondparent>VRE_HorseKonik</secondparent>
+							<offspring>VRE_Mule</offspring>
+						</li>
+					</combinations>
+				</specificCombinationsOverride>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Donkey"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/HorseBabies/DonkeyBaby/DonkeyBaby</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Donkey"]/lifeStages/li[1]/bodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.75</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Donkey"]/lifeStages/li[1]/dessicatedBodyGraphicData/drawSize</xpath>
+		<value>
+			<drawSize>1.75</drawSize>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Donkey"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Horses/Donkey/Donkey</texPath>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Donkey"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Horses/Donkey/Donkey</texPath>
+		</value>
+	</Operation>
+</Patch>
+
