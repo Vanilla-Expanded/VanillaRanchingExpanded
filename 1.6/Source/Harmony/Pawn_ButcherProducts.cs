@@ -19,32 +19,29 @@ namespace VanillaRanchingExpanded
         {
             foreach (var thing in values) yield return thing;
 
-            if (WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(__instance))
+            if (__instance?.TryGetComp<CompAnimalGenes>() is CompAnimalGenes comp)
             {
-               
-                CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[__instance];
-                if (comp != null)
+
+                foreach (AnimalGeneDef gene in comp.genes)
                 {
-                    foreach (AnimalGeneDef gene in comp.genes)
+                    if (!gene.extraButcherProducts.NullOrEmpty())
                     {
-                        if (!gene.extraButcherProducts.NullOrEmpty())
+                        foreach (ThingDefCountClass thingDefCountClass in gene.extraButcherProducts)
                         {
-                            foreach (ThingDefCountClass thingDefCountClass in gene.extraButcherProducts)
+
+                            float num = gene.scaleButcherProductsByMeatAmount ? __instance.GetStatValue(StatDefOf.MeatAmount) / 140 * efficiency : efficiency;
+
+                            float adjustedNum = num * __instance.GetStatValue(InternalDefOf.VRE_AdditionalButcherProductsFactor, cacheStaleAfterTicks: 60);
+
+                            if (adjustedNum > 0)
                             {
-                               
-                                float num = gene.scaleButcherProductsByMeatAmount ? __instance.GetStatValue(StatDefOf.MeatAmount)/140 * efficiency : efficiency;
-                               
-                                float adjustedNum = num * __instance.GetStatValue(InternalDefOf.VRE_AdditionalButcherProductsFactor);
-                               
-                                if (adjustedNum > 0)
-                                {
-                                    Thing thing = ThingMaker.MakeThing(thingDefCountClass.thingDef);
-                                    thing.stackCount = (int)(thingDefCountClass.count * adjustedNum);
-                                    yield return thing;
-                                }
+                                Thing thing = ThingMaker.MakeThing(thingDefCountClass.thingDef);
+                                thing.stackCount = (int)(thingDefCountClass.count * adjustedNum);
+                                yield return thing;
                             }
                         }
                     }
+
 
                 }
             }

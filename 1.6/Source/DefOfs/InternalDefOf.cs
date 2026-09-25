@@ -15,7 +15,7 @@ namespace VanillaRanchingExpanded
 			DefOfHelper.EnsureInitializedInCtor(typeof(InternalDefOf));
 		}
 
-		public static StatDef VRE_HealthFromGenesScale;
+		
         public static StatDef VRE_ManhunterOnDamageFactor;
         public static StatDef VRE_ManhunterOnTameFailFactor;
 		public static StatDef VRE_ManhunterOnDamageOffset;

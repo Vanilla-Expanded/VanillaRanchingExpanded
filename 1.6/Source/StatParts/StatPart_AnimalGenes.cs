@@ -11,13 +11,9 @@ namespace VanillaRanchingExpanded
             if (req.HasThing)
             {
                 Pawn pawn = req.Thing as Pawn;
-                if (pawn != null && WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn))
+                if (pawn?.TryGetComp<CompAnimalGenes>() is CompAnimalGenes comp)
                 {
-                    CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[pawn];
-                    if (comp != null)
-                    {
-                        val *= GenesFactorsDefined(comp);
-                    }
+                    val *= GenesFactorsDefined(comp);
                 }
             }
         }
@@ -38,29 +34,27 @@ namespace VanillaRanchingExpanded
             if (req.HasThing)
             {
                 Pawn pawn = req.Thing as Pawn;
-                if (pawn != null && WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn))
+                if (pawn?.TryGetComp<CompAnimalGenes>() is CompAnimalGenes comp)
                 {
-                    CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[pawn];
-                    if (comp != null)
+
+                    if (GenesFactorsDefined(comp) != 1f)
                     {
-                        if (GenesFactorsDefined(comp) != 1f)
+                        if (!text.NullOrEmpty())
                         {
-                            if (!text.NullOrEmpty())
+                            text += "\n";
+                        }
+                        text += "GenePriceFactors".Translate() + ":";
+                        for (int i = 0; i < comp.genes.Count; i++)
+                        {
+                            AnimalGeneDef geneDef = comp.genes[i];
+                            if (geneDef.marketValueFactor != 1f)
                             {
-                                text += "\n";
-                            }
-                            text += "GenePriceFactors".Translate() + ":";
-                            for (int i = 0; i < comp.genes.Count; i++)
-                            {
-                                AnimalGeneDef geneDef = comp.genes[i];
-                                if (geneDef.marketValueFactor != 1f)
-                                {
-                                    text += $"\n  - {geneDef.LabelCap} x{geneDef.marketValueFactor.ToStringPercent()}";
-                                }
+                                text += $"\n  - {geneDef.LabelCap} x{geneDef.marketValueFactor.ToStringPercent()}";
                             }
                         }
-                        
                     }
+
+
                     return text?.TrimEndNewlines();
                 }
             }

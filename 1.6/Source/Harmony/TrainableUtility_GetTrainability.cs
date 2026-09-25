@@ -14,22 +14,20 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyTrainability(Pawn pawn, ref TrainabilityDef __result)
         {
-            if (pawn!=null&&WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn))
+            if (pawn?.TryGetComp<CompAnimalGenes>() is CompAnimalGenes comp)
             {
-                CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[pawn];
-                if (comp != null)
-                { 
-                    foreach(AnimalGeneDef gene in comp.genes)
+
+                foreach (AnimalGeneDef gene in comp.genes)
+                {
+                    if (gene.trainabilityDef != null)
                     {
-                        if (gene.trainabilityDef != null)
+                        if (!pawn.health.hediffSet.HasHediff(HediffDefOf.SentienceCatalyst))
                         {
-                            if (!pawn.health.hediffSet.HasHediff(HediffDefOf.SentienceCatalyst))
-                            {
-                                __result = gene.trainabilityDef;
-                            }
+                            __result = gene.trainabilityDef;
                         }
                     }
-                }              
+                }
+
             }
         }
     }

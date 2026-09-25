@@ -13,7 +13,7 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyManhunterChance(Pawn ropee)
         {
-            if (Rand.Chance(ropee.GetStatValue(InternalDefOf.VRE_ManhunterOnRopingChance)))
+            if (Rand.Chance(ropee.GetStatValue(InternalDefOf.VRE_ManhunterOnRopingChance, cacheStaleAfterTicks: 60)))
             {
                 ropee.mindState.mentalStateHandler.TryStartMentalState(PawnUtility.ManhunterStateFor(ropee));
             }

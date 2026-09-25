@@ -38,22 +38,18 @@ namespace VanillaRanchingExpanded
 
         public static void MoveGenes(Pawn pawn, CompHatcher compHatcher)
         {
-            if (!WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn)) { return; }
-            CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[pawn];
-            if (comp is null) { return; }
-
+            if (pawn?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes comp) { return; }
+           
             Thing egg = compHatcher.parent;
-            if (egg is null) { return; }
-            if (!WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(egg)) { return; }
-            CompAnimalGenes compEgg = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[egg];
-            if (compEgg is null) { return; }
+            if (egg?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes compEgg) { return; }
+           
             comp.genes.Clear();
 
             foreach (AnimalGeneDef geneDef in compEgg.genes)
             {
                 AnimalGeneUtility.AddGene(comp, geneDef);
             }
-            WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.Remove(egg);
+           
         }
 
     }

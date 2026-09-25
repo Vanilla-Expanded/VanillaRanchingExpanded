@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using VEF.AnimalGenes;
 using Verse;
 using static HarmonyLib.Code;
+using static RimWorld.ColonistBar;
 
 namespace VanillaRanchingExpanded
 {
@@ -30,15 +31,15 @@ namespace VanillaRanchingExpanded
             tickCounter++;
             if (tickCounter > tickInterval)
             {
-                Dictionary<Thing, CompAnimalGenes> allGeneticAnimals = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes;
-
-                foreach (KeyValuePair<Thing, CompAnimalGenes> entry in allGeneticAnimals)
+                foreach (var item in PawnsFinder.AllMapsWorldAndTemporary_AliveOrDead)
                 {
-                    if (entry.Key is Pawn pawn)
+                    if (item?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes comp) continue;
+                    if (item is Pawn pawn)
                     {
-                        if (pawn.IsPlayerControlled) {
+                        if (pawn.IsPlayerControlled)
+                        {
 
-                            AnimalGeneDef filthAnimalGene = entry.Value.genes?.Where(x => x.isIllnessGene).FirstOrDefault();
+                            AnimalGeneDef filthAnimalGene = comp.genes?.Where(x => x.isIllnessGene).FirstOrDefault();
                             if (filthAnimalGene != null)
                             {
 
@@ -57,11 +58,11 @@ namespace VanillaRanchingExpanded
                                 }
                             }
                         }
-                        
+
 
                         float currentAge = pawn.ageTracker.AgeBiologicalYearsFloat;
-                        
-                        if (currentAge > entry.Value.LifeSpanFactor * pawn.def.race.lifeExpectancy)
+
+                        if (currentAge > comp.LifeSpanFactor * pawn.def.race.lifeExpectancy)
                         {
                             bool hasOldAge = pawn.health.hediffSet.HasHediff(InternalDefOf.VRE_OldAge);
                             if (!hasOldAge)
@@ -74,8 +75,13 @@ namespace VanillaRanchingExpanded
 
                         }
                     }
-                    tickCounter = 0;
+
                 }
+
+               
+                
+                 tickCounter = 0;
+                
             }
 
         }

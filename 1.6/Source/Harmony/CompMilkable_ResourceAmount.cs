@@ -15,7 +15,7 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyMilkYield(CompMilkable __instance, ref int __result)
         {
-            __result = (int)(__result*__instance.parent.GetStatValue(InternalDefOf.VRE_MilkYieldFactor));
+            __result = (int)(__result*__instance.parent.GetStatValue(InternalDefOf.VRE_MilkYieldFactor, cacheStaleAfterTicks: 60));
 
         }
     }

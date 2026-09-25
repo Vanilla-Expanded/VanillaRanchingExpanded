@@ -29,11 +29,11 @@ namespace VanillaRanchingExpanded
 
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
-            if (target.Thing != null && WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(target.Thing))
+            if (target.Thing?.TryGetComp<CompAnimalGenes>() is null)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
     }
 }

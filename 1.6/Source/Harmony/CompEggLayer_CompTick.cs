@@ -39,7 +39,7 @@ namespace VanillaRanchingExpanded
         {
             Pawn pawn = compEgglayer.parent as Pawn;
             if (pawn != null) {
-                return baseEggLayIntervalDays * pawn.GetStatValue(InternalDefOf.VRE_EggIntervalFactor);
+                return baseEggLayIntervalDays * pawn.GetStatValue(InternalDefOf.VRE_EggIntervalFactor,cacheStaleAfterTicks: 60);
             }return baseEggLayIntervalDays;
         }
 

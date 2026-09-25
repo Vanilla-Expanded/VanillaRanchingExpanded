@@ -48,11 +48,10 @@ namespace VanillaRanchingExpanded
         public static float AdjustLifeExpectancy(float expectancy, StatRequest req)
         {
             Pawn pawn = req.Thing as Pawn;
-            if (pawn != null && WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes.ContainsKey(pawn)) {
-                CompAnimalGenes comp = WorldComponent_AnimalGenes.Instance.pawnToCompAnimalGenes[pawn];
-                if (comp != null) {
-                    return expectancy * comp.LifeSpanFactor;
-                }
+            if (pawn?.TryGetComp<CompAnimalGenes>() is  CompAnimalGenes comp) {
+               
+                return expectancy * comp.LifeSpanFactor;
+                
             }
 
             return expectancy;

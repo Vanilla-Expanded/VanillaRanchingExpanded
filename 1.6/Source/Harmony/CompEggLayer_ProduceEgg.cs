@@ -44,7 +44,7 @@ namespace VanillaRanchingExpanded
             Pawn pawn = compEgglayer.parent as Pawn;
             if (pawn != null)
             {
-                return (int)Math.Max(baseYield + pawn.GetStatValue(InternalDefOf.VRE_EggYieldOffset),1);
+                return (int)Math.Max(baseYield + pawn.GetStatValue(InternalDefOf.VRE_EggYieldOffset, cacheStaleAfterTicks: 60),1);
             }
             return baseYield;
         }

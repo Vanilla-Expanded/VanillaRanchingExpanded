@@ -17,8 +17,8 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyManhunterChance(Pawn pawn, ref float __result)
         {
-            __result *= pawn.GetStatValue(InternalDefOf.VRE_ManhunterOnDamageFactor);
-            __result += pawn.GetStatValue(InternalDefOf.VRE_ManhunterOnDamageOffset);
+            __result *= pawn.GetStatValue(InternalDefOf.VRE_ManhunterOnDamageFactor, cacheStaleAfterTicks: 60);
+            __result += pawn.GetStatValue(InternalDefOf.VRE_ManhunterOnDamageOffset, cacheStaleAfterTicks: 60);
 
         }
     }

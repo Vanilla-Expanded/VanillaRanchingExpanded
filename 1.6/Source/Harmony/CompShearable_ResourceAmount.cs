@@ -15,7 +15,7 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyWoolYield(CompMilkable __instance, ref int __result)
         {
-            __result = (int)(__result * __instance.parent.GetStatValue(InternalDefOf.VRE_WoolYieldFactor));
+            __result = (int)(__result * __instance.parent.GetStatValue(InternalDefOf.VRE_WoolYieldFactor, cacheStaleAfterTicks: 60));
 
         }
     }

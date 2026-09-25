@@ -16,7 +16,7 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyMilkInterval(CompMilkable __instance, ref int __result)
         {
-            __result = (int)Math.Max(__result + __instance.parent.GetStatValue(InternalDefOf.VRE_MilkIntervalOffset),1);
+            __result = (int)Math.Max(__result + __instance.parent.GetStatValue(InternalDefOf.VRE_MilkIntervalOffset, cacheStaleAfterTicks: 60),1);
 
         }
     }
