@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Genetics Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						<GeneticRim.ExtractableAnimalsList>
+							<defName>GR_TierTwoAnimalsHorsesRanching</defName>
+							<tier>2</tier>
+							<itemProduced>GR_EquineGenetic</itemProduced>
+							<extractableAnimals>
+								<li>VRE_HorseArabian</li>
+								<li>VRE_HorseDraft</li>
+								<li>VRE_HorseKonik</li>
+								<li>VRE_Mule</li>
+							</extractableAnimals>
+						</GeneticRim.ExtractableAnimalsList>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
+
