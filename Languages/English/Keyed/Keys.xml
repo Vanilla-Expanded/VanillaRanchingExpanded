@@ -9,6 +9,7 @@
 	<VRE_AnimalDiseaseDesc>{0} has acquired an animal disease, {1}. They should be treated as soon as possible.</VRE_AnimalDiseaseDesc>
 	<VRE_OldAge>Old age: {0}</VRE_OldAge>
 	<VRE_OldAgeDesc>{0} is showing signs of old age. Their time may be growing short.</VRE_OldAgeDesc>
+	<VRE_ReassignAnimalPen>Reassign animal pen</VRE_ReassignAnimalPen>
 	
 	<!-- Stats -->
 	
