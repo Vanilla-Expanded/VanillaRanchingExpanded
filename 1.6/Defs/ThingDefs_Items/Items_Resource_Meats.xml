@@ -2,7 +2,7 @@
 <Defs>
 	<ThingDef ParentName="OrganicProductBase">
 		<defName>VRE_Bacon</defName>
-		<label>bacont</label>
+		<label>bacon</label>
 		<description>Raw cured pork belly. Can be cooked until crisp or eaten warm.</description>
 		<graphicData>
 			<texPath>Things/Item/VRE_Bacon</texPath>
