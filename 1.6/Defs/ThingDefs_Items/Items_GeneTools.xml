@@ -20,7 +20,7 @@
 		<alwaysHaulable>true</alwaysHaulable>
 		<rotatable>false</rotatable>
 		<healthAffectsPrice>false</healthAffectsPrice>
-		<tradeability>All</tradeability>
+		<tradeability>Sellable</tradeability>
 		<pathCost>14</pathCost>
 		<comps>
 			<li Class="CompProperties_Forbiddable"/>
