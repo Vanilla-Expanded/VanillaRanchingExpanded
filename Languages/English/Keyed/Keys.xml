@@ -16,6 +16,7 @@
 	<VRE_DifferentFeratype>Only animals of the same family as the sire of the gamete can be selected</VRE_DifferentFeratype>
 	<VRE_AlreadyPregnant>Pregnant animals can’t be selected for gamete implantation</VRE_AlreadyPregnant>
 	<VRE_YouNeedHelp>You need help</VRE_YouNeedHelp>
+	<VRE_NotEggLayers>Can't extract gametes from egg laying animals</VRE_NotEggLayers>
 	
 	<!-- Stats -->
 	

@@ -26,6 +26,11 @@ namespace VanillaRanchingExpanded
                 return "VRE_NotACompatibleAnimal".Translate();
             }
 
+            if (pawn.TryGetComp<CompEggLayer>() is not null)
+            {
+                return "VRE_NotEggLayers".Translate();
+            }
+
             if (pawn.ageTracker.AgeBiologicalYears < recipe.minAllowedAge)
             {
                 return "CannotMustBeAge".Translate(recipe.minAllowedAge);
