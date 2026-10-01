@@ -14,7 +14,7 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyTrainability(Pawn pawn, ref TrainabilityDef __result)
         {
-            if (pawn?.TryGetComp<CompAnimalGenes>() is CompAnimalGenes comp)
+            if (pawn?.TryGetComp<CompAnimalGenes>() is CompAnimalGenes comp && comp.genes.Count>0)
             {
 
                 foreach (AnimalGeneDef gene in comp.genes)
