@@ -10,6 +10,12 @@
 	<VRE_OldAge>Old age: {0}</VRE_OldAge>
 	<VRE_OldAgeDesc>{0} is showing signs of old age. Their time may be growing short.</VRE_OldAgeDesc>
 	<VRE_ReassignAnimalPen>Reassign animal pen</VRE_ReassignAnimalPen>
+	<VRE_SurgeryDisableReasonGameteExtracted>gamete extracted recently</VRE_SurgeryDisableReasonGameteExtracted>
+	<VRE_NotACompatibleAnimal>This animal doesn't use the Animal Genes system</VRE_NotACompatibleAnimal>
+	<VRE_OnlyFemale>Only female animals can be selected for gamete implantation</VRE_OnlyFemale>
+	<VRE_DifferentFeratype>Only animals of the same family as the sire of the gamete can be selected</VRE_DifferentFeratype>
+	<VRE_AlreadyPregnant>Pregnant animals can’t be selected for gamete implantation</VRE_AlreadyPregnant>
+	<VRE_YouNeedHelp>You need help</VRE_YouNeedHelp>
 	
 	<!-- Stats -->
 	

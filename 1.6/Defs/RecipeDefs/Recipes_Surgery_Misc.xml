@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RecipeDef Abstract="True" Name="VRE_AnimalFertilitySurgery" ParentName="SurgeryFlesh">
+		<workAmount>500</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<researchPrerequisites>
+			<li>MedicineProduction</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	<RecipeDef ParentName="VRE_AnimalFertilitySurgery">
+		<defName>VRE_ExtractGamete</defName>
+		<label>extract gamete</label>
+		<description>Extract animal’s gamete into a storage capsule. It can then be injected into a female animal of the same animal family to start a pregnancy.</description>
+		<jobString>extracting gamete from TargetA.</jobString>
+		<workerClass>VanillaRanchingExpanded.Recipe_ExtractGamete</workerClass>
+		<addsHediff>VRE_GameteExtracted</addsHediff>
+		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+		<genderPrerequisite>Male</genderPrerequisite>
+		<mustBeFertile>true</mustBeFertile>
+		<minAllowedAge>1</minAllowedAge>
+		<incompatibleWithHediffTags>
+			<li>VRE_GameteExtracted</li>
+		</incompatibleWithHediffTags>
+		<uiIconThing>VRE_AnimalGamete</uiIconThing>
+	</RecipeDef>
+	
+</Defs>

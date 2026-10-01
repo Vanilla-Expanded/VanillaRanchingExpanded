@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffDef[defName="Pregnant"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.HediffCompProperties_GameteGenes">  
+			</li>
+		</value>
+	</Operation>
+</Patch>
+

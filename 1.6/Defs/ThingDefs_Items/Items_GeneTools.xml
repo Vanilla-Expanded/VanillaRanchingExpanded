@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<!--<ThingDef Name="VRE_GeneToolBase" Abstract="True">
+	<ThingDef Name="VRE_GeneToolBase" Abstract="True">
 		<statBases>
-			<MaxHitPoints>100</MaxHitPoints>
+			<MaxHitPoints>50</MaxHitPoints>
 			<Mass>0.5</Mass>
-			<Flammability>0</Flammability>
+			<Flammability>1</Flammability>
+			<MarketValue>50</MarketValue>
 		</statBases>
 		<thingClass>ThingWithComps</thingClass>
-		<tradeTags>
-			<li>Artifact</li>
-		</tradeTags>
 		<stackLimit>1</stackLimit>
 		<preventSpawningInResourcePod>true</preventSpawningInResourcePod>
 		<tradeNeverGenerateStacked>true</tradeNeverGenerateStacked>
@@ -29,6 +27,47 @@
 		</comps>
 	</ThingDef>
 	<ThingDef ParentName="VRE_GeneToolBase">
+		<defName>VRE_AnimalGamete</defName>
+		<label>gamete</label>
+		<description>An extracted male animal gamete stored in a protective capsule. Once implanted into a non-pregnant female animal, it initiates a pregnancy and passes on the sire's feragerm.</description>
+		<thingClass>VanillaRanchingExpanded.AnimalGamete</thingClass>
+		<useHitPoints>true</useHitPoints>
+		<stackLimit>1</stackLimit>
+		<canDeteriorateUnspawned>true</canDeteriorateUnspawned>
+		<deteriorateFromEnvironmentalEffects>false</deteriorateFromEnvironmentalEffects>
+		<uiIconPath>UI/ImplantGamete</uiIconPath>
+		<graphicData>
+			<texPath>Things/Item/VRE_AnimalGamete</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<thingSetMakerTags>
+			<li>NotForGuests</li>
+		</thingSetMakerTags>
+		<thingCategories>
+			<li>Medicine</li>
+		</thingCategories>
+		<comps>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+			<li Class="CompProperties_Targetable">
+				<compClass>VanillaRanchingExpanded.CompTargetable_FemaleAnimalGenecarrier</compClass>
+			</li>
+			<li Class="CompProperties_Usable">
+				<useLabel>implant gamete</useLabel>
+				<useJob>VRE_ImplantGamete</useJob>
+				<showUseGizmo>true</showUseGizmo>
+				<useDuration>60</useDuration>
+			</li>
+			<li Class="VanillaRanchingExpanded.CompProperties_TargetEffect_ImplantGamete">
+				
+			</li>
+		</comps>
+	</ThingDef>
+	<!--<ThingDef ParentName="VRE_GeneToolBase">
 		<defName>VRE_GeneToolAdd</defName>
 		<label>animal gene tool</label>
 		<description>A gene tool to add a specific gene to an animal.</description>
@@ -70,5 +109,4 @@
 		</comps>
 		
 	</ThingDef>-->
-	
 </Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef>
+		<defName>VRE_GameteExtracted</defName>
+		<label>gamete extracted</label>
+		<description>This male recently underwent a gamete extraction procedure. No more gametes can be extracted until some time has passed.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>1</initialSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>true</showRemainingTime>
+				<disappearsAfterTicks>120000</disappearsAfterTicks>
+				<!-- 2 days -->
+			</li>
+		</comps>
+		<tags>
+			<li>VRE_GameteExtracted</li>
+		</tags>
+	</HediffDef>
+</Defs>

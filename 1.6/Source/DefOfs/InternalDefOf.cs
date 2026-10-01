@@ -37,6 +37,8 @@ namespace VanillaRanchingExpanded
         public static HediffDef VRE_Parasites;
         public static HediffDef VRE_ScariaInfection;
         public static HediffDef VRE_OldAge;
+        public static HediffDef VRE_GameteExtracted;
 
+        public static ThingDef VRE_AnimalGamete;
     }
 }
