@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Alpaca</defName>
+		<description>A medium-sized ungulate closely related to the llama, the alpaca is usually raised for its remarkably soft and insulating wool.</description>
+		<feratypeFamily>VRE_Alpaca</feratypeFamily>
+		<label>alpaca</label>
+		<race>Alpaca</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Alpaca</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageWool</li>	
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Cassowary</defName>
+		<description>A large land mammal adapted to arid environments. Domesticated since ancient times, its leather is exceptionally good at insulating against the desert heat, and its milk is quite nourishing.</description>
+		<feratypeFamily>VRE_Cassowary</feratypeFamily>
+		<label>cassowary</label>
+		<race>Cassowary</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Cassowary</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+				
+			
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Dromedary</defName>
+		<description>A large land mammal adapted to arid environments. Domesticated since ancient times, its leather is exceptionally good at insulating against the desert heat, and its milk is quite nourishing.</description>
+		<feratypeFamily>VRE_Camels</feratypeFamily>
+		<label>dromedary</label>
+		<race>Dromedary</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Dromedary</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageMilk</li>
+			<li>VRE_AveragePackCapacity</li>	
+			
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	
+	
+</Defs>

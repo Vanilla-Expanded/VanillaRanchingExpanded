@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Camel</defName>
+		<description>A large land mammal adapted to arid environments. Domesticated since ancient times, its wool and leather are both exceptionally good at insulating against the desert heat, and its milk is quite nourishing.</description>
+		<feratypeFamily>VRE_Camels</feratypeFamily>
+		<label>camel</label>
+		<race>AEXP_Camel</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Camel</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageMilk</li>
+			<li>VRE_AveragePackCapacity</li>	
+			<li>VRE_AverageWool</li>	
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+</Defs>

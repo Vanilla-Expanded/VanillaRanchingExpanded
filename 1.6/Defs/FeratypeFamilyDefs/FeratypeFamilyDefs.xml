@@ -30,4 +30,59 @@
 		<label>horses</label>
 		<description>A family of hardy, hoofed animals valued for their strength, speed, and endurance, serving as reliable mounts and beasts of burden.</description>
 	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Alpaca</defName>
+		<label>alpacas</label>
+		<description>A domesticated species of camelid with dense, luxurious wool and a surprisingly stubborn temperament.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Camels</defName>
+		<label>camels</label>
+		<description>Hardy pack animals adapted to harsh, arid environments, capable of carrying heavy loads over long distances.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Cassowary</defName>
+		<label>cassowaries</label>
+		<description>Large, flightless birds with powerful legs and a dangerous, dagger-like claw.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Chickens</defName>
+		<label>chickens</label>
+		<description>Common domesticated birds prized for their eggs, meat, and easygoing nature.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Ducks</defName>
+		<label>ducks</label>
+		<description>Domesticated waterfowl valued for their eggs, meat, and hardy nature.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Emus</defName>
+		<label>emus</label>
+		<description>Large, flightless birds with long legs and a curious, adaptable nature.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_MegaChickens</defName>
+		<label>megachickens</label>
+		<description>Unusual royal farm birds raised by spoiled royalty as a pet project. These birds simply never stop growing.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Ostriches</defName>
+		<label>ostriches</label>
+		<description>Large, flightless birds prized for their speed, hardiness, and enormous eggs.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Peacocks</defName>
+		<label>peacocks</label>
+		<description>Striking birds prized for their colorful plumage and magnificent tail feathers.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Quail</defName>
+		<label>quail</label>
+		<description>Small, hardy birds valued for their eggs, meat, and prolific breeding.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Swan</defName>
+		<label>swan</label>
+		<description>Graceful waterfowl known for their striking plumage, long necks, and strong pair bonds.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
 </Defs>
