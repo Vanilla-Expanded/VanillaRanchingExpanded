@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<TrainableDef>
+		<defName>VRE_Herd</defName>
+		<label>herd</label>
+		<description>Herd roaming animals back toward their pens, keeping livestock where they belong.</description>
+		<listPriority>799</listPriority>
+		<difficulty>200</difficulty>
+		<steps>2</steps>
+		<prerequisites>
+			<li>Release</li>
+		</prerequisites>
+		<specialTrainable>true</specialTrainable>
+	</TrainableDef>
+
+</Defs>

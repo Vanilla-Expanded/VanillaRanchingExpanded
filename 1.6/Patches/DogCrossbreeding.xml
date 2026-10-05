@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName = "YorkshireTerrier"]/race/canCrossBreedWith</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName = "YorkshireTerrier"]/race</xpath>
+			<value>
+				<canCrossBreedWith>
+					<li>VRE_Collie</li>
+				</canCrossBreedWith>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName = "YorkshireTerrier"]/race/canCrossBreedWith</xpath>
+			<value>
+				<li>VRE_Collie</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName = "YorkshireTerrier"]/modExtensions/li[@Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension"]</xpath>
+		<nomatch Class="PatchOperationAddModExtension">
+			<xpath>Defs/ThingDef[defName = "YorkshireTerrier"]</xpath>
+			<value>
+				<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+					<crossBreedKindDef>Random</crossBreedKindDef>
+				</li>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[defName = "YorkshireTerrier"]</xpath>
+		<value>
+			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+				<crossBreedKindDef>Random</crossBreedKindDef>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName = "LabradorRetriever"]/race/canCrossBreedWith</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName = "LabradorRetriever"]/race</xpath>
+			<value>
+				<canCrossBreedWith>
+					<li>VRE_Collie</li>
+				</canCrossBreedWith>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName = "LabradorRetriever"]/race/canCrossBreedWith</xpath>
+			<value>
+				<li>VRE_Collie</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName = "LabradorRetriever"]/modExtensions/li[@Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension"]</xpath>
+		<nomatch Class="PatchOperationAddModExtension">
+			<xpath>Defs/ThingDef[defName = "LabradorRetriever"]</xpath>
+			<value>
+				<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+					<crossBreedKindDef>Random</crossBreedKindDef>
+				</li>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName = "Husky"]/race/canCrossBreedWith</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName = "Husky"]/race</xpath>
+			<value>
+				<canCrossBreedWith>
+					<li>VRE_Collie</li>
+				</canCrossBreedWith>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName = "Husky"]/race/canCrossBreedWith</xpath>
+			<value>
+				<li>VRE_Collie</li>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName = "Husky"]/modExtensions/li[@Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension"]</xpath>
+		<nomatch Class="PatchOperationAddModExtension">
+			<xpath>Defs/ThingDef[defName = "Husky"]</xpath>
+			<value>
+				<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
+					<crossBreedKindDef>Random</crossBreedKindDef>
+				</li>
+			</value>
+		</nomatch>
+	</Operation>
+</Patch>
+
