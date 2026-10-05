@@ -6,6 +6,8 @@
 		<li IfModActive="VanillaExpanded.VAEWaste">1.6/Mods/VanillaAnimalsExpandedWaste</li>
 		<li IfModNotActive="Ludeon.RimWorld.Odyssey" IfModActive="VanillaExpanded.VanillaAnimalsExpanded">1.6/Mods/VanillaAnimalsExpandedNO</li>
 		<li IfModActive="VanillaExpanded.VanillaAnimalsExpanded">1.6/Mods/VanillaAnimalsExpanded</li>
+		<li IfModActive="VanillaExpanded.VAERoy">1.6/Mods/VanillaAnimalsExpandedRoyal</li>
+		<li IfModNotActive="Ludeon.RimWorld.Odyssey" IfModActive="VanillaExpanded.VAERoy">1.6/Mods/VanillaAnimalsExpandedRoyalNO</li>
 	</v1.6>
 </loadFolders>
 

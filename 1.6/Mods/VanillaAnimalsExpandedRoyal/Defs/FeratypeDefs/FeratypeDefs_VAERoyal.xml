@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Megachicken</defName>
+		<description>The unusual royal farm bird, the megachicken is raised by spoiled royalty as a pet project. This bird simply never stops growing.</description>
+		<feratypeFamily>VRE_MegaChickens</feratypeFamily>
+		<label>megachicken</label>
+		<race>VAERoy_Megachicken</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Megachicken</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageEggYield</li>		
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	
+</Defs>

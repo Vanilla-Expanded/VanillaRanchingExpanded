@@ -58,7 +58,7 @@
 	<VEF.AnimalGenes.FeratypeFamilyDef>
 		<defName>VRE_Emus</defName>
 		<label>emus</label>
-		<description>Large, flightless birds with long legs and a curious, adaptable nature.</description>
+		<description>Large, flightless birds with long legs and a curious, adaptable nature, but a notorious bad attitude.</description>
 	</VEF.AnimalGenes.FeratypeFamilyDef>
 	<VEF.AnimalGenes.FeratypeFamilyDef>
 		<defName>VRE_MegaChickens</defName>

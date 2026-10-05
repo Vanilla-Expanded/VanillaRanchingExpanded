@@ -16,12 +16,12 @@
 			<li>VRE_AverageMetabolism</li>
 			<li>VRE_AverageBuild</li>
 			<li>VRE_AverageIntelligence</li>
-			<li>VRE_AverageWool</li>	
+			<li>VRE_AverageWool</li>
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
 	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_Cassowary</defName>
-		<description>A large land mammal adapted to arid environments. Domesticated since ancient times, its leather is exceptionally good at insulating against the desert heat, and its milk is quite nourishing.</description>
+		<description>A large flightless bird with brightly-colored feathers.</description>
 		<feratypeFamily>VRE_Cassowary</feratypeFamily>
 		<label>cassowary</label>
 		<race>Cassowary</race>
@@ -35,8 +35,26 @@
 			<li>VRE_AverageMetabolism</li>
 			<li>VRE_AverageBuild</li>
 			<li>VRE_AverageIntelligence</li>
-				
-			
+			<li>VRE_AverageEggYield</li>
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Chicken</defName>
+		<description>The most traditional farm bird, the chicken is raised for its eggs and meat.</description>
+		<feratypeFamily>VRE_Chickens</feratypeFamily>
+		<label>chicken</label>
+		<race>Chicken</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Chicken</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageEggYield</li>				
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
 	<VEF.AnimalGenes.FeratypeDef>
@@ -56,10 +74,83 @@
 			<li>VRE_AverageBuild</li>
 			<li>VRE_AverageIntelligence</li>
 			<li>VRE_AverageMilk</li>
-			<li>VRE_AveragePackCapacity</li>	
-			
+			<li>VRE_AveragePackCapacity</li>
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
-	
-	
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Duck</defName>
+		<description>A very common type of farm bird, also appearing in the wild, the duck is raised for its delicious meat.</description>
+		<feratypeFamily>VRE_Ducks</feratypeFamily>
+		<label>duck</label>
+		<race>Duck</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Duck</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageEggYield</li>				
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Emu</defName>
+		<description>A large, flightless bird with long legs and a curious, adaptable nature, but a notorious bad attitude.</description>
+		<feratypeFamily>VRE_Emus</feratypeFamily>
+		<label>emu</label>
+		<race>Emu</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Emu</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageEggYield</li>				
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Goat</defName>
+		<description>Naturally curious about the world, goats are among the friendliest domesticated creature bred by mankind.</description>
+		<feratypeFamily>VRE_Goats</feratypeFamily>
+		<label>goat</label>
+		<race>Goat</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Goat</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageMilk</li>
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Ostrich</defName>
+		<description>The largest unmodified bird species, ostriches are known for their fast run, huge eggs, and powerful kick.</description>
+		<feratypeFamily>VRE_Ostriches</feratypeFamily>
+		<label>ostrich</label>
+		<race>Ostrich</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Ostrich</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageEggYield</li>				
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
 </Defs>

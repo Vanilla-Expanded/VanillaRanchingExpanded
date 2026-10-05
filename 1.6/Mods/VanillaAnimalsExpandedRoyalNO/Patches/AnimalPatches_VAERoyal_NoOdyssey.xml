@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_Peacock"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_Peacock"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_Peacock"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggPeacockFertilized"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_EggPeacockFertilized"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggPeacockFertilized"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+			<li Class="VEF.AnimalGenes.CompProperties_StackByGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggPeacockFertilized"]/inspectorTabs</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_EggPeacockFertilized"]</xpath>
+			<value>
+				<inspectorTabs/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggPeacockFertilized"]/inspectorTabs</xpath>
+		<value>
+			<li>VEF.AnimalGenes.ITab_AnimalGenes</li>
+		</value>
+	</Operation>
+	
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_Quail"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_Quail"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_Quail"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggQuailFertilized"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_EggQuailFertilized"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggQuailFertilized"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+			<li Class="VEF.AnimalGenes.CompProperties_StackByGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggQuailFertilized"]/inspectorTabs</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_EggQuailFertilized"]</xpath>
+			<value>
+				<inspectorTabs/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggQuailFertilized"]/inspectorTabs</xpath>
+		<value>
+			<li>VEF.AnimalGenes.ITab_AnimalGenes</li>
+		</value>
+	</Operation>
+	
+		<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_Swan"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_Swan"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_Swan"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggSwanFertilized"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_EggSwanFertilized"]</xpath>
+			<value>
+				<comps/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggSwanFertilized"]/comps</xpath>
+		<value>
+			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
+			</li>
+			<li Class="VEF.AnimalGenes.CompProperties_StackByGenes">      
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggSwanFertilized"]/inspectorTabs</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VAERoy_EggSwanFertilized"]</xpath>
+			<value>
+				<inspectorTabs/>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="VAERoy_EggSwanFertilized"]/inspectorTabs</xpath>
+		<value>
+			<li>VEF.AnimalGenes.ITab_AnimalGenes</li>
+		</value>
+	</Operation>
+</Patch>
+

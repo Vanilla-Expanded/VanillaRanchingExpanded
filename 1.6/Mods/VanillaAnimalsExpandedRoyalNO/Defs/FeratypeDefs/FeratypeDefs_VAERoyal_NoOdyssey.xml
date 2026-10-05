@@ -1,31 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<VEF.AnimalGenes.FeratypeDef>
-		<defName>VRE_Muskox</defName>
-		<description>A shaggy, cold-hardy mammal prized for its thick, protective wool and resilient nature in freezing environments.</description>
-		<feratypeFamily>VRE_Bovines</feratypeFamily>
-		<canBeAlpha>true</canBeAlpha>
-		<label>muskox</label>
-		<race>Muskox</race>
-		<iconPath>UI/FeratypeIcons/Feratype_MuskOx</iconPath>
-		<animalGenes>
-			<li>VRE_GoodVitality</li>
-			<li>VRE_Slow</li>
-			<li>VRE_AverageSize</li>
-			<li>VRE_Filthy</li>
-			<li>VRE_Unruly</li>
-			<li>VRE_AverageMetabolism</li>
-			<li>VRE_AverageBuild</li>
-			<li>VRE_AverageIntelligence</li>
-			<li>VRE_LuxuriantWool</li>
-		</animalGenes>
-	</VEF.AnimalGenes.FeratypeDef>
-	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_Peacock</defName>
-		<description>Large birds with extravagant plumage. Male peacocks use their tail feathers in elaborate courtship displays.</description>
+		<description>Beautiful, majestic royal birds genetically altered to be able to bestow psychic energy onto people they nuzzle.</description>
 		<feratypeFamily>VRE_Peacocks</feratypeFamily>
 		<label>peacock</label>
-		<race>Peacock</race>
+		<race>VAERoy_Peacock</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Peacock</iconPath>
 		<animalGenes>
 			<li>VRE_AverageVitality</li>
@@ -41,10 +21,10 @@
 	</VEF.AnimalGenes.FeratypeDef>
 	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_Quail</defName>
-		<description>Small plump ground-dwelling birds with a distinctive plume.</description>
+		<description>Royal poultry bred specifically for human consumption, quail meat is one of a kind, with a taste so succulent it turns any meal into a lavish meal.</description>
 		<feratypeFamily>VRE_Quail</feratypeFamily>
 		<label>quail</label>
-		<race>Quail</race>
+		<race>VAERoy_Quail</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Quail</iconPath>
 		<animalGenes>
 			<li>VRE_AverageVitality</li>
@@ -60,10 +40,10 @@
 	</VEF.AnimalGenes.FeratypeDef>
 	<VEF.AnimalGenes.FeratypeDef>
 		<defName>VRE_Swan</defName>
-		<description>Large graceful waterfowl known for their beauty, and their surprising ferocity.</description>
+		<description>One of the largest birds capable of flying, swans are often kept by royalty due to the beautiful nests of flowers they build for themselves.</description>
 		<feratypeFamily>VRE_Swan</feratypeFamily>
 		<label>swan</label>
-		<race>Swan</race>
+		<race>VAERoy_Swan</race>
 		<iconPath>UI/FeratypeIcons/Feratype_Swan</iconPath>
 		<animalGenes>
 			<li>VRE_AverageVitality</li>
@@ -77,4 +57,5 @@
 			<li>VRE_AverageEggYield</li>		
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
+	
 </Defs>
