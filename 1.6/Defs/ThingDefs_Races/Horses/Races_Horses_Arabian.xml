@@ -65,6 +65,12 @@
 				<li>VRE_HorseKonik</li>
 				<li>Donkey</li>
 			</canCrossBreedWith>
+			<wildBiomes>
+				<BorealForest>0.15</BorealForest>
+				<TemperateForest>0.2</TemperateForest>
+				<TemperateSwamp>0.2</TemperateSwamp>
+				<AridShrubland>0.1</AridShrubland>
+			</wildBiomes>
 		</race>
 		<modExtensions>
 			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">

@@ -31,7 +31,7 @@
 			<li>VRE_VeryFast</li>
 			<li>VRE_AverageSize</li>
 			<li>VRE_AverageCleanliness</li>
-			<li>VRE_Unruly</li>
+			<li>VRE_Compliant</li>
 			<li>VRE_VeryFastMetabolism</li>
 			<li>VRE_Lean</li>
 			<li>VRE_IntermediateIntelligence</li>

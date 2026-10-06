@@ -18,6 +18,12 @@
 			</li>
 		</comps>
 		<race>
+			<wildBiomes>
+				<BorealForest>0.15</BorealForest>
+				<TemperateForest>0.2</TemperateForest>
+				<TemperateSwamp>0.2</TemperateSwamp>
+				<AridShrubland>0.1</AridShrubland>
+			</wildBiomes>
 			<herdAnimal>true</herdAnimal>
 			<body>QuadrupedAnimalWithHooves</body>
 			<baseBodySize>3</baseBodySize>
