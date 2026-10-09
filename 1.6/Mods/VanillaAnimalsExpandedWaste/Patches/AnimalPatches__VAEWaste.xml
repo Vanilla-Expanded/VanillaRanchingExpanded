@@ -67,7 +67,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
 		<value>
-			<texPath>Pawn/CowsBabies/WastefalloBaby</texPath>
+			<texPath>Pawn/CowsBabies/WasteffaloBaby</texPath>
 		</value>
 	</Operation>
 	<!--<Operation Class="PatchOperationReplace">
@@ -80,14 +80,14 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
 		<value>
-			<texPath>Pawn/Cows/Wastefallo/WastefalloBull</texPath>
+			<texPath>Pawn/Cows/Wasteffalo/WasteffaloBull</texPath>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[2]</xpath>
 		<value>
 			<femaleGraphicData>
-				<texPath>Pawn/Cows/Wastefallo/WastefalloCow</texPath>
+				<texPath>Pawn/Cows/Wasteffalo/WasteffaloCow</texPath>
 				<drawSize>2.15</drawSize>
 				<shadowData>
 					<volume>(0.6, 0.45, 0.45)</volume>
@@ -99,14 +99,14 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
 		<value>
-			<texPath>Pawn/Cows/Wastefallo/WastefalloBull</texPath>
+			<texPath>Pawn/Cows/Wasteffalo/WasteffaloBull</texPath>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/PawnKindDef[defName="VAEWaste_Wasteffalo"]/lifeStages/li[3]</xpath>
 		<value>
 			<femaleGraphicData>
-				<texPath>Pawn/Cows/Wastefallo/WastefalloCow</texPath>
+				<texPath>Pawn/Cows/Wasteffalo/WasteffaloCow</texPath>
 				<drawSize>2.9</drawSize>
 				<shadowData>
 					<volume>(0.8, 0.6, 0.6)</volume>
