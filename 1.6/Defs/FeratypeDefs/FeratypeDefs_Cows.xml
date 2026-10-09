@@ -137,7 +137,8 @@
 			<li>VRE_AverageMetabolism</li>
 			<li>VRE_AverageBuild</li>
 			<li>VRE_AverageIntelligence</li>
-			<li>VRE_AverageWool</li>			
+			<li>VRE_AverageWool</li>	
+			<li>VRE_AveragePackCapacity</li>			
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
 	<VEF.AnimalGenes.FeratypeDef>
@@ -158,6 +159,7 @@
 			<li>VRE_AverageBuild</li>
 			<li>VRE_ObliviousIntelligence</li>
 			<li>VRE_DryMilk</li>
+			<li>VRE_AveragePackCapacity</li>
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
 	<VEF.AnimalGenes.FeratypeDef>
@@ -179,6 +181,7 @@
 			<li>VRE_ObliviousIntelligence</li>
 			<li>VRE_ThickWool</li>
 			<li>VRE_MeagerMilk</li>
+			<li>VRE_AveragePackCapacity</li>
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
 </Defs>

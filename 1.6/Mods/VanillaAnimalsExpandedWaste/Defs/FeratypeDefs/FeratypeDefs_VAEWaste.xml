@@ -16,7 +16,8 @@
 			<li>VRE_Wild</li>
 			<li>VRE_AverageMetabolism</li>
 			<li>VRE_AverageBuild</li>
-			<li>VRE_AverageIntelligence</li>		
+			<li>VRE_AverageIntelligence</li>	
+			<li>VRE_AveragePackCapacity</li>			
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
 </Defs>
