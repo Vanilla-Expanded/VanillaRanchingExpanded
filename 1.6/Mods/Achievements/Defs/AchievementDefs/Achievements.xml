@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AchievementsExpanded.AchievementTabDef>
+		<defName>VRE_VanillaRanchingExpanded</defName>
+		<label>Vanilla Ranching Expanded</label>
+	</AchievementsExpanded.AchievementTabDef>
+	<AchievementsExpanded.AchievementDef Name="VRE_AchievementParent" Abstract="true">
+		<bgtexPath>Achievements/VRE_AchievementBackground</bgtexPath>
+		<tab>VRE_VanillaRanchingExpanded</tab>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_BestBoyEver</defName>
+		<label>best boy ever</label>
+		<description>Acquire a Collie to manage your ranches</description>
+		<tracker Class="AchievementsExpanded.KindDefTracker">
+			<kindDefs>
+				<li>
+					<key>VRE_Collie</key>
+					<value>1</value>
+				</li>
+			</kindDefs>
+		</tracker>
+		<texPath>Pawn/Collie/BorderCollie_east</texPath>
+		<points>10</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_HealthySpecimen</defName>
+		<label>Healthy specimen</label>
+		<description>Get a ranch animal with a perfect vitality animal gene</description>
+		<tracker Class="AchievementsExpanded.AnimalGeneTracker">
+			<animalGenesList>
+				<li>
+					<key>VRE_PerfectVitality</key>
+					<value>1</value>
+				</li>
+			</animalGenesList>
+		</tracker>
+		<texPath>UI/AnimalGenes/AnimalGene_Vitality</texPath>
+		<points>5</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_MovingLikeTheWind</defName>
+		<label>Moving like the wind</label>
+		<description>Get a ranch animal with a very fast animal gene</description>
+		<tracker Class="AchievementsExpanded.AnimalGeneTracker">
+			<animalGenesList>
+				<li>
+					<key>VRE_VeryFast</key>
+					<value>1</value>
+				</li>
+			</animalGenesList>
+		</tracker>
+		<texPath>UI/AnimalGenes/AnimalGene_Speed</texPath>
+		<points>5</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_CleverGirl</defName>
+		<label>Clever girl!</label>
+		<description>Get a ranch animal with an advanced intelligence animal gene</description>
+		<tracker Class="AchievementsExpanded.AnimalGeneTracker">
+			<animalGenesList>
+				<li>
+					<key>VRE_AdvancedIntelligence</key>
+					<value>1</value>
+				</li>
+			</animalGenesList>
+		</tracker>
+		<texPath>UI/AnimalGenes/AnimalGene_Intelligence</texPath>
+		<points>5</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_Stinky</defName>
+		<label>Stinky!</label>
+		<description>Get a ranch animal with a very filthy animal gene</description>
+		<tracker Class="AchievementsExpanded.AnimalGeneTracker">
+			<animalGenesList>
+				<li>
+					<key>VRE_VeryFilthy</key>
+					<value>1</value>
+				</li>
+			</animalGenesList>
+		</tracker>
+		<texPath>UI/AnimalGenes/AnimalGene_Filth</texPath>
+		<points>5</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_MaximumBaconry</defName>
+		<label>Maximum baconry</label>
+		<description>Get a member of the pig feratype family that produces maximum bacon</description>
+		<tracker Class="AchievementsExpanded.AnimalGeneTracker">
+			<animalGenesList>
+				<li>
+					<key>VRE_MaximumBaconYield</key>
+					<value>1</value>
+				</li>
+			</animalGenesList>
+		</tracker>
+		<texPath>UI/AnimalGenes/AnimalGene_BaconYield</texPath>
+		<points>10</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_ExtractGamete</defName>
+		<label>Gamete extraction</label>
+		<description>Extract a gamete from a ranch animal</description>
+		<tracker Class="AchievementsExpanded.HediffTracker">
+			<def>VRE_GameteExtracted</def>
+			<count>1</count>
+		</tracker>
+		<texPath>Things/Item/VRE_AnimalGamete</texPath>
+		<points>5</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_FullBarn</defName>
+		<label>Full barn</label>
+		<description>Get the five feratypes of bovines from this mod (Angus, Dairy, Wooly, Zebu and Jersey)</description>
+		<tracker Class="AchievementsExpanded.KindDefTracker">
+			<kindDefs>
+				<li>
+					<key>VRE_CowAngus</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_CowDairy</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_CowJersey</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_CowWooly</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_CowZebu</key>
+					<value>1</value>
+				</li>
+			</kindDefs>
+		</tracker>
+		<texPath>Pawn/Cows/Beef/BeefBull_east</texPath>
+		<points>25</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_FullPigsty</defName>
+		<label>Full pigsty</label>
+		<description>Get the three feratypes of pigs from this mod (Iberian, Berkshire, and Duroc)</description>
+		<tracker Class="AchievementsExpanded.KindDefTracker">
+			<kindDefs>
+				<li>
+					<key>VRE_IberianPig</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_BerkshirePig</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_DurocPig</key>
+					<value>1</value>
+				</li>
+				
+			</kindDefs>
+		</tracker>
+		<texPath>Pawn/Pigs/Iberian/IberianBoar_east</texPath>
+		<points>25</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_FullPen</defName>
+		<label>Full pen</label>
+		<description>Get the four feratypes of sheep from this mod (Dairy, Merino, Dorper, and Shaggy)</description>
+		<tracker Class="AchievementsExpanded.KindDefTracker">
+			<kindDefs>
+				<li>
+					<key>VRE_DairySheep</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_MerinoSheep</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_DorperSheep</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_ShaggySheep</key>
+					<value>1</value>
+				</li>
+				
+			</kindDefs>
+		</tracker>
+		<texPath>Pawn/Sheep/Dairy/DairyRam_east</texPath>
+		<points>25</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_FullStable</defName>
+		<label>Full stable</label>
+		<description>Get the three feratypes of horses from this mod (Arabian, Draft, and Konik)</description>
+		<tracker Class="AchievementsExpanded.KindDefTracker">
+			<kindDefs>
+				<li>
+					<key>VRE_HorseArabian</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_HorseDraft</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>VRE_HorseKonik</key>
+					<value>1</value>
+				</li>
+				
+			</kindDefs>
+		</tracker>
+		<texPath>Pawn/Horses/Arabian/Arabian_east</texPath>
+		<points>25</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_Stubborn</defName>
+		<label>Stubborn</label>
+		<description>Get a mule by crossbreeding a donkey and any horse</description>
+		<tracker Class="AchievementsExpanded.KindDefTracker">
+			<kindDefs>
+				<li>
+					<key>VRE_Mule</key>
+					<value>1</value>
+				</li>
+			</kindDefs>
+		</tracker>
+		<texPath>Pawn/Horses/Mule/Mule_east</texPath>
+		<points>5</points>
+	</AchievementsExpanded.AchievementDef>
+	<AchievementsExpanded.AchievementDef ParentName="VRE_AchievementParent">
+		<defName>VRE_OldManCow</defName>
+		<label>Old man cow</label>
+		<description>Get an animal that grows old</description>
+		<tracker Class="AchievementsExpanded.HediffTracker">
+			<def>VRE_OldAge</def>
+			<count>1</count>
+		</tracker>
+		<texPath>Achievements/VRE_OldAgeAchievement</texPath>
+		<points>10</points>
+	</AchievementsExpanded.AchievementDef>
+</Defs>
+

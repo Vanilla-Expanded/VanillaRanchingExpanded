@@ -8,6 +8,7 @@
 		<li IfModActive="VanillaExpanded.VanillaAnimalsExpanded">1.6/Mods/VanillaAnimalsExpanded</li>
 		<li IfModActive="VanillaExpanded.VAERoy">1.6/Mods/VanillaAnimalsExpandedRoyal</li>
 		<li IfModNotActive="Ludeon.RimWorld.Odyssey" IfModActive="VanillaExpanded.VAERoy">1.6/Mods/VanillaAnimalsExpandedRoyalNO</li>
+		<li IfModActive="vanillaexpanded.achievements">1.6/Mods/Achievements</li>
 	</v1.6>
 </loadFolders>
 
