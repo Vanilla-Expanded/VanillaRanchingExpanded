@@ -153,4 +153,61 @@
 			<li>VRE_AverageEggYield</li>				
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Goose</defName>
+		<description>A domesticated bird kept by humans as poultry for their eggs and meat.</description>
+		<feratypeFamily>VRE_Goose</feratypeFamily>
+		<label>goose</label>
+		<race>Goose</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Goose</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageEggYield</li>				
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Turkey</defName>
+		<description>A short, fat, flightless bird known for its hilarious 'gobbling' call. It has been long domesticated, but also lives in the wild.</description>
+		<feratypeFamily>VRE_Turkey</feratypeFamily>
+		<label>turkey</label>
+		<race>Turkey</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Turkey</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageEggYield</li>				
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Boomalope</defName>
+		<description>Engineered for chemicals production, the boomalope grows a large sac of volatile chemicals on its back.</description>
+		<feratypeFamily>VRE_Boomalope</feratypeFamily>
+		<label>boomalope</label>
+		<race>Boomalope</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Boomalope</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageMilk</li>				
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
 </Defs>

@@ -17,7 +17,7 @@
 	</VEF.AnimalGenes.FeratypeFamilyDef>
 	<VEF.AnimalGenes.FeratypeFamilyDef>
 		<defName>VRE_Boomalope</defName>
-		<label>boomalope</label>
+		<label>boomalopes</label>
 		<description>Strange, fire-prone livestock descended from engineered animals, selectively bred for their volatile biology and unusual adaptations.</description>
 	</VEF.AnimalGenes.FeratypeFamilyDef>
 	<VEF.AnimalGenes.FeratypeFamilyDef>
@@ -77,12 +77,22 @@
 	</VEF.AnimalGenes.FeratypeFamilyDef>
 	<VEF.AnimalGenes.FeratypeFamilyDef>
 		<defName>VRE_Quail</defName>
-		<label>quail</label>
+		<label>quails</label>
 		<description>Small, hardy birds valued for their eggs, meat, and prolific breeding.</description>
 	</VEF.AnimalGenes.FeratypeFamilyDef>
 	<VEF.AnimalGenes.FeratypeFamilyDef>
 		<defName>VRE_Swan</defName>
-		<label>swan</label>
+		<label>swans</label>
 		<description>Graceful waterfowl known for their striking plumage, long necks, and strong pair bonds.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Goose</defName>
+		<label>geese</label>
+		<description>Hardy, territorial birds known for their loud honking and aggressive defense of their flock.</description>
+	</VEF.AnimalGenes.FeratypeFamilyDef>
+	<VEF.AnimalGenes.FeratypeFamilyDef>
+		<defName>VRE_Turkey</defName>
+		<label>turkeys</label>
+		<description>Large, hardy birds that forage in groups and use their imposing size to intimidate potential threats.</description>
 	</VEF.AnimalGenes.FeratypeFamilyDef>
 </Defs>

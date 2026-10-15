@@ -21,4 +21,23 @@
 			<li>VRE_AverageWool</li>	
 		</animalGenes>
 	</VEF.AnimalGenes.FeratypeDef>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_WildGoose</defName>
+		<description>A non-domesticated grey goose. Compared to their domesticated brethren, which have been selected over thousands of years for larger size, wild geese don't lay as many eggs, and they are renowned for their aggressive temperament.</description>
+		<feratypeFamily>VRE_Goose</feratypeFamily>
+		<label>wild goose</label>
+		<race>AEXP_WildGoose</race>
+		<iconPath>UI/FeratypeIcons/Feratype_WildGoose</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+			<li>VRE_AverageEggYield</li>				
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
 </Defs>

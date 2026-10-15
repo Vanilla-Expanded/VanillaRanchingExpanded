@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<VEF.AnimalGenes.FeratypeDef>
+		<defName>VRE_Toxalope</defName>
+		<description>A pollution-adapted cousin of the boomalope, the toxalope grows toxic pouches on its back. Unlike the boomalope, the toxalope cannot be milked.</description>
+		<feratypeFamily>VRE_Boomalope</feratypeFamily>
+		<label>toxalope</label>
+		<race>Toxalope</race>
+		<iconPath>UI/FeratypeIcons/Feratype_Toxalope</iconPath>
+		<animalGenes>
+			<li>VRE_AverageVitality</li>
+			<li>VRE_AverageSpeed</li>
+			<li>VRE_AverageSize</li>
+			<li>VRE_AverageCleanliness</li>
+			<li>VRE_AverageWildness</li>
+			<li>VRE_AverageMetabolism</li>
+			<li>VRE_AverageBuild</li>
+			<li>VRE_AverageIntelligence</li>
+						
+		</animalGenes>
+	</VEF.AnimalGenes.FeratypeDef>
+</Defs>

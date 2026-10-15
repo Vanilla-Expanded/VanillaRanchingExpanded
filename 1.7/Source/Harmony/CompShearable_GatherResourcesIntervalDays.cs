@@ -14,7 +14,7 @@ namespace VanillaRanchingExpanded
     public class VanillaRanchingExpanded_CompShearable_GatherResourcesIntervalDays_Patch
     {
         [HarmonyPostfix]
-        public static void ModifyWoolInterval(CompMilkable __instance, ref int __result)
+        public static void ModifyWoolInterval(CompShearable __instance, ref int __result)
         {
             __result = Math.Max((int)(__result * __instance.parent.GetStatValue(InternalDefOf.VRE_WoolIntervalFactor, cacheStaleAfterTicks: 60)),1);
 

@@ -13,7 +13,7 @@ namespace VanillaRanchingExpanded
     public class VanillaRanchingExpanded_CompShearable_ResourceAmount_Patch
     {
         [HarmonyPostfix]
-        public static void ModifyWoolYield(CompMilkable __instance, ref int __result)
+        public static void ModifyWoolYield(CompShearable __instance, ref int __result)
         {
             __result = (int)(__result * __instance.parent.GetStatValue(InternalDefOf.VRE_WoolYieldFactor, cacheStaleAfterTicks: 60));
 
