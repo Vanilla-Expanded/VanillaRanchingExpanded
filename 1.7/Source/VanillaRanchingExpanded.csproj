@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputPath>../Assemblies</OutputPath>
     <TargetFramework>net10.0</TargetFramework>
@@ -20,7 +20,7 @@
       <CopyLocal>false</CopyLocal>
       <Private>false</Private>
     </Reference>
-   
+
     <Reference Include="RimWorld">
       <HintPath>..\..\..\..\RimWorld.dll</HintPath>
 	   <CopyLocal>false</CopyLocal>
@@ -41,7 +41,7 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <Target Name="KillRimWorld" BeforeTargets="Clean;Build">
-    <Exec Command="tasklist /FI &quot;IMAGENAME eq RimWorld.exe&quot; | find /I &quot;RimWorld.exe&quot; &amp;gt;nul &amp;amp;&amp;amp; taskkill /F /IM RimWorld.exe" IgnoreExitCode="true" />
+  <Target Name="KillRimWorld" BeforeTargets="BeforeCompile">
+    <Exec Command="taskkill /F /IM RimWorld.exe" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
   </Target>
 </Project>

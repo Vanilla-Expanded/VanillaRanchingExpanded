@@ -13,7 +13,7 @@
             "command": "dotnet",
             "args": [
                 "build",
-                "${workspaceFolder}/1.6/Source/VanillaRanchingExpanded.csproj"
+                "${workspaceFolder}/1.7/Source/VanillaRanchingExpanded.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {

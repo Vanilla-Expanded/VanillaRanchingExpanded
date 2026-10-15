@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThinkTreeDef>
+		<defName>VRE_Herding</defName>
+		<insertTag>Animal_PreWander</insertTag>
+		<insertPriority>0</insertPriority>
+		<thinkRoot Class="ThinkNode_ChancePerHour_Constant">
+			<mtbHours>2</mtbHours>
+			<subNodes>
+				<li Class="ThinkNode_ConditionalOfPlayerFaction">
+					<subNodes>
+						<li Class="VanillaRanchingExpanded.ThinkNode_ConditionalCanHerd">
+							<subNodes>
+								<li Class="ThinkNode_Tagger">
+									<tagToGive>TrainedAnimalBehavior</tagToGive>
+									<subNodes>
+										<li Class="VanillaRanchingExpanded.JobGiver_HerdRoamingAnimal" />
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+</Defs>

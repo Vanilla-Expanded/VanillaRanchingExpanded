@@ -40,5 +40,11 @@ namespace VanillaRanchingExpanded
         public static HediffDef VRE_GameteExtracted;
 
         public static ThingDef VRE_AnimalGamete;
+
+        public static ThingDef VRE_Collie;
+        public static JobDef VRE_HerdAnimal;
+        public static JobDef VRE_FleeToPen;
+        [MayRequire("Ludeon.RimWorld.Odyssey")]
+        public static TrainableDef VRE_Herd;
     }
 }

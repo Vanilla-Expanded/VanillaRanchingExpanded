@@ -6,12 +6,30 @@
 		<reportString>using gene tool.</reportString>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
-	
+
 	<JobDef>
 		<defName>VRE_ImplantGamete</defName>
 		<driverClass>VanillaRanchingExpanded.JobDriver_ImplantGamete</driverClass>
 		<reportString>implanting gamete.</reportString>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
-	
+
+	<JobDef>
+		<defName>VRE_HerdAnimal</defName>
+		<driverClass>VanillaRanchingExpanded.JobDriver_HerdAnimal</driverClass>
+		<reportString>herding TargetA.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+
+	<JobDef>
+		<defName>VRE_FleeToPen</defName>
+		<driverClass>JobDriver_Goto</driverClass>
+		<reportString>fleeing to pen.</reportString>
+		<casualInterruptible>false</casualInterruptible>
+		<playerInterruptible>false</playerInterruptible>
+		<collideWithPawns>true</collideWithPawns>
+		<checkOverrideOnDamage>Never</checkOverrideOnDamage>
+		<ignoreFenceBlocked>true</ignoreFenceBlocked>
+	</JobDef>
+
 </Defs>
