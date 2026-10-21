@@ -14,14 +14,39 @@ namespace VanillaRanchingExpanded
     {
         private static HashSet<ThingDef> expandedDefs = new();
 
-        public static void Prefix(ThingDef tDef, ref int nestLevel, out int __state)
+        [HarmonyPriority(Priority.High)]
+        public static void Prefix(Listing_TreeThingFilter __instance, ThingDef tDef, ref int nestLevel, out int __state)
         {
             __state = nestLevel;
-            if (ITab_PenAnimals_FillTab_Patch.currentPenMarker != null &&
-                ITab_PenAnimals_FillTab_Patch.cachedPenAnimals.TryGetValue(tDef, out var pawns) &&
-                pawns.Count > 0)
+            if (ITab_PenAnimals_FillTab_Patch.currentPenMarker is null ||
+                ITab_PenAnimals_FillTab_Patch.cachedPenAnimals.TryGetValue(tDef, out var pawns) is false ||
+                pawns.Count == 0)
             {
-                nestLevel += 1;
+                return;
+            }
+            nestLevel += 1;
+
+            var arrowRect = new Rect(__state * __instance.nestIndentWidth, __instance.CurHeight + __instance.lineHeight / 2f - 9f, 18f, 18f);
+            var isExpanded = expandedDefs.Contains(tDef);
+            if (Event.current.type == EventType.Repaint)
+            {
+                GUI.color = Mouse.IsOver(arrowRect) ? GenUI.MouseoverColor : Color.white;
+                GUI.DrawTexture(arrowRect, isExpanded ? TexButton.Collapse : TexButton.Reveal);
+                GUI.color = Color.white;
+            }
+            if (Mouse.IsOver(arrowRect) && Event.current.type == EventType.MouseDown)
+            {
+                if (isExpanded)
+                {
+                    expandedDefs.Remove(tDef);
+                    SoundDefOf.TabClose.PlayOneShotOnCamera();
+                }
+                else
+                {
+                    expandedDefs.Add(tDef);
+                    SoundDefOf.TabOpen.PlayOneShotOnCamera();
+                }
+                Event.current.Use();
             }
         }
 
@@ -30,23 +55,8 @@ namespace VanillaRanchingExpanded
             if (ITab_PenAnimals_FillTab_Patch.currentPenMarker == null || ITab_PenAnimals_FillTab_Patch.cachedPenAnimals.TryGetValue(tDef, out var pawns) is false || pawns.Count == 0) return;
 
             var lineHeight = __instance.lineHeight;
-            var rowY = __instance.CurHeight - lineHeight - __instance.verticalSpacing;
 
-            var arrowRect = new Rect(__state * __instance.nestIndentWidth, rowY + lineHeight / 2f - 9f, 18f, 18f);
-            var isExpanded = expandedDefs.Contains(tDef);
-            var wasExpanded = isExpanded;
-            if (Widgets.ButtonImage(arrowRect, isExpanded ? TexButton.Collapse : TexButton.Reveal))
-            {
-                isExpanded = isExpanded is false;
-                (isExpanded ? SoundDefOf.TabOpen : SoundDefOf.TabClose).PlayOneShotOnCamera();
-            }
-            if (isExpanded != wasExpanded)
-            {
-                if (isExpanded) expandedDefs.Add(tDef);
-                else expandedDefs.Remove(tDef);
-            }
-
-            if (isExpanded is false) return;
+            if (expandedDefs.Contains(tDef) is false) return;
 
             var marker = ITab_PenAnimals_FillTab_Patch.currentPenMarker;
             var comp = marker.parent.GetComp<CompAnimalAssignments>();
