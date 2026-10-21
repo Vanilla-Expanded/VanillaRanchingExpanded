@@ -204,7 +204,7 @@
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>
 		<marketValueFactor>1.2</marketValueFactor>
 		<isIllnessGene>true</isIllnessGene>
-		<animalIllnessMTB>120</animalIllnessMTB>
+		<animalIllnessMTB>160</animalIllnessMTB>
 		<statFactors>
 			<FilthRate>0</FilthRate>			
 			<MarketValue>1.2</MarketValue>
@@ -217,7 +217,7 @@
 		<label>tidy</label>
 		<stability>-1</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>		
-		<animalIllnessMTB>60</animalIllnessMTB>
+		<animalIllnessMTB>80</animalIllnessMTB>
 		<isIllnessGene>true</isIllnessGene>
 		<statFactors>
 			<FilthRate>0.5</FilthRate>					
@@ -240,7 +240,7 @@
 		<stability>1</stability>
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>	
 		<isIllnessGene>true</isIllnessGene>		
-		<animalIllnessMTB>30</animalIllnessMTB>
+		<animalIllnessMTB>40</animalIllnessMTB>
 		<statFactors>
 			<FilthRate>1.5</FilthRate>					
 		</statFactors>
@@ -254,7 +254,7 @@
 		<iconPath>UI/AnimalGenes/AnimalGene_Filth</iconPath>
 		<marketValueFactor>0.9</marketValueFactor>
 		<isIllnessGene>true</isIllnessGene>
-		<animalIllnessMTB>18</animalIllnessMTB>
+		<animalIllnessMTB>24</animalIllnessMTB>
 		<statFactors>
 			<FilthRate>2</FilthRate>			
 			<MarketValue>0.9</MarketValue>

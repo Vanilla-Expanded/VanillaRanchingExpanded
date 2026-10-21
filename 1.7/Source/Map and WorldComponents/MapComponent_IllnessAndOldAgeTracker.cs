@@ -42,20 +42,24 @@ namespace VanillaRanchingExpanded
                             AnimalGeneDef filthAnimalGene = comp.genes?.Where(x => x.isIllnessGene).FirstOrDefault();
                             if (filthAnimalGene != null)
                             {
-
-                                bool illnessHappens = Rand.MTBEventOccurs(filthAnimalGene.animalIllnessMTB, 60000, 60000);
-
-                                if (illnessHappens)
+                                if (comp.ticksSinceLastDisease >= 600000)
                                 {
-                                    HediffDef chosenIllness = diseasesAndWeights.RandomElementByWeight(x => x.Value).Key;
-                                    if (chosenIllness != null)
-                                    {
-                                        Hediff hediff = HediffMaker.MakeHediff(chosenIllness, pawn);
-                                        pawn.health.AddHediff(hediff);
-                                        Find.LetterStack.ReceiveLetter("VRE_AnimalDisease".Translate(hediff.def.LabelCap), "VRE_AnimalDiseaseDesc".Translate(pawn.Name.ToString(), hediff.def.LabelCap), LetterDefOf.NegativeEvent, pawn);
+                                    bool illnessHappens = Rand.MTBEventOccurs(filthAnimalGene.animalIllnessMTB, 60000, 60000);
 
+                                    if (illnessHappens)
+                                    {
+                                        comp.ticksSinceLastDisease = 0;
+                                        HediffDef chosenIllness = diseasesAndWeights.RandomElementByWeight(x => x.Value).Key;
+                                        if (chosenIllness != null)
+                                        {
+                                            Hediff hediff = HediffMaker.MakeHediff(chosenIllness, pawn);
+                                            pawn.health.AddHediff(hediff);
+                                            Find.LetterStack.ReceiveLetter("VRE_AnimalDisease".Translate(hediff.def.LabelCap), "VRE_AnimalDiseaseDesc".Translate(pawn.Name.ToString(), hediff.def.LabelCap), LetterDefOf.NegativeEvent, pawn);
+
+                                        }
                                     }
                                 }
+                                
                             }
                         }
 
