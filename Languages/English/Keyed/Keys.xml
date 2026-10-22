@@ -17,6 +17,8 @@
 	<VRE_AlreadyPregnant>Pregnant animals can’t be selected for gamete implantation</VRE_AlreadyPregnant>
 	<VRE_YouNeedHelp>You need help</VRE_YouNeedHelp>
 	<VRE_NotEggLayers>Can't extract gametes from egg laying animals</VRE_NotEggLayers>
+	<VRE_NutritionToStore>Nutrition to store</VRE_NutritionToStore>
+	<VRE_TargetNutrition>Target nutrition for this trough. Set to 0 to disable automatic refilling.</VRE_TargetNutrition>
 	
 	<!-- Stats -->
 	

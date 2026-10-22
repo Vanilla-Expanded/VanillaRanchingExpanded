@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ShelfBase">
+		<defName>VRE_AnimalTrough</defName>
+		<label>animal trough</label>
+		<description>An animal trough for storing hay, kibble and other animal feed. Items stored in this will not affect room beauty and they won't deteriorate, even if outside. Colonists will bring set amount of nutrition into the animal trough.</description>
+		<graphicData>
+			<texPath>Things/Structure/Trough/Trough</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,2)</drawSize>
+		</graphicData>
+		<costStuffCount>20</costStuffCount>
+		<tickerType>Rare</tickerType>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>8</Mass>
+			<Beauty>0.5</Beauty>
+			<WorkToBuild>500</WorkToBuild>
+			<Flammability>1</Flammability>
+		</statBases>
+		<size>(2,1)</size>
+		<designationHotKey>Misc12</designationHotKey>
+		<thingClass>VanillaRanchingExpanded.Building_AnimalTrough</thingClass>
+		<building>
+			<storageGroupTag>Shelf</storageGroupTag>
+			<fixedStorageSettings>
+				<filter>
+					<disallowNotEverStorable>true</disallowNotEverStorable>
+					<categories>
+						<li>Foods</li>
+					</categories>
+				</filter>
+			</fixedStorageSettings>
+			<defaultStorageSettings Inherit="False">
+				<priority>Preferred</priority>
+				<filter>
+					<thingDefs>
+						<li>Hay</li>
+						<li>Kibble</li>
+					</thingDefs>
+				</filter>
+			</defaultStorageSettings>
+		</building>
+	</ThingDef>
+</Defs>
