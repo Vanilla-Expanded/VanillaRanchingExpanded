@@ -8,7 +8,7 @@ namespace VanillaRanchingExpanded
     public class WorkGiver_RefillAnimalTrough : WorkGiver_Scanner
     {
         public override ThingRequest PotentialWorkThingRequest =>
-            ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial);
+            ThingRequest.ForDef(InternalDefOf.VRE_AnimalTrough);
 
         public override PathEndMode PathEndMode => PathEndMode.Touch;
 

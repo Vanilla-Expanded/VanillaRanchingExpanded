@@ -40,6 +40,7 @@ namespace VanillaRanchingExpanded
         public static HediffDef VRE_GameteExtracted;
 
         public static ThingDef VRE_AnimalGamete;
+        public static ThingDef VRE_AnimalTrough;
         public static ThingDef VRE_Collie;
 
         public static JobDef VRE_HerdAnimal;

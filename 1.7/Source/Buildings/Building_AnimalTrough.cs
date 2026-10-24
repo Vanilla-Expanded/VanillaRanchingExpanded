@@ -1,9 +1,7 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
-using VEF;
 using Verse;
 using Verse.AI;
 
@@ -12,459 +10,341 @@ namespace VanillaRanchingExpanded
     public class Building_AnimalTrough : Building_Storage
     {
         public float nutritionTarget = 6f;
-        private const int RefillCheckInterval = 2500; //1 hour
-        [System.NonSerialized]
-        private bool refillNeeded;
-        [System.NonSerialized]
-        public bool draggingNutritionBar;
-        private int nextRefillCheckTick;
+        [NonSerialized] public bool draggingNutritionBar;
+        private readonly AnimalTroughRefillBatch batch = new AnimalTroughRefillBatch();
 
         public override void ExposeData()
         {
             base.ExposeData();
+            ExposeRefillData();
+        }
+
+        private void ExposeRefillData()
+        {
             Scribe_Values.Look(ref nutritionTarget, "nutritionTarget", 6f);
+            Scribe_Values.Look(ref batch.remainingNutrition, "refillNutritionRemaining", 0f);
+            Scribe_Values.Look(ref batch.started, "refillBatchStarted", false);
+            Scribe_Values.Look(ref batch.nextCheckTick, "nextRefillCheckTick", -1);
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            if (batch.nextCheckTick < 0)
+                batch.nextCheckTick = Find.TickManager.TicksGame +
+                    (int)((uint)thingIDNumber * 391u % AnimalTroughRefillBatch.CheckInterval);
+        }
+
+        public void SetNutritionTarget(float value)
+        {
+            value = Math.Clamp(value, 0f, 100f);
+            if (storageGroup == null)
+                ApplyNutritionTarget(value);
+            else
+                foreach (IStorageGroupMember member in storageGroup.members)
+                    if (member is Building_AnimalTrough trough)
+                        trough.ApplyNutritionTarget(value);
+        }
+
+        private void ApplyNutritionTarget(float value)
+        {
+            nutritionTarget = value;
+            if (Spawned)
+                batch.ClampToSpace(value - GetStoredNutrition(), Find.TickManager.TicksGame);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (Gizmo gizmo in base.GetGizmos())
                 yield return gizmo;
-
             yield return new Gizmo_AnimalTroughNutrition(this);
+        }
+
+        public override string GetInspectString()
+        {
+            var text = new StringBuilder(base.GetInspectString());
+            if (Spawned)
+            {
+                if (text.Length > 0) text.AppendLine();
+                text.Append("VRE_TroughNutrition".Translate(GetStoredNutrition().ToString("0.##"),
+                    nutritionTarget.ToString("0.##")));
+                if (nutritionTarget <= 0f)
+                    text.AppendLine().Append("VRE_TroughDisabled".Translate());
+                else if (batch.Active)
+                    text.AppendLine().Append("VRE_TroughRefilling".Translate(batch.remainingNutrition.ToString("0.##")));
+            }
+            return text.ToString();
         }
 
         public override void TickRare()
         {
             base.TickRare();
-
-            if (!Spawned || nutritionTarget <= 0f)
+            if (!Spawned) return;
+            int now = Find.TickManager.TicksGame;
+            batch.ClampToSpace(nutritionTarget - GetStoredNutrition(), now);
+            if (batch.Active)
             {
-                refillNeeded = false;
+                if (!HasAnimalsToFeed(GetEnclosedPen())) batch.Complete(now);
                 return;
             }
+            if (now < batch.nextCheckTick) return;
+            batch.nextCheckTick = now + AnimalTroughRefillBatch.CheckInterval;
+            if (nutritionTarget <= 0f) return;
 
-            int currentTick = Find.TickManager.TicksGame;
-
-            if (currentTick < nextRefillCheckTick)
-            {
-                return;
-            }
-
-            nextRefillCheckTick = currentTick + RefillCheckInterval;
-            CheckRefill();
+            CompAnimalPenMarker marker = GetEnclosedPen();
+            if (HasAnimalsToFeed(marker) && PenNeedsFood(marker) &&
+                HasRefillSource(nutritionTarget - GetStoredNutrition()))
+                batch.Approve(nutritionTarget - GetStoredNutrition());
         }
 
-
-        private bool TryFindRefillCell(Pawn pawn, Thing food, out IntVec3 cell)
+        // A batch is committed only after the first hauler has reserved its source and destination.
+        // JobOnThing is also called while scanning, so it must not commit a batch itself.
+        internal bool TryStartRefill()
         {
-            cell = IntVec3.Invalid;
-
-            if (slotGroup == null || Map == null)
+            if (!CanContinueRefill()) return false;
+            if (!batch.started)
             {
-                return false;
-            }
-
-            foreach (IntVec3 candidate in AllSlotCellsList())
-            {
-                if (Map.haulDestinationManager.SlotGroupParentAt(candidate) != this)
+                if (!PenNeedsFood(GetEnclosedPen()))
                 {
-                    continue;
-                }
-
-                if (!GetStoreSettings().AllowedToAccept(food))
-                {
+                    batch.Complete(Find.TickManager.TicksGame);
                     return false;
                 }
-
-                if (!pawn.CanReach(candidate, PathEndMode.Touch, Danger.Some))
-                {
-                    continue;
-                }
-
-                if (!pawn.CanReserve(candidate))
-                {
-                    continue;
-                }
-
-                cell = candidate;
-                return true;
+                batch.started = true;
             }
+            return true;
+        }
 
+        internal bool CanContinueRefill()
+        {
+            if (!Spawned || nutritionTarget <= 0f || !batch.Active) return false;
+            return HasAnimalsToFeed(GetEnclosedPen());
+        }
+
+        private bool PenNeedsFood(CompAnimalPenMarker marker)
+        {
+            return marker != null && CalculateAvailableNutrition(marker) + CalculatePendingNutrition(marker)
+                < marker.PenFoodCalculator.SumNutritionConsumptionPerDay;
+        }
+
+        private static bool HasAnimalsToFeed(CompAnimalPenMarker marker)
+        {
+            return marker != null && marker.PenFoodCalculator.SumNutritionConsumptionPerDay > 0f;
+        }
+
+        private bool HasRefillJob()
+        {
+            foreach (Pawn pawn in Map.mapPawns.AllPawnsSpawned)
+                if (pawn.CurJob?.def == InternalDefOf.VRE_RefillAnimalTrough &&
+                    AllSlotCellsList().Contains(pawn.CurJob.GetTarget(TargetIndex.B).Cell))
+                    return true;
             return false;
         }
 
-
-
-
-        private void CheckRefill()
-        {
-            refillNeeded = false;
-
-            CompAnimalPenMarker marker = GetEnclosedPen();
-            if (marker == null)
-            {
-                return;
-            }
-
-            float dailyConsumption =
-                marker.PenFoodCalculator.SumNutritionConsumptionPerDay;
-
-            if (dailyConsumption <= 0f)
-            {
-                return;
-            }
-
-            float availableNutrition =
-                CalculateAvailableNutrition(marker)
-                + CalculatePendingNutrition(marker);
-
-            if (availableNutrition >= dailyConsumption)
-            {
-                return;
-            }
-
-            if (GetStoredNutrition() >= nutritionTarget)
-            {
-                return;
-            }
-
-            refillNeeded = true;
-        }
-
-
-       
-
         internal Job TryMakeRefillJob(Pawn pawn, bool forced)
         {
-            if (!refillNeeded)
-            {
-                return null;
-            }
-            if (!Spawned || nutritionTarget <= 0f || pawn.Map != Map)
-            {
-                return null;
-            }
+            if (!batch.Active || !Spawned || pawn.Map != Map || nutritionTarget <= 0f ||
+                Faction != pawn.Faction || this.IsForbidden(pawn) || !pawn.CanReserve(this) || HasRefillJob()) return null;
+            if (!HasAnimalsToFeed(GetEnclosedPen())) return null;
 
-            CompAnimalPenMarker marker = GetEnclosedPen();
-            if (marker == null)
-            {
-                return null;
-            }
-
-            float dailyConsumption =
-                marker.PenFoodCalculator.SumNutritionConsumptionPerDay;
-
-            if (dailyConsumption <= 0f || CalculateAvailableNutrition(marker) + CalculatePendingNutrition(marker) >= dailyConsumption)
-            {
-                return null;
-            }
-
-            float remainingTarget = nutritionTarget - GetStoredNutrition();
-            if (remainingTarget <= 0f)
-            {
-                return null;
-            }
-
-            foreach (Pawn otherPawn in Map.mapPawns.AllPawnsSpawned)
-            {
-                Job currentJob = otherPawn.CurJob;
-
-                if (currentJob == null ||
-                    currentJob.def != InternalDefOf.VRE_RefillAnimalTrough)
-                {
-                    continue;
-                }
-
-                if (AllSlotCellsList().Contains(
-                    currentJob.GetTarget(TargetIndex.B).Cell))
-                {
-                    return null;
-                }
-            }
-
+            float remaining = Math.Min(batch.remainingNutrition, nutritionTarget - GetStoredNutrition());
             Thing bestFood = null;
+            IntVec3 bestCell = IntVec3.Invalid;
             int bestCount = 0;
-            float bestNutrition = float.MaxValue;
+            float bestNutrition = 0f;
+            float bestDistance = float.MaxValue;
+            bool anyUsableSource = false;
 
             foreach (Thing food in Map.listerThings.AllThings)
             {
-                if (!food.Spawned ||
-                    food.def.category != ThingCategory.Item ||
-                    !food.IngestibleNow ||
-                    food.IsForbidden(pawn) ||
-                    !Accepts(food))
-                {
-                    continue;
-                }
-
-            
-                if (Map.haulDestinationManager.SlotGroupParentAt(food.Position)
-                    is Building_AnimalTrough)
-                {
-                    continue;
-                }
-
-                float nutritionPerItem =
-                    food.GetStatValue(StatDefOf.Nutrition);
-
-                if (nutritionPerItem <= 0f ||
-                    nutritionPerItem > remainingTarget)
-                {
-                    continue;
-                }
-
-                if (!pawn.RaceProps.CanEverEat(food.def) &&
-                    !HaulAIUtility.PawnCanAutomaticallyHaul(pawn, food, forced))
-                {
-                    continue;
-                }
-
-                if (!HaulAIUtility.PawnCanAutomaticallyHaul(pawn, food, forced))
-                {
-                    continue;
-                }
-
-                int count = Mathf.FloorToInt(
-                    remainingTarget / nutritionPerItem + 0.00001f);
-
-                count = Mathf.Min(count, food.stackCount);
-                count = Mathf.Min(
-                    count,
-                    MassUtility.CountToPickUpUntilOverEncumbered(pawn, food));
-
-                if (count <= 0)
-                {
-                    continue;
-                }
-
-                float deliveredNutrition = count * nutritionPerItem;
-
-          
-                if (deliveredNutrition < bestNutrition)
+                if (!IsRefillFood(food)) continue;
+                float perItem = food.GetStatValue(StatDefOf.Nutrition);
+                int fittingCount = AnimalTroughRefillBatch.CountThatFits(remaining, perItem);
+                if (fittingCount <= 0 || !HasPhysicalSpace(food)) continue;
+                anyUsableSource = true;
+                if (!HaulAIUtility.PawnCanAutomaticallyHaul(pawn, food, forced)) continue;
+                if (pawn.carryTracker.CarriedThing != null &&
+                    !pawn.carryTracker.CarriedThing.CanStackWith(food)) continue;
+                int count = Math.Min(fittingCount, Math.Min(food.stackCount,
+                    pawn.carryTracker.AvailableStackSpace(food.def)));
+                if (count <= 0 || !TryFindRefillCell(pawn, food, out IntVec3 cell, out int space)) continue;
+                count = Math.Min(count, space);
+                float deliveredNutrition = count * perItem;
+                float distance = pawn.Position.DistanceToSquared(food.Position) + food.Position.DistanceToSquared(cell);
+                if (AnimalTroughRefillBatch.IsBetterDelivery(deliveredNutrition, distance, bestNutrition, bestDistance))
                 {
                     bestFood = food;
+                    bestCell = cell;
                     bestCount = count;
                     bestNutrition = deliveredNutrition;
+                    bestDistance = distance;
                 }
             }
 
             if (bestFood == null)
             {
+                // An inaccessible source may still be usable by another colonist. Only abandon
+                // the batch if there is no permitted, fitting source with physical storage space.
+                if (!anyUsableSource) batch.Complete(Find.TickManager.TicksGame);
                 return null;
             }
-
-
-            if (!TryFindRefillCell(pawn, bestFood, out IntVec3 destination))
-            {
-                return null;
-            }
-
-            Job job = JobMaker.MakeJob(
-                InternalDefOf.VRE_RefillAnimalTrough,
-                bestFood,
-                destination);
-
+            Job job = JobMaker.MakeJob(InternalDefOf.VRE_RefillAnimalTrough, bestFood, bestCell);
             job.count = bestCount;
             job.haulMode = HaulMode.ToCellStorage;
             job.haulOpportunisticDuplicates = false;
-
             return job;
+        }
 
+        private bool IsRefillFood(Thing food)
+        {
+            return food.Spawned && food.def.category == ThingCategory.Item && food.IngestibleNow &&
+                GetParentStoreSettings().AllowedToAccept(food) && Accepts(food) &&
+                !(Map.haulDestinationManager.SlotGroupParentAt(food.Position) is Building_AnimalTrough);
+        }
+
+        private bool HasRefillSource(float remaining)
+        {
+            // Do not promise food to the pen if this trough's filter has no usable source.
+            foreach (Thing food in Map.listerThings.AllThings)
+                if (IsRefillFood(food) && HasPhysicalSpace(food) &&
+                    AnimalTroughRefillBatch.CountThatFits(remaining, food.GetStatValue(StatDefOf.Nutrition)) > 0)
+                    return true;
+            return false;
+        }
+
+        private bool HasPhysicalSpace(Thing food)
+        {
+            foreach (IntVec3 cell in AllSlotCellsList())
+                if (CellSpaceFor(cell, food) > 0) return true;
+            return false;
+        }
+
+        internal bool TryFindRefillCell(Pawn pawn, Thing food, out IntVec3 cell, out int space)
+        {
+            cell = IntVec3.Invalid;
+            space = 0;
+            foreach (IntVec3 candidate in AllSlotCellsList())
+            {
+                int candidateSpace = CellSpaceFor(candidate, food);
+                if (candidateSpace <= space || candidate.IsForbidden(pawn) ||
+                    !pawn.CanReach(candidate, PathEndMode.Touch, pawn.NormalMaxDanger()) ||
+                    !pawn.CanReserve(candidate)) continue;
+                cell = candidate;
+                space = candidateSpace;
+            }
+            return cell.IsValid;
+        }
+
+        internal int CellSpaceFor(IntVec3 cell, Thing food)
+        {
+            if (!Spawned || Map.haulDestinationManager.SlotGroupParentAt(cell) != this ||
+                !cell.IsValidStorageFor(Map, food) || cell.ContainsStaticFire(Map)) return 0;
+            int stacks = 0;
+            int space = 0;
+            foreach (Thing item in cell.GetThingList(Map))
+            {
+                if (item.def.category != ThingCategory.Item) continue;
+                stacks++;
+                if (item.CanStackWith(food)) space += Math.Max(0, item.def.stackLimit - item.stackCount);
+            }
+            // A direct drop can create one new stack, in addition to filling compatible stacks.
+            if (stacks < def.building.maxItemsInCell) space += food.def.stackLimit;
+            return space;
+        }
+
+        internal int DeliveryCount(Thing food, IntVec3 cell)
+        {
+            if (!CanContinueRefill() || !Accepts(food) || !GetParentStoreSettings().AllowedToAccept(food)) return 0;
+            return Math.Min(food.stackCount, Math.Min(CellSpaceFor(cell, food),
+                AnimalTroughRefillBatch.CountThatFits(Math.Min(batch.remainingNutrition,
+                    nutritionTarget - GetStoredNutrition()), food.GetStatValue(StatDefOf.Nutrition))));
+        }
+
+        internal void Notify_Delivered(float nutrition)
+        {
+            batch.Delivered(nutrition, Find.TickManager.TicksGame);
         }
 
         private float CalculatePendingNutrition(CompAnimalPenMarker marker)
         {
-            if (Map == null || marker?.PenState == null)
-            {
-                return 0f;
-            }
-
             float nutrition = 0f;
-            HashSet<Region> penRegions = marker.PenState.ConnectedRegions;
-
-            foreach (Pawn hauler in Map.mapPawns.AllPawnsSpawned)
+            foreach (Thing thing in Map.listerThings.ThingsOfDef(def))
             {
-                Job currentJob = hauler.CurJob;
-
-                if (currentJob == null ||
-                    currentJob.def != InternalDefOf.VRE_RefillAnimalTrough)
+                if (!(thing is Building_AnimalTrough other) || other == this || !other.batch.Active ||
+                    other.GetEnclosedPen()?.PenState != marker.PenState) continue;
+                float pending = Math.Min(other.batch.remainingNutrition,
+                    Math.Max(0f, other.nutritionTarget - other.GetStoredNutrition()));
+                // A reserved source still on the ground inside the pen was already counted.
+                foreach (Pawn pawn in Map.mapPawns.AllPawnsSpawned)
                 {
-                    continue;
+                    Job job = pawn.CurJob;
+                    if (job?.def != InternalDefOf.VRE_RefillAnimalTrough ||
+                        !other.AllSlotCellsList().Contains(job.GetTarget(TargetIndex.B).Cell)) continue;
+                    Thing source = job.GetTarget(TargetIndex.A).Thing;
+                    if (source?.Spawned == true && IsAvailablePenFood(source, marker, GetPenAnimals(marker)))
+                        pending -= Math.Min(job.count, source.stackCount) * source.GetStatValue(StatDefOf.Nutrition);
                 }
-
-                LocalTargetInfo destination =
-                    currentJob.GetTarget(TargetIndex.B);
-
-                if (!destination.IsValid ||
-                    !(Map.haulDestinationManager.SlotGroupParentAt(destination.Cell)
-                        is Building_AnimalTrough destinationTrough) ||
-                    destinationTrough.GetEnclosedPen() != marker)
-                {
-                    continue;
-                }
-
-                Thing carriedThing = hauler.carryTracker.CarriedThing;
-
-                if (carriedThing != null)
-                {
-                    nutrition += carriedThing.GetStatValue(StatDefOf.Nutrition)
-                        * carriedThing.stackCount;
-
-                    continue;
-                }
-
-                Thing source = currentJob.GetTarget(TargetIndex.A).Thing;
-
-                if (source == null || !source.Spawned)
-                {
-                    continue;
-                }
-
-                Region sourceRegion =
-                    Map.regionGrid.GetValidRegionAt(source.Position);
-
-                
-                if (sourceRegion != null && penRegions.Contains(sourceRegion))
-                {
-                    continue;
-                }
-
-                int count = currentJob.count > 0
-                    ? Mathf.Min(currentJob.count, source.stackCount)
-                    : source.stackCount;
-
-                nutrition += source.GetStatValue(StatDefOf.Nutrition) * count;
+                nutrition += Math.Max(0f, pending);
             }
-
             return nutrition;
         }
 
+        private List<Pawn> GetPenAnimals(CompAnimalPenMarker marker)
+        {
+            var animals = new List<Pawn>();
+            foreach (Pawn pawn in Map.mapPawns.AllPawnsSpawned)
+            {
+                Region region = Map.regionGrid.GetValidRegionAt(pawn.Position);
+                if (pawn.IsAnimal && region != null && marker.PenState.ContainsConnectedRegion(region))
+                    animals.Add(pawn);
+            }
+            return animals;
+        }
+
+        private bool IsAvailablePenFood(Thing food, CompAnimalPenMarker marker, List<Pawn> animals)
+        {
+            if (!food.Spawned || (food.def.category != ThingCategory.Item && !(food is Plant)) ||
+                !food.IngestibleNow) return false;
+            Region region = Map.regionGrid.GetValidRegionAt(food.Position);
+            if (region == null || !marker.PenState.ContainsConnectedRegion(region)) return false;
+            foreach (Pawn animal in animals)
+                if (animal.RaceProps.CanEverEat(food.def) && !food.IsForbidden(animal) &&
+                    animal.CanReach(food, PathEndMode.Touch, animal.NormalMaxDanger())) return true;
+            return false;
+        }
 
         private float CalculateAvailableNutrition(CompAnimalPenMarker marker)
         {
-            Map map = Map;
-            PenMarkerState state = marker.PenState;
-
-            if (map == null || state == null)
-            {
-                return 0f;
-            }
-
-            HashSet<Region> penRegions = state.ConnectedRegions;
-            List<Pawn> penAnimals = new List<Pawn>();
-
-            foreach (Thing thing in map.listerThings.AllThings)
-            {
-                if (!(thing is Pawn pawn) || !pawn.Spawned || !pawn.IsAnimal)
-                {
-                    continue;
-                }
-
-                Region region = map.regionGrid.GetValidRegionAt(pawn.Position);
-                if (region != null && penRegions.Contains(region))
-                {
-                    penAnimals.Add(pawn);
-                }
-            }
-
-            if (penAnimals.Count == 0)
-            {
-                return 0f;
-            }
-
+            List<Pawn> animals = GetPenAnimals(marker);
             float nutrition = 0f;
-
-           
-            foreach (Thing thing in map.listerThings.AllThings)
+            foreach (Thing food in Map.listerThings.AllThings)
             {
-                if (!thing.Spawned ||thing.def.category != ThingCategory.Item ||!thing.IngestibleNow)
-                {
-                    continue;
-                }
-
-                Region region = map.regionGrid.GetValidRegionAt(thing.Position);
-                if (region == null || !penRegions.Contains(region))
-                {
-                    continue;
-                }
-
-                bool accessibleFood = false;
-
-                foreach (Pawn animal in penAnimals)
-                {
-                    if (!animal.RaceProps.CanEverEat(thing.def))
-                    {
-                        continue;
-                    }
-
-                    if (!map.reachability.CanReach(animal.Position,thing.Position,PathEndMode.Touch,TraverseParms.For(animal)))
-                    {
-                        continue;
-                    }
-
-                    accessibleFood = true;
-                    break;
-                }
-
-                if (accessibleFood)
-                {
-                    nutrition += thing.GetStatValue(StatDefOf.Nutrition) * thing.stackCount;
-                }
+                if (!IsAvailablePenFood(food, marker, animals)) continue;
+                float perItem = food.GetStatValue(StatDefOf.Nutrition);
+                nutrition += food is Plant plant ? perItem * plant.Growth : perItem * food.stackCount;
             }
-
             return nutrition;
         }
 
-        private float GetStoredNutrition()
+        public float GetStoredNutrition()
         {
             float nutrition = 0f;
-
-            if (slotGroup == null)
-            {
-                return nutrition;
-            }
-
-            foreach (Thing thing in slotGroup.HeldThings)
-            {
-                nutrition += thing.GetStatValue(StatDefOf.Nutrition) * thing.stackCount;
-            }
-
+            foreach (Thing food in slotGroup.HeldThings)
+                nutrition += food.GetStatValue(StatDefOf.Nutrition) * food.stackCount;
             return nutrition;
         }
-
 
         private CompAnimalPenMarker GetEnclosedPen()
         {
-            if (Map == null)
-            {
-                return null;
-            }
-
+            if (!Spawned) return null;
             Region region = Map.regionGrid.GetValidRegionAt(Position);
-            if (region == null)
-            {
-                return null;
-            }
-
+            if (region == null) return null;
             foreach (Building building in Map.listerBuildings.allBuildingsAnimalPenMarkers)
             {
                 CompAnimalPenMarker marker = building.GetComp<CompAnimalPenMarker>();
-
-                if (marker == null || marker.PenState == null)
-                {
-                    continue;
-                }
-
-                PenMarkerState state = marker.PenState;
-
-                if (state.Enclosed && state.ContainsConnectedRegion(region))
-                {
-                    return marker;
-                }
+                if (marker?.PenState != null && marker.PenState.Enclosed &&
+                    marker.PenState.ContainsConnectedRegion(region)) return marker;
             }
-
             return null;
         }
-
     }
 }

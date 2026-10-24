@@ -22,13 +22,17 @@
 		<designationHotKey>Misc12</designationHotKey>
 		<thingClass>VanillaRanchingExpanded.Building_AnimalTrough</thingClass>
 		<building>
-			<storageGroupTag>Shelf</storageGroupTag>
+			<storageGroupTag>VRE_AnimalTrough</storageGroupTag>
 			<fixedStorageSettings>
 				<filter>
 					<disallowNotEverStorable>true</disallowNotEverStorable>
 					<categories>
 						<li>Foods</li>
 					</categories>
+					<disallowedCategories>
+						<li>Drugs</li>
+						<li>Corpses</li>
+					</disallowedCategories>
 				</filter>
 			</fixedStorageSettings>
 			<defaultStorageSettings Inherit="False">

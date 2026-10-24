@@ -19,6 +19,9 @@
 	<VRE_NotEggLayers>Can't extract gametes from egg laying animals</VRE_NotEggLayers>
 	<VRE_NutritionToStore>Nutrition to store</VRE_NutritionToStore>
 	<VRE_TargetNutrition>Target nutrition for this trough. Set to 0 to disable automatic refilling.</VRE_TargetNutrition>
+	<VRE_TroughNutrition>Nutrition: {0} / {1}</VRE_TroughNutrition>
+	<VRE_TroughDisabled>Automatic refilling disabled.</VRE_TroughDisabled>
+	<VRE_TroughRefilling>Refill batch remaining: {0} nutrition.</VRE_TroughRefilling>
 	
 	<!-- Stats -->
 	

@@ -32,6 +32,8 @@
 		<defName>VRE_RefillAnimalTrough</defName>
 		<driverClass>VanillaRanchingExpanded.JobDriver_RefillAnimalTrough</driverClass>
 		<reportString>refilling an animal trough.</reportString>
+		<!-- The driver drops remainders outside troughs. Generic cleanup must not bypass the cap. -->
+		<carryThingAfterJob>true</carryThingAfterJob>
 		<casualInterruptible>true</casualInterruptible>
 		<playerInterruptible>true</playerInterruptible>
 	</JobDef>

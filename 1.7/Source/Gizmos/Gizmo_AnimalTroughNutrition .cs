@@ -16,7 +16,7 @@ namespace VanillaRanchingExpanded
         protected override float Target
         {
             get => Mathf.Clamp01(trough.nutritionTarget / 100f);
-            set => trough.nutritionTarget = Mathf.Round(value * 100f);
+            set => trough.SetNutritionTarget(Mathf.Round(value * 100f));
         }
 
         protected override float ValuePercent =>

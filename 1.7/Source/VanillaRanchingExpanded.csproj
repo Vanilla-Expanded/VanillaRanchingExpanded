@@ -9,6 +9,8 @@
     <Nullable>warnings</Nullable>
 	  <GenerateDependencyFile>false</GenerateDependencyFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GameAssemblyDirectory Condition="'$(GameAssemblyDirectory)' == ''">$(MSBuildProjectDirectory)\..\..\..\..</GameAssemblyDirectory>
+    <FrameworkAssemblyPath Condition="'$(FrameworkAssemblyPath)' == ''">$(MSBuildProjectDirectory)\..\..\..\..\VanillaExpandedFramework\1.7\Assemblies\VEF.dll</FrameworkAssemblyPath>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Lib.Harmony">
@@ -16,32 +18,32 @@
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\Assembly-CSharp.dll</HintPath>
+      <HintPath>$(GameAssemblyDirectory)\Assembly-CSharp.dll</HintPath>
       <CopyLocal>false</CopyLocal>
       <Private>false</Private>
     </Reference>
 
     <Reference Include="RimWorld">
-      <HintPath>..\..\..\..\RimWorld.dll</HintPath>
+      <HintPath>$(GameAssemblyDirectory)\RimWorld.dll</HintPath>
 	   <CopyLocal>false</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityStubs">
-      <HintPath>..\..\..\..\UnityStubs.dll</HintPath>
+      <HintPath>$(GameAssemblyDirectory)\UnityStubs.dll</HintPath>
 	   <CopyLocal>false</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="VEF">
-      <HintPath>..\..\..\VanillaExpandedFramework\1.7\Assemblies\VEF.dll</HintPath>
+      <HintPath>$(FrameworkAssemblyPath)</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Waylith">
-      <HintPath>..\..\..\..\Waylith.dll</HintPath>
+      <HintPath>$(GameAssemblyDirectory)\Waylith.dll</HintPath>
 	   <CopyLocal>false</CopyLocal>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <Target Name="KillRimWorld" BeforeTargets="BeforeCompile">
+  <Target Name="KillRimWorld" BeforeTargets="BeforeCompile" Condition="'$(KillRunningRimWorld)' == 'true'">
     <Exec Command="taskkill /F /IM RimWorld.exe" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
   </Target>
 </Project>
