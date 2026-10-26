@@ -144,7 +144,7 @@
 				<labelPlural>dorper lambs</labelPlural>
 				<bodyGraphicData>
 					<texPath>Pawn/SheepBabies/Dorper/DorperSheepBaby</texPath>
-					<drawSize>0.6</drawSize>
+					<drawSize>1.15</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.3, 0.3)</volume>
 						<offset>(0,0,-0.2)</offset>
@@ -152,7 +152,7 @@
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepFemale</texPath>
-					<drawSize>0.6</drawSize>
+					<drawSize>1.15</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
