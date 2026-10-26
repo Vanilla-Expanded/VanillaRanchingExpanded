@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<AlphaMemes.RanchAnimalsDef>
+		<defName>VRE_RanchAnimalsDef</defName>
+		<horses>
+			<li>VRE_HorseArabian</li>
+			<li>VRE_HorseDraft</li>
+			<li>VRE_HorseKonik</li>
+		</horses>
+		<cows>
+			<li>VRE_CowDairy</li>
+			<li>VRE_CowJersey</li>
+			<li>VRE_CowWooly</li>
+			<li>VRE_CowZebu</li>
+			<li>VRE_CowAngus</li>
+		</cows>
+	</AlphaMemes.RanchAnimalsDef>
+</Defs>
+
