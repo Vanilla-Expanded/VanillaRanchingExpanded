@@ -16,6 +16,29 @@
 			</li>
 		</value>
 	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li[1]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/AlpacaBabies/AlpacaBaby</texPath>
+		</value>
+	</Operation>
+
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li[2]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Alpaca/Alpaca</texPath>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[defName="Alpaca"]/lifeStages/li[3]/bodyGraphicData/texPath</xpath>
+		<value>
+			<texPath>Pawn/Alpaca/Alpaca</texPath>
+		</value>
+	</Operation>
+	
+	
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[defName="Dromedary"]/comps</xpath>
 		<nomatch Class="PatchOperationAdd">
