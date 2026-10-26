@@ -1,23 +1,14 @@
 ﻿using RimWorld;
-using RimWorld.Planet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VEF.AnimalGenes;
 using Verse;
-using static HarmonyLib.Code;
-using static RimWorld.ColonistBar;
 
 namespace VanillaRanchingExpanded
 {
     public class MapComponent_IllnessAndOldAgeTracker : MapComponent
     {
 
-        public Dictionary<HediffDef, float> diseasesAndWeights = new Dictionary<HediffDef, float>() { { InternalDefOf.Animal_Flu, 0.85f },
-        { InternalDefOf.VRE_Parasites, 1f },{ InternalDefOf.VRE_ScariaInfection, 0.06f }};
-
+        // Keep this component's name for existing saves. Illnesses are now handled once
+        // globally by WorldComponent_AnimalIllnessTracker; this component handles old age only.
         public int tickCounter = 0;
         public const int tickInterval = 60000;
 
@@ -36,34 +27,6 @@ namespace VanillaRanchingExpanded
                     if (item?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes comp) continue;
                     if (item is Pawn pawn)
                     {
-                        if (pawn.IsColonyAnimal)
-                        {
-
-                            AnimalGeneDef filthAnimalGene = comp.genes?.Where(x => x.isIllnessGene).FirstOrDefault();
-                            if (filthAnimalGene != null)
-                            {
-                                if (comp.ticksSinceLastDisease >= 600000)
-                                {
-                                    bool illnessHappens = Rand.MTBEventOccurs(filthAnimalGene.animalIllnessMTB, 60000, 60000);
-
-                                    if (illnessHappens)
-                                    {
-                                        comp.ticksSinceLastDisease = 0;
-                                        HediffDef chosenIllness = diseasesAndWeights.RandomElementByWeight(x => x.Value).Key;
-                                        if (chosenIllness != null)
-                                        {
-                                            Hediff hediff = HediffMaker.MakeHediff(chosenIllness, pawn);
-                                            pawn.health.AddHediff(hediff);
-                                            Find.LetterStack.ReceiveLetter("VRE_AnimalDisease".Translate(hediff.def.LabelCap), "VRE_AnimalDiseaseDesc".Translate(pawn.Name.ToString(), hediff.def.LabelCap), LetterDefOf.NegativeEvent, pawn);
-
-                                        }
-                                    }
-                                }
-                                
-                            }
-                        }
-
-
                         float currentAge = pawn.ageTracker.AgeBiologicalYearsFloat;
 
                         if (currentAge > comp.LifeSpanFactor * pawn.def.race.lifeExpectancy)
