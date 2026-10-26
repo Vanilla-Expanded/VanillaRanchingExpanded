@@ -83,7 +83,7 @@ namespace VanillaRanchingExpanded
             {
                 text.AppendLine().AppendLine();
                 text.Append(group.Key.LabelCap).Append(": ");
-                text.Append(string.Join(", ", group.Value.Select(pawn => pawn.LabelShortCap.Resolve())));
+                text.Append(string.Join(", ", group.Value.Select(pawn => pawn.LabelShortCap)));
             }
             Find.LetterStack.ReceiveLetter("VRE_AnimalDiseases".Translate(), text.ToString(),
                 LetterDefOf.NegativeEvent, new LookTargets(affectedAnimals));
