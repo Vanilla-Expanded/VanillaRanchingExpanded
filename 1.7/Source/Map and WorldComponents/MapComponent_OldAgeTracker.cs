@@ -4,15 +4,12 @@ using Verse;
 
 namespace VanillaRanchingExpanded
 {
-    public class MapComponent_IllnessAndOldAgeTracker : MapComponent
-    {
-
-        // Keep this component's name for existing saves. Illnesses are now handled once
-        // globally by WorldComponent_AnimalIllnessTracker; this component handles old age only.
+    public class MapComponent_OldAgeTracker : MapComponent
+    {     
         public int tickCounter = 0;
         public const int tickInterval = 60000;
 
-        public MapComponent_IllnessAndOldAgeTracker(Map map) : base(map)
+        public MapComponent_OldAgeTracker(Map map) : base(map)
         {
         }
         public override void MapComponentTick()
@@ -46,9 +43,7 @@ namespace VanillaRanchingExpanded
                     }
 
                 }
-
                
-                
                  tickCounter = 0;
                 
             }

@@ -35,15 +35,13 @@ namespace VanillaRanchingExpanded
         {
             int now = Find.TickManager.TicksGame;
             if (nextIllnessCheckTick < 0)
-            {
-                // New games and saves predating this component start with a full day's delay.
+            {           
                 nextIllnessCheckTick = now + CheckInterval;
                 return;
             }
             if (now < nextIllnessCheckTick) return;
 
-            // Advance before processing. Loading a save resumes this schedule, and an overdue
-            // check runs only once rather than replaying missed days as a burst of illnesses.
+           
             nextIllnessCheckTick = now + CheckInterval;
             CheckIllnesses();
         }
@@ -53,28 +51,31 @@ namespace VanillaRanchingExpanded
             var cases = new Dictionary<HediffDef, List<Pawn>>();
             var affectedAnimals = new List<Pawn>();
             var checkedAnimals = new HashSet<Pawn>();
-            // Take a snapshot: adding a hediff can cause other mods to query PawnsFinder's
-            // shared lists. Include caravans and other world pawns as the old system did.
+          
             List<Pawn> animals = PawnsFinder.AllMapsWorldAndTemporary_Alive.ToList();
             foreach (Pawn pawn in animals)
             {
                 if (pawn == null || pawn.Dead || pawn.Destroyed || !pawn.IsColonyAnimal ||
                     !checkedAnimals.Add(pawn)) continue;
                 CompAnimalGenes comp = pawn.TryGetComp<CompAnimalGenes>();
-                AnimalGeneDef illnessGene = comp?.genes?.FirstOrDefault(gene => gene.isIllnessGene);
-                if (illnessGene == null || comp.ticksSinceLastDisease < DiseaseCooldown) continue;
-                if (!Rand.MTBEventOccurs(illnessGene.animalIllnessMTB, GenDate.TicksPerDay, CheckInterval)) continue;
-
-                HediffDef illness = diseasesAndWeights.RandomElementByWeight(entry => entry.Value).Key;
-                pawn.health.AddHediff(HediffMaker.MakeHediff(illness, pawn));
-                comp.ticksSinceLastDisease = 0;
-                if (!cases.TryGetValue(illness, out List<Pawn> group))
+                if (comp != null)
                 {
-                    group = new List<Pawn>();
-                    cases.Add(illness, group);
+                    AnimalGeneDef illnessGene = comp.genes?.FirstOrDefault(gene => gene.isIllnessGene);
+                    if (illnessGene == null || comp.ticksSinceLastDisease < DiseaseCooldown) continue;
+                    if (!Rand.MTBEventOccurs(illnessGene.animalIllnessMTB, GenDate.TicksPerDay, CheckInterval)) continue;
+
+                    HediffDef illness = diseasesAndWeights.RandomElementByWeight(entry => entry.Value).Key;
+                    pawn.health.AddHediff(HediffMaker.MakeHediff(illness, pawn));
+                    comp.ticksSinceLastDisease = 0;
+                    if (!cases.TryGetValue(illness, out List<Pawn> group))
+                    {
+                        group = new List<Pawn>();
+                        cases.Add(illness, group);
+                    }
+                    group.Add(pawn);
+                    affectedAnimals.Add(pawn);
                 }
-                group.Add(pawn);
-                affectedAnimals.Add(pawn);
+               
             }
 
             if (affectedAnimals.Count == 0) return;
