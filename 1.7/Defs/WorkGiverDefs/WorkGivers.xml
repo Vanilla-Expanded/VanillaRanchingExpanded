@@ -4,10 +4,9 @@
 		<defName>VRE_RefillAnimalTrough</defName>
 		<giverClass>VanillaRanchingExpanded.WorkGiver_RefillAnimalTrough</giverClass>
 		<workType>Hauling</workType>
-		<!-- Above ordinary hauling (15), below urgent fuel and supply jobs. -->
 		<priorityInType>16</priorityInType>
-		 <verb>refill</verb>
-    <gerund>refilling</gerund>
+		<verb>refill</verb>
+		<gerund>refilling</gerund>
 		<requiredCapacities>
 			<li>Manipulation</li>
 		</requiredCapacities>

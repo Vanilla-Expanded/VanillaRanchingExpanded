@@ -3,9 +3,8 @@ using RimWorld;
 
 namespace VanillaRanchingExpanded
 {
-    // Extend the standard clipboard, so copying from ordinary storage clears a stale trough target.
     [HarmonyPatch(typeof(StorageSettingsClipboard))]
-    public static class AnimalTrough_StorageClipboard
+    public static class VanillaRanchingExpanded_StorageSettingsClipboard_Patches
     {
         private static float? copiedNutritionTarget;
 

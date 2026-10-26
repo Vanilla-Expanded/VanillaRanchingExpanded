@@ -2,7 +2,6 @@ using System;
 
 namespace VanillaRanchingExpanded
 {
-    // Saved by the building. The budget only decreases, even if animals eat during a delivery.
     internal sealed class AnimalTroughRefillBatch
     {
         internal const int CheckInterval = 2500;
@@ -41,7 +40,6 @@ namespace VanillaRanchingExpanded
         internal static int CountThatFits(float remaining, float perItem)
         {
             if (remaining <= 0f || perItem <= 0f || float.IsNaN(remaining) || float.IsNaN(perItem)) return 0;
-            // Allow only float representation error, never a whole extra item.
             return (int)Math.Min(int.MaxValue, Math.Floor(((double)remaining + RoundingTolerance) / perItem));
         }
 

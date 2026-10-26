@@ -97,8 +97,6 @@ namespace VanillaRanchingExpanded
                 batch.Approve(nutritionTarget - GetStoredNutrition());
         }
 
-        // A batch is committed only after the first hauler has reserved its source and destination.
-        // JobOnThing is also called while scanning, so it must not commit a batch itself.
         internal bool TryStartRefill()
         {
             if (!CanContinueRefill()) return false;
@@ -182,8 +180,6 @@ namespace VanillaRanchingExpanded
 
             if (bestFood == null)
             {
-                // An inaccessible source may still be usable by another colonist. Only abandon
-                // the batch if there is no permitted, fitting source with physical storage space.
                 if (!anyUsableSource) batch.Complete(Find.TickManager.TicksGame);
                 return null;
             }
@@ -203,7 +199,6 @@ namespace VanillaRanchingExpanded
 
         private bool HasRefillSource(float remaining)
         {
-            // Do not promise food to the pen if this trough's filter has no usable source.
             foreach (Thing food in Map.listerThings.AllThings)
                 if (IsRefillFood(food) && HasPhysicalSpace(food) &&
                     AnimalTroughRefillBatch.CountThatFits(remaining, food.GetStatValue(StatDefOf.Nutrition)) > 0)
@@ -246,7 +241,7 @@ namespace VanillaRanchingExpanded
                 stacks++;
                 if (item.CanStackWith(food)) space += Math.Max(0, item.def.stackLimit - item.stackCount);
             }
-            // A direct drop can create one new stack, in addition to filling compatible stacks.
+
             if (stacks < def.building.maxItemsInCell) space += food.def.stackLimit;
             return space;
         }
@@ -273,7 +268,6 @@ namespace VanillaRanchingExpanded
                     other.GetEnclosedPen()?.PenState != marker.PenState) continue;
                 float pending = Math.Min(other.batch.remainingNutrition,
                     Math.Max(0f, other.nutritionTarget - other.GetStoredNutrition()));
-                // A reserved source still on the ground inside the pen was already counted.
                 foreach (Pawn pawn in Map.mapPawns.AllPawnsSpawned)
                 {
                     Job job = pawn.CurJob;

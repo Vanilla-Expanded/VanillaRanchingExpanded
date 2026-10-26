@@ -7,7 +7,7 @@ using Verse;
 namespace VanillaRanchingExpanded
 {
     [HarmonyPatch(typeof(CompAnimalPenMarker), nameof(CompAnimalPenMarker.AcceptsToPen))]
-    public class CompAnimalPenMarker_AcceptsToPen_Patch
+    public class VanillaRanchingExpanded_CompAnimalPenMarker_AcceptsToPen_Patch
     {
         public static void Postfix(Pawn animal, ref bool __result, CompAnimalPenMarker __instance)
         {
