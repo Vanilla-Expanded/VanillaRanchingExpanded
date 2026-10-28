@@ -79,6 +79,16 @@ namespace VanillaRanchingExpanded
             }
 
             if (affectedAnimals.Count == 0) return;
+            if (affectedAnimals.Count == 1)
+            {
+                Pawn animal = affectedAnimals[0];
+                HediffDef illness = cases.Keys.Single();
+                Find.LetterStack.ReceiveLetter("VRE_AnimalDisease".Translate(illness.LabelCap),
+                    "VRE_AnimalDiseaseDesc".Translate(animal.Name?.ToString() ?? animal.LabelShortCap, illness.LabelCap),
+                    LetterDefOf.NegativeEvent, animal);
+                return;
+            }
+
             var text = new StringBuilder("VRE_AnimalDiseasesDesc".Translate(affectedAnimals.Count));
             foreach (KeyValuePair<HediffDef, List<Pawn>> group in cases)
             {
