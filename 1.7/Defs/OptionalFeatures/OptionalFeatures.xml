@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <VEF.OptionalFeatures.ModDef>
+        <defName>VRE_OptionalFeatures_Ranching</defName>
+        <label>Vanilla Ranching Expanded</label>
+        <description>VE Framework optional features for Vanilla Ranching Expanded</description>
+        <Activate>
+            <li>AnimalGenesMechanics</li>
+        </Activate>
+    </VEF.OptionalFeatures.ModDef>
+</Defs>
