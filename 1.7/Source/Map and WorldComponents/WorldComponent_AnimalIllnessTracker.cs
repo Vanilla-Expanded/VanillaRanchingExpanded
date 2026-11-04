@@ -83,9 +83,12 @@ namespace VanillaRanchingExpanded
             {
                 Pawn animal = affectedAnimals[0];
                 HediffDef illness = cases.Keys.Single();
+                TaggedString letterText = "VRE_AnimalDiseaseDesc".Translate(
+                    animal.Name?.ToString() ?? animal.LabelShortCap, illness.LabelCap);
+                if (!illness.description.NullOrEmpty())
+                    letterText += "\n\n" + illness.description;
                 Find.LetterStack.ReceiveLetter("VRE_AnimalDisease".Translate(illness.LabelCap),
-                    "VRE_AnimalDiseaseDesc".Translate(animal.Name?.ToString() ?? animal.LabelShortCap, illness.LabelCap),
-                    LetterDefOf.NegativeEvent, animal);
+                    letterText, LetterDefOf.NegativeEvent, animal);
                 return;
             }
 
