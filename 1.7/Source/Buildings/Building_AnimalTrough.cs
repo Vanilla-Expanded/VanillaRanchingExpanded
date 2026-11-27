@@ -16,41 +16,40 @@ namespace VanillaRanchingExpanded
         public override void ExposeData()
         {
             base.ExposeData();
-            ExposeRefillData();
-        }
-
-        private void ExposeRefillData()
-        {
             Scribe_Values.Look(ref nutritionTarget, "nutritionTarget", 6f);
             Scribe_Values.Look(ref batch.remainingNutrition, "refillNutritionRemaining", 0f);
             Scribe_Values.Look(ref batch.started, "refillBatchStarted", false);
             Scribe_Values.Look(ref batch.nextCheckTick, "nextRefillCheckTick", -1);
         }
 
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            if (batch.nextCheckTick < 0)
-                batch.nextCheckTick = Find.TickManager.TicksGame +
-                    (int)((uint)thingIDNumber * 391u % AnimalTroughRefillBatch.CheckInterval);
+            if (batch.nextCheckTick < 0) { batch.nextCheckTick = Find.TickManager.TicksGame + (int)((uint)thingIDNumber * 391u % AnimalTroughRefillBatch.CheckInterval); }
+
         }
 
         public void SetNutritionTarget(float value)
         {
             value = Math.Clamp(value, 0f, 100f);
-            if (storageGroup == null)
-                ApplyNutritionTarget(value);
-            else
-                foreach (IStorageGroupMember member in storageGroup.members)
-                    if (member is Building_AnimalTrough trough)
-                        trough.ApplyNutritionTarget(value);
+            if (storageGroup == null) { ApplyNutritionTarget(value); }
+
+            else { 
+                foreach (IStorageGroupMember member in storageGroup.members) { 
+                    if (member is Building_AnimalTrough trough) { 
+                        trough.ApplyNutritionTarget(value); 
+                    } 
+                } 
+            }
         }
 
         private void ApplyNutritionTarget(float value)
         {
             nutritionTarget = value;
-            if (Spawned)
+            if (Spawned) { 
                 batch.ClampToSpace(value - GetStoredNutrition(), Find.TickManager.TicksGame);
+            }
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -92,9 +91,11 @@ namespace VanillaRanchingExpanded
             if (nutritionTarget <= 0f) return;
 
             CompAnimalPenMarker marker = GetEnclosedPen();
-            if (HasAnimalsToFeed(marker) && PenNeedsFood(marker) &&
-                HasRefillSource(nutritionTarget - GetStoredNutrition()))
+            if (HasAnimalsToFeed(marker) && PenNeedsFood(marker) && HasRefillSource(nutritionTarget - GetStoredNutrition()))
+            {
                 batch.Approve(nutritionTarget - GetStoredNutrition());
+            }
+                
         }
 
         internal bool TryStartRefill()
@@ -120,8 +121,7 @@ namespace VanillaRanchingExpanded
 
         private bool PenNeedsFood(CompAnimalPenMarker marker)
         {
-            return marker != null && CalculateAvailableNutrition(marker) + CalculatePendingNutrition(marker)
-                < marker.PenFoodCalculator.SumNutritionConsumptionPerDay;
+            return marker != null && CalculateAvailableNutrition(marker) + CalculatePendingNutrition(marker) < marker.PenFoodCalculator.SumNutritionConsumptionPerDay;
         }
 
         private static bool HasAnimalsToFeed(CompAnimalPenMarker marker)
@@ -132,16 +132,18 @@ namespace VanillaRanchingExpanded
         private bool HasRefillJob()
         {
             foreach (Pawn pawn in Map.mapPawns.AllPawnsSpawned)
-                if (pawn.CurJob?.def == InternalDefOf.VRE_RefillAnimalTrough &&
-                    AllSlotCellsList().Contains(pawn.CurJob.GetTarget(TargetIndex.B).Cell))
+            {
+                if (pawn.CurJob?.def == InternalDefOf.VRE_RefillAnimalTrough && AllSlotCellsList().Contains(pawn.CurJob.GetTarget(TargetIndex.B).Cell))
+                {
                     return true;
+                }                  
+            }               
             return false;
         }
 
         internal Job TryMakeRefillJob(Pawn pawn, bool forced)
         {
-            if (!batch.Active || !Spawned || pawn.Map != Map || nutritionTarget <= 0f ||
-                Faction != pawn.Faction || this.IsForbidden(pawn) || !pawn.CanReserve(this) || HasRefillJob()) return null;
+            if (!batch.Active || !Spawned || pawn.Map != Map || nutritionTarget <= 0f || Faction != pawn.Faction || this.IsForbidden(pawn) || !pawn.CanReserve(this) || HasRefillJob()) return null;
             if (!HasAnimalsToFeed(GetEnclosedPen())) return null;
 
             float remaining = Math.Min(batch.remainingNutrition, nutritionTarget - GetStoredNutrition());
@@ -160,10 +162,8 @@ namespace VanillaRanchingExpanded
                 if (fittingCount <= 0 || !HasPhysicalSpace(food)) continue;
                 anyUsableSource = true;
                 if (!HaulAIUtility.PawnCanAutomaticallyHaul(pawn, food, forced)) continue;
-                if (pawn.carryTracker.CarriedThing != null &&
-                    !pawn.carryTracker.CarriedThing.CanStackWith(food)) continue;
-                int count = Math.Min(fittingCount, Math.Min(food.stackCount,
-                    pawn.carryTracker.AvailableStackSpace(food.def)));
+                if (pawn.carryTracker.CarriedThing != null && !pawn.carryTracker.CarriedThing.CanStackWith(food)) continue;
+                int count = Math.Min(fittingCount, Math.Min(food.stackCount, pawn.carryTracker.AvailableStackSpace(food.def)));
                 if (count <= 0 || !TryFindRefillCell(pawn, food, out IntVec3 cell, out int space)) continue;
                 count = Math.Min(count, space);
                 float deliveredNutrition = count * perItem;
@@ -192,24 +192,26 @@ namespace VanillaRanchingExpanded
 
         private bool IsRefillFood(Thing food)
         {
-            return food.Spawned && food.def.category == ThingCategory.Item && food.IngestibleNow &&
-                GetParentStoreSettings().AllowedToAccept(food) && Accepts(food) &&
-                !(Map.haulDestinationManager.SlotGroupParentAt(food.Position) is Building_AnimalTrough);
+            return food.Spawned && food.def.category == ThingCategory.Item && food.IngestibleNow && GetParentStoreSettings().AllowedToAccept(food) && Accepts(food) &&
+            !(Map.haulDestinationManager.SlotGroupParentAt(food.Position) is Building_AnimalTrough);
         }
 
         private bool HasRefillSource(float remaining)
         {
             foreach (Thing food in Map.listerThings.AllThings)
-                if (IsRefillFood(food) && HasPhysicalSpace(food) &&
-                    AnimalTroughRefillBatch.CountThatFits(remaining, food.GetStatValue(StatDefOf.Nutrition)) > 0)
+            {
+                if (IsRefillFood(food) && HasPhysicalSpace(food) && AnimalTroughRefillBatch.CountThatFits(remaining, food.GetStatValue(StatDefOf.Nutrition)) > 0)
                     return true;
+            }              
             return false;
         }
 
         private bool HasPhysicalSpace(Thing food)
         {
             foreach (IntVec3 cell in AllSlotCellsList())
+            {
                 if (CellSpaceFor(cell, food) > 0) return true;
+            }               
             return false;
         }
 
@@ -220,9 +222,7 @@ namespace VanillaRanchingExpanded
             foreach (IntVec3 candidate in AllSlotCellsList())
             {
                 int candidateSpace = CellSpaceFor(candidate, food);
-                if (candidateSpace <= space || candidate.IsForbidden(pawn) ||
-                    !pawn.CanReach(candidate, PathEndMode.Touch, pawn.NormalMaxDanger()) ||
-                    !pawn.CanReserve(candidate)) continue;
+                if (candidateSpace <= space || candidate.IsForbidden(pawn) || !pawn.CanReach(candidate, PathEndMode.Touch, pawn.NormalMaxDanger()) || !pawn.CanReserve(candidate)) continue;
                 cell = candidate;
                 space = candidateSpace;
             }
@@ -231,8 +231,7 @@ namespace VanillaRanchingExpanded
 
         internal int CellSpaceFor(IntVec3 cell, Thing food)
         {
-            if (!Spawned || Map.haulDestinationManager.SlotGroupParentAt(cell) != this ||
-                !cell.IsValidStorageFor(Map, food) || cell.ContainsStaticFire(Map)) return 0;
+            if (!Spawned || Map.haulDestinationManager.SlotGroupParentAt(cell) != this || !cell.IsValidStorageFor(Map, food) || cell.ContainsStaticFire(Map)) return 0;
             int stacks = 0;
             int space = 0;
             foreach (Thing item in cell.GetThingList(Map))
@@ -249,9 +248,8 @@ namespace VanillaRanchingExpanded
         internal int DeliveryCount(Thing food, IntVec3 cell)
         {
             if (!CanContinueRefill() || !Accepts(food) || !GetParentStoreSettings().AllowedToAccept(food)) return 0;
-            return Math.Min(food.stackCount, Math.Min(CellSpaceFor(cell, food),
-                AnimalTroughRefillBatch.CountThatFits(Math.Min(batch.remainingNutrition,
-                    nutritionTarget - GetStoredNutrition()), food.GetStatValue(StatDefOf.Nutrition))));
+            return Math.Min(food.stackCount, Math.Min(CellSpaceFor(cell, food), AnimalTroughRefillBatch.CountThatFits(Math.Min(batch.remainingNutrition,
+            nutritionTarget - GetStoredNutrition()), food.GetStatValue(StatDefOf.Nutrition))));
         }
 
         internal void Notify_Delivered(float nutrition)
@@ -266,16 +264,16 @@ namespace VanillaRanchingExpanded
             {
                 if (!(thing is Building_AnimalTrough other) || other == this || !other.batch.Active ||
                     other.GetEnclosedPen()?.PenState != marker.PenState) continue;
-                float pending = Math.Min(other.batch.remainingNutrition,
-                    Math.Max(0f, other.nutritionTarget - other.GetStoredNutrition()));
+                float pending = Math.Min(other.batch.remainingNutrition, Math.Max(0f, other.nutritionTarget - other.GetStoredNutrition()));
                 foreach (Pawn pawn in Map.mapPawns.AllPawnsSpawned)
                 {
                     Job job = pawn.CurJob;
-                    if (job?.def != InternalDefOf.VRE_RefillAnimalTrough ||
-                        !other.AllSlotCellsList().Contains(job.GetTarget(TargetIndex.B).Cell)) continue;
+                    if (job?.def != InternalDefOf.VRE_RefillAnimalTrough || !other.AllSlotCellsList().Contains(job.GetTarget(TargetIndex.B).Cell)) continue;
                     Thing source = job.GetTarget(TargetIndex.A).Thing;
                     if (source?.Spawned == true && IsAvailablePenFood(source, marker, GetPenAnimals(marker)))
+                    {
                         pending -= Math.Min(job.count, source.stackCount) * source.GetStatValue(StatDefOf.Nutrition);
+                    }
                 }
                 nutrition += Math.Max(0f, pending);
             }
@@ -289,20 +287,21 @@ namespace VanillaRanchingExpanded
             {
                 Region region = Map.regionGrid.GetValidRegionAt(pawn.Position);
                 if (pawn.IsAnimal && region != null && marker.PenState.ContainsConnectedRegion(region))
+                {
                     animals.Add(pawn);
+                }                
             }
             return animals;
         }
 
         private bool IsAvailablePenFood(Thing food, CompAnimalPenMarker marker, List<Pawn> animals)
         {
-            if (!food.Spawned || (food.def.category != ThingCategory.Item && !(food is Plant)) ||
-                !food.IngestibleNow) return false;
+            if (!food.Spawned || (food.def.category != ThingCategory.Item && !(food is Plant)) || !food.IngestibleNow) return false;
             Region region = Map.regionGrid.GetValidRegionAt(food.Position);
             if (region == null || !marker.PenState.ContainsConnectedRegion(region)) return false;
-            foreach (Pawn animal in animals)
-                if (animal.RaceProps.CanEverEat(food.def) && !food.IsForbidden(animal) &&
-                    animal.CanReach(food, PathEndMode.Touch, animal.NormalMaxDanger())) return true;
+            foreach (Pawn animal in animals) {
+                if (animal.RaceProps.CanEverEat(food.def) && !food.IsForbidden(animal) && animal.CanReach(food, PathEndMode.Touch, animal.NormalMaxDanger())) return true;
+            }              
             return false;
         }
 
@@ -323,7 +322,9 @@ namespace VanillaRanchingExpanded
         {
             float nutrition = 0f;
             foreach (Thing food in slotGroup.HeldThings)
+            {
                 nutrition += food.GetStatValue(StatDefOf.Nutrition) * food.stackCount;
+            }              
             return nutrition;
         }
 
@@ -335,8 +336,7 @@ namespace VanillaRanchingExpanded
             foreach (Building building in Map.listerBuildings.allBuildingsAnimalPenMarkers)
             {
                 CompAnimalPenMarker marker = building.GetComp<CompAnimalPenMarker>();
-                if (marker?.PenState != null && marker.PenState.Enclosed &&
-                    marker.PenState.ContainsConnectedRegion(region)) return marker;
+                if (marker?.PenState != null && marker.PenState.Enclosed && marker.PenState.ContainsConnectedRegion(region)) return marker;
             }
             return null;
         }

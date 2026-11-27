@@ -16,16 +16,15 @@ public sealed class CompProperties_GroupedEggGenes : CompProperties
 
 public sealed class CompGroupedEggGenes : CompStackByGenes
 {
-    // Uniform stacks use the shared profile in CompAnimalGenes.
+
     private List<EggGeneGroup> groups;
 
     public override bool AllowStackWith(Thing other)
     {
-        if (other.TryGetComp<CompGroupedEggGenes>() != null &&
-            parent.TryGetComp<CompAnimalGenes>() is { } target &&
-            other.TryGetComp<CompAnimalGenes>() is { } source)
+        if (other.TryGetComp<CompGroupedEggGenes>() != null && parent.TryGetComp<CompAnimalGenes>() is { } target && other.TryGetComp<CompAnimalGenes>() is { } source)
+        {
             return target.HasAssignedGenes == source.HasAssignedGenes;
-
+        }     
         return base.AllowStackWith(other);
     }
 
@@ -33,7 +32,9 @@ public sealed class CompGroupedEggGenes : CompStackByGenes
     {
         base.PostExposeData();
         if (Scribe.mode != LoadSaveMode.Saving || groups != null)
+        {
             Scribe_Collections.Look(ref groups, "vreEggGeneGroups", LookMode.Deep);
+        }          
     }
 
     public override void PreAbsorbStack(Thing otherStack, int count)
@@ -76,7 +77,6 @@ public sealed class CompGroupedEggGenes : CompStackByGenes
         if (groups == null)
             return new List<EggGeneGroup> { new EggGeneGroup(count, genes.genes.ToList()) };
 
-        // Other game systems can reduce stackCount directly, consuming eggs from the tail.
         int recordedCount = groups.Sum(group => group.Count);
         if (recordedCount > count)
             TakeTail(groups, recordedCount - count);
@@ -88,7 +88,6 @@ public sealed class CompGroupedEggGenes : CompStackByGenes
     private void SetGroups(List<EggGeneGroup> updated, CompAnimalGenes genes)
     {
         groups = updated.Count > 1 ? updated : null;
-        // VEF still exposes the first profile in the existing Genes tab.
         if (updated.Count > 0 && !genes.genes.SequenceEqual(updated[0].Genes))
             genes.SetInheritedGenes(updated[0].Genes);
     }
@@ -102,7 +101,6 @@ public sealed class CompGroupedEggGenes : CompStackByGenes
             destination.Add(group);
     }
 
-    // VEF moves hatchling kinds from the tail as well. Preserve their order within the moved eggs.
     private static List<EggGeneGroup> TakeTail(List<EggGeneGroup> source, int count)
     {
         var moved = new List<EggGeneGroup>();

@@ -15,10 +15,8 @@ namespace VanillaRanchingExpanded
         public static IEnumerable<CodeInstruction> MoveGenesFromEggToPawn(IEnumerable<CodeInstruction> codeInstructions, ILGenerator generator)
         {
             var moveGenesMethod = AccessTools.Method(typeof(VanillaRanchingExpanded_CompHatcher_Hatch_Patch), nameof(MoveNextEggGenes));
-            var generatePawn = AccessTools.Method(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn),
-                new[] { typeof(PawnGenerationRequest) });
-
-            // One cursor per hatch keeps the gene groups aligned with the generated chicks.
+            var generatePawn = AccessTools.Method(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn),new[] { typeof(PawnGenerationRequest) });
+           
             var cursor = generator.DeclareLocal(typeof(CompGroupedEggGenes.HatchCursor));
             yield return CodeInstruction.LoadArgument(0);
             yield return new CodeInstruction(OpCodes.Call,
@@ -30,7 +28,6 @@ namespace VanillaRanchingExpanded
                 yield return instruction;
                 if (instruction.Calls(generatePawn))
                 {
-                    // Keep the generated pawn on the stack for the original hatch code.
                     yield return new CodeInstruction(OpCodes.Dup);
                     yield return new CodeInstruction(OpCodes.Ldloca, cursor);
                     yield return new CodeInstruction(OpCodes.Call, moveGenesMethod);
@@ -38,14 +35,12 @@ namespace VanillaRanchingExpanded
             }
         }
 
-        private static CompGroupedEggGenes.HatchCursor StartHatch(CompHatcher compHatcher) =>
-            CompGroupedEggGenes.StartHatch(compHatcher.parent);
+        private static CompGroupedEggGenes.HatchCursor StartHatch(CompHatcher compHatcher) => CompGroupedEggGenes.StartHatch(compHatcher.parent);
 
         private static void MoveNextEggGenes(Pawn pawn, ref CompGroupedEggGenes.HatchCursor cursor)
         {
             var genes = cursor.TakeNext();
-            if (genes != null && pawn?.AnimalGenes is CompAnimalGenes comp)
-                comp.SetInheritedGenes(genes);
+            if (genes != null && pawn?.AnimalGenes is CompAnimalGenes comp) { comp.SetInheritedGenes(genes); }                
         }
 
         public static void MoveGenes(Pawn pawn, CompHatcher compHatcher)

@@ -51,8 +51,6 @@ namespace VanillaRanchingExpanded
                     return;
                 }
                 float perItem = carried.GetStatValue(StatDefOf.Nutrition);
-                // The target/filter/contents can change while walking. Drop only what still fits;
-                // the finish action drops any remainder outside troughs.
                 if (!pawn.carryTracker.TryDropCarriedThing(cell, count, ThingPlaceMode.Direct, out _,
                     (placed, placedCount) => trough.Notify_Delivered(perItem * placedCount)))
                     EndJobWith(JobCondition.Incompletable);
